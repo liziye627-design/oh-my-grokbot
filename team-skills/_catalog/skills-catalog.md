@@ -1,6 +1,6 @@
 # Skills catalog (installed 2026-10-16 CST) — 18 installed skills
 
-Location: /home/box/agent-data/workflows/<id>/ (bundled files copied alongside SKILL.md)
+Location: team-skills/<id>/ (bundled files copied alongside SKILL.md)
 
 | id | source (stars) | license | category | assigned teams/bots |
 |---|---|---|---|---|
