@@ -1,4 +1,4 @@
-# Skills catalog (installed 2026-10-16 CST) — 18 installed skills
+# Skills catalog (installed 2026-10-16 CST) — 38 installed external skills (verified on disk)
 
 Location: <grokbot-workflows>/<id>/ (bundled files copied alongside SKILL.md)
 
@@ -45,7 +45,7 @@ Location: <grokbot-workflows>/<id>/ (bundled files copied alongside SKILL.md)
 - Descriptions made generic (team notes / "Claude" removed); team mapping lives only in this catalog.
 - dev-mcp-builder: approval-required note added for npx inspector and scripts/evaluation.py.
 
-## Round 2 installed (2026-10-16 23:35 CST) — 11 skills
+## Round 2 installed (2026-10-16 23:35 CST) — 9 installed (+ 2 staged, pending user decision)
 | id | source (stars) | license | category | assigned teams/bots |
 |---|---|---|---|---|
 | research-competitive-intel | alirezarezvani/claude-skills (28.3k★) | MIT | research | research-lab (competitor-scout, industry-analyst) |
@@ -57,14 +57,14 @@ Location: <grokbot-workflows>/<id>/ (bundled files copied alongside SKILL.md)
 | sales-engineer | alirezarezvani/claude-skills (28.3k★) | MIT | sales | sales-team (sales-engineer, company-researcher) |
 | agile-product-owner | alirezarezvani/claude-skills (28.3k★) | MIT | eng/product | engineering-lab (requirements), app-studio/product-analyst |
 | brand-voice-enforcement | anthropics/knowledge-work-plugins partner-built/brand-voice (29.9k★ repo; MIT Tribe AI) | MIT | content | content-studio/voice-keeper, wechat/title-editor, sales-team |
-| reverse-ghidra-static-analysis | mukul975/Anthropic-Cybersecurity-Skills (34.5k★) | Apache-2.0 | reverse | reverse-lab ONLY (authorization-gate + per-use consent) |
-| reverse-firmware-binwalk | mukul975/Anthropic-Cybersecurity-Skills (34.5k★) | Apache-2.0 | reverse | reverse-lab ONLY (authorization-gate + per-use consent); eng embedded may consult methodology after gate |
+| reverse-ghidra-static-analysis | mukul975/Anthropic-Cybersecurity-Skills (34.5k★) | Apache-2.0 | reverse | **NOT installed** — 暂存区（未入库）等用户决定 / staged, pending user decision (reverse-lab ONLY if approved) |
+| reverse-firmware-binwalk | mukul975/Anthropic-Cybersecurity-Skills (34.5k★) | Apache-2.0 | reverse | **NOT installed** — 暂存区（未入库）等用户决定 / staged, pending user decision (reverse-lab ONLY if approved) |
 
 ### Dedupe (not installed; Mika's live versions win)
 research-market-research, research-deep-research, content-copywriting, content-creator, social-x-growth → superseded by Mika market-research / source-research+fact-verification / khazix-writer / social-research.
 
 ### Remaining gaps
-office docs (docx/xlsx/pptx/pdf) permissive SKILL.md; market-desk filings/tape/universe-specific; sales crm-manager/lead-hunter prospecting; network protocol RE methodology. Supplement B 12 awaiting re-review after LICENSE+Source fix.
+office docs (docx/xlsx/pptx/pdf) permissive SKILL.md; market-desk filings/tape/universe-specific; sales crm-manager/lead-hunter prospecting; network protocol RE methodology. Supplement B reviewed: 11 installed with LICENSE + Source (competitive-brief dropped as duplicate); no longer pending LICENSE review.
 
 ## Supplement B installed (2026-10-16 23:40 CST) — 11 of 12
 | id | source (stars) | license | category | assigned teams/bots |
@@ -82,4 +82,4 @@ office docs (docx/xlsx/pptx/pdf) permissive SKILL.md; market-desk filings/tape/u
 | performance-report | anthropics/knowledge-work-plugins (29.9k★) | Apache-2.0 | social/content | x-growth (reviewer), content-studio/channel-editor, complements social-media-analyzer |
 
 ### Dedupe drop (Supplement B)
-- competitive-brief — NOT installed; overlaps research-competitive-intel (already live). Staged under skills-candidates/competitive-brief.
+- competitive-brief — NOT installed; overlaps research-competitive-intel (already live). 暂存区（未入库）/ staged, pending (dedupe drop).
