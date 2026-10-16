@@ -26,3 +26,7 @@
 - `skills-catalog.md` — 安装清单（来源、星数、许可证、岗位映射、未收录项及原因）
 - `mapping.md` — 技能到岗位的对照表及使用限制
 - `skills-review.md` — 两轮独立复核记录
+
+## Round 2 (20 external skills)
+
+Some skills ship local Python helper scripts (`scripts/`, e.g. finance-financial-analyst, social-media-analyzer, eng-spec-driven-workflow, sales-engineer, agile-product-owner). They are included as-is and were **reviewed but not executed**; review them before running. Each skill keeps its upstream LICENSE and a Source line in SKILL.md.
