@@ -1,0 +1,205 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-wechat",
+      "version": "0.2.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "个人公众号写作：从历史文章提取文风，确认大纲后写正文、备选标题和独立审稿。包含本地 HTML 排版和草稿交接；账户写入需独立授权与验证。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "routine-design",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "baoyu-url-to-markdown",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "baoyu-markdown-to-html",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "baoyu-post-to-wechat",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "khazix-writer",
+          "range": "^0.1.0",
+          "optional": false
+        }
+      ],
+      "agents": [
+        {
+          "id": "voice-keeper",
+          "mission": "从作者提供的历史文章提取可复用的文风，并把新题目收成可写的大纲。",
+          "skills": ["source-research", "khazix-writer", "baoyu-url-to-markdown"],
+          "expectedOutputs": ["voice-profile.md", "outline.md"]
+        },
+        {
+          "id": "drafter",
+          "mission": "按已确认大纲和文风写正文，事实、推断、意见和亲历分开。",
+          "skills": ["source-research", "fact-verification", "task-planning", "khazix-writer"],
+          "expectedOutputs": ["article.md"]
+        },
+        {
+          "id": "title-editor",
+          "mission": "根据正文给出可核对的备选标题，并标出标题里没有正文支持的承诺。",
+          "skills": [
+            "fact-verification",
+            "artifact-validation",
+            "baoyu-markdown-to-html",
+            "baoyu-post-to-wechat"
+          ],
+          "expectedOutputs": ["titles.md"]
+        },
+        {
+          "id": "reviewer",
+          "mission": "独立退回没有来源的数字、偏离文风的段落和不能发表的承诺。",
+          "skills": [
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "khazix-writer"
+          ],
+          "expectedOutputs": ["review.md"]
+        }
+      ],
+      "policies": [
+        "evidence-required",
+        "independent-review",
+        "no-fabricated-metrics",
+        "explicit-publication-approval",
+        "draft-only"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "capture-voice",
+      "name": "从历史文章提取文风",
+      "entryRole": "voice-keeper",
+      "requiredInputs": ["pastArticles"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "profile",
+          "role": "voice-keeper",
+          "dependsOn": [],
+          "requiredArtifacts": ["voice-profile.md"],
+          "acceptanceCriteria": [
+            "画像只依据作者提供的文章，并标出样本数量。",
+            "样本不足时保持草稿，不把通用文风写成作者本人。"
+          ]
+        },
+        {
+          "id": "accept",
+          "role": "reviewer",
+          "dependsOn": ["profile"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": ["审查者能把画像中的判断指回样本。", "无法指回的判断被退回。"]
+        }
+      ]
+    },
+    {
+      "id": "write-article",
+      "name": "大纲、正文、标题与审稿",
+      "entryRole": "voice-keeper",
+      "requiredInputs": ["idea", "voiceProfile", "sourceNotes"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "outline",
+          "role": "voice-keeper",
+          "dependsOn": [],
+          "requiredArtifacts": ["outline.md"],
+          "acceptanceCriteria": [
+            "大纲写明读者、核心判断、段落职责和不写的内容。",
+            "同题材料只作为需求观察，不编造阅读量。"
+          ]
+        },
+        {
+          "id": "draft",
+          "role": "drafter",
+          "dependsOn": ["outline"],
+          "requiredArtifacts": ["article.md"],
+          "acceptanceCriteria": [
+            "正文遵循大纲，事实句带有来源说明。",
+            "推断、意见和亲历使用不同标记。"
+          ]
+        },
+        {
+          "id": "titles",
+          "role": "title-editor",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["titles.md"],
+          "acceptanceCriteria": [
+            "至少给出多个标题，并说明各自承诺了什么。",
+            "正文没有支持的数字或结果不能出现在推荐标题里。"
+          ]
+        },
+        {
+          "id": "layout",
+          "role": "title-editor",
+          "dependsOn": ["titles"],
+          "requiredArtifacts": ["article.html", "render-receipt.json"],
+          "acceptanceCriteria": [
+            "HTML is rendered by the bundled Baoyu runtime from the actual article.",
+            "Receipt records actual command, exit code and source/output hashes; no publication is claimed."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["layout"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "审查者不是起草者。",
+            "未解决的事实、文风或标题问题会退回，不进入发布。",
+            "Inspect rendered HTML alongside the source article and channel drafts."
+          ]
+        }
+      ]
+    }
+  ]
+}

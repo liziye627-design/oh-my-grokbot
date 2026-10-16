@@ -1,0 +1,10 @@
+{
+  "eventId": "video-studio-pilot-001",
+  "objective": "完成一次内部试运行，依据真实输入交付成果并等待独立验收。",
+  "inputs": {
+    "brief": "REPLACE_WITH_REAL_REFERENCE:brief",
+    "source-materials": "REPLACE_WITH_REAL_REFERENCE:source-materials",
+    "asset-rights": "REPLACE_WITH_REAL_REFERENCE:asset-rights",
+    "delivery-spec": "REPLACE_WITH_REAL_REFERENCE:delivery-spec"
+  }
+}

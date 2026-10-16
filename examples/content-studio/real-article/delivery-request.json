@@ -1,0 +1,39 @@
+{
+  "status": "needs_human",
+  "action": "wechat-draft-only",
+  "targetAccount": null,
+  "approved": false,
+  "missing": [
+    "target-account",
+    "author-title-choice",
+    "cover-image",
+    "scoped-submit-approval",
+    "account-runtime-verification"
+  ],
+  "payload": [
+    {
+      "path": "article.md",
+      "sha256": "20ebc301ec55a8e0302c5e48ade85046ead382bee2c2945c13ed7b0a5af2962b"
+    },
+    {
+      "path": "article.html",
+      "sha256": "1f9d8d6729452a41642f15d4262413190e13840a86b77b8dd0c66c8b0aab58f2"
+    },
+    {
+      "path": "titles.md",
+      "sha256": "d197c288c00a66c1b20652b4ece81bb7a802e69b7f383c79feb628d8846016b4"
+    },
+    {
+      "path": "thread.md",
+      "sha256": "b465fccb6d949d140db6b79bde8eedf7b2e29e7a7e031048ef9cac908fb9a7b9"
+    },
+    {
+      "path": "post-cut.md",
+      "sha256": "6470560b2c1148bea7995ade8acae9639beb4400c2508f4d03767a391c72c403"
+    }
+  ],
+  "wechatDraftId": null,
+  "xPostId": null,
+  "nativeExecution": "not-verified",
+  "externalWritesPerformed": false
+}

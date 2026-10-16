@@ -1,0 +1,259 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-x-growth",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "X 增长数字员工：有来源的选题、内容草稿、独立审稿与导出数据复盘。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        { "capability": "native-agent-team", "range": "^0.1.0", "optional": false },
+        { "capability": "source-research", "range": "^0.2.0", "optional": false },
+        { "capability": "fact-verification", "range": "^0.2.0", "optional": false },
+        { "capability": "task-planning", "range": "^0.2.0", "optional": false },
+        { "capability": "agent-handoff", "range": "^0.2.0", "optional": false },
+        { "capability": "artifact-validation", "range": "^0.2.0", "optional": false },
+        { "capability": "approval-protocol", "range": "^0.2.0", "optional": false },
+        { "capability": "social-research", "range": "^0.2.0", "optional": false },
+        { "capability": "social-publishing", "range": "^0.2.0", "optional": false },
+        { "capability": "x-public-search", "range": "^0.1.0", "optional": true }
+      ],
+      "agents": [
+        {
+          "id": "scout",
+          "mission": "从授权公开检索或用户提供素材提取带来源、时间与覆盖边界的候选话题。",
+          "skills": ["social-research", "source-research"],
+          "expectedOutputs": ["sources.json", "topic-brief.md"]
+        },
+        {
+          "id": "researcher",
+          "mission": "核对事实，区分直接证据、推断、未知与相互矛盾的来源。",
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["claims.json", "research-brief.md"]
+        },
+        {
+          "id": "editor",
+          "mission": "按品牌约束制作 X 草稿与内容日历，所有数字和引用均可回溯。",
+          "skills": ["social-publishing", "agent-handoff"],
+          "expectedOutputs": ["drafts.md", "calendar.csv"]
+        },
+        {
+          "id": "reviewer",
+          "mission": "独立检查事实、品牌、链接、执行边界与验收证据，不自行批准发布。",
+          "skills": ["fact-verification", "artifact-validation", "approval-protocol"],
+          "expectedOutputs": ["review.md"]
+        },
+        {
+          "id": "operations",
+          "mission": "组织交接、核算用户导出指标、准备精确审批包与回执核对。",
+          "skills": ["task-planning", "agent-handoff", "approval-protocol"],
+          "expectedOutputs": ["analytics.md", "approval-request.json", "handoff.md"]
+        }
+      ],
+      "policies": [
+        "evidence-required",
+        "independent-review",
+        "explicit-publication-approval",
+        "native-execution-only",
+        "no-unsolicited-messaging"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "topic-research",
+      "name": "证据驱动选题",
+      "entryRole": "scout",
+      "requiredInputs": ["brief", "sourceBundleOrAuthorizedReadAccess", "researchWindow"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "collect",
+          "role": "scout",
+          "dependsOn": [],
+          "requiredArtifacts": ["sources.json", "topic-brief.md"],
+          "acceptanceCriteria": [
+            "Every source includes URL or supplied-file row, observation time, and origin type.",
+            "Coverage limits and unavailable search access are explicit; no invented live trends."
+          ]
+        },
+        {
+          "id": "verify",
+          "role": "researcher",
+          "dependsOn": ["collect"],
+          "requiredArtifacts": ["claims.json", "research-brief.md"],
+          "acceptanceCriteria": [
+            "Every publishable factual claim maps to supporting evidence.",
+            "Unsupported claims are excluded; conflicts and confidence are recorded."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["verify"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Reviewer is independent of the drafting role.",
+            "Review lists accepted claims, rejected claims and remaining evidence gaps."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "content-calendar",
+      "name": "草稿与发布交接",
+      "entryRole": "editor",
+      "requiredInputs": ["brief", "verifiedClaims", "calendarWindow", "targetAccount"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "draft",
+          "role": "editor",
+          "dependsOn": [],
+          "requiredArtifacts": ["drafts.md", "calendar.csv"],
+          "acceptanceCriteria": [
+            "Each draft cites approved claim IDs and follows language, tone and length constraints.",
+            "Calendar includes timezone and proposed times, with all entries marked draft."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Check complete rendered text, source links, media references and target account.",
+            "Separate supported facts, inferences and personal experience; reject fabricated metrics.",
+            "Any unresolved defect or generic filler blocks publishing handoff."
+          ]
+        },
+        {
+          "id": "handoff",
+          "role": "operations",
+          "dependsOn": ["review"],
+          "requiredArtifacts": ["approval-request.json", "handoff.md"],
+          "acceptanceCriteria": [
+            "Approval binds exact destination and payload; edits require renewed approval.",
+            "Handoff remains needs_human until authorized native execution and observed receipt; no fabricated post IDs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "export-analytics",
+      "name": "导出数据复盘",
+      "entryRole": "operations",
+      "requiredInputs": ["metricsExport", "metricDefinitions", "comparisonWindow"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "analyze",
+          "role": "operations",
+          "dependsOn": [],
+          "requiredArtifacts": ["analytics.md"],
+          "acceptanceCriteria": [
+            "Validate duplicate post IDs, period, missing values and nonnegative metric counts.",
+            "Use aggregate numerator divided by aggregate denominator; zero denominators yield unavailable.",
+            "Separate correlation from causality and avoid claiming unprovided revenue or follower attribution."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["analyze"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Independently recalculate totals and rates from supplied rows.",
+            "Report sample size and missing baseline before recommending experiments."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "write-thread",
+      "name": "线程草稿",
+      "entryRole": "editor",
+      "requiredInputs": ["idea", "voiceNotes", "verifiedClaims", "targetAccount"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "draft",
+          "role": "editor",
+          "dependsOn": [],
+          "requiredArtifacts": ["thread.md"],
+          "acceptanceCriteria": [
+            "The first post states the payoff and a reason to continue.",
+            "Each following post advances one point and cites supported claim IDs for factual lines.",
+            "Every post remains draft and fits the account's current length rule."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Reviewer did not write the thread.",
+            "Unsupported claims, length risk and generic filler block handoff."
+          ]
+        },
+        {
+          "id": "handoff",
+          "role": "operations",
+          "dependsOn": ["review"],
+          "requiredArtifacts": ["approval-request.json", "handoff.md"],
+          "acceptanceCriteria": [
+            "Approval binds the full thread text and target account.",
+            "No post ID or thread URL is invented."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "write-article",
+      "name": "长文草稿与短帖剪裁",
+      "entryRole": "editor",
+      "requiredInputs": ["idea", "voiceNotes", "sourceBundle", "targetAccount"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "draft",
+          "role": "editor",
+          "dependsOn": [],
+          "requiredArtifacts": ["article.md", "post-cut.md"],
+          "acceptanceCriteria": [
+            "The article has a title, sections and a source note for factual claims.",
+            "The short post can be read alone and is not a paste of the article.",
+            "Neither artifact is marked published."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Facts, inferences and personal experience are labeled.",
+            "Missing sources remain gaps, and no X Article URL is invented."
+          ]
+        },
+        {
+          "id": "handoff",
+          "role": "operations",
+          "dependsOn": ["review"],
+          "requiredArtifacts": ["handoff.md"],
+          "acceptanceCriteria": [
+            "Handoff stays needs_human until the account owner publishes it.",
+            "Creating or publishing an X Article is not claimed by this workflow."
+          ]
+        }
+      ]
+    }
+  ]
+}

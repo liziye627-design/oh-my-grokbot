@@ -1,0 +1,18 @@
+{
+  "period-timezone": "Asia/Shanghai",
+  "currentPeriod": "2026-10-08T00:00:00+08:00 inclusive to 2026-10-15T00:00:00+08:00 exclusive",
+  "previousPeriod": "2026-10-01T00:00:00+08:00 inclusive to 2026-10-08T00:00:00+08:00 exclusive",
+  "metric-definitions": "CNY gross booked amount for won deals only; not recognized revenue. Count unique deal ID per export; exact duplicates removed, conflicts require review. Conversion is won deal count / all unique deals in period.",
+  "current-export": [
+    { "id": "C1", "date": "2026-10-09", "status": "won", "amount": 1200 },
+    { "id": "C2", "date": "2026-10-10", "status": "won", "amount": 800 },
+    { "id": "C2", "date": "2026-10-10", "status": "won", "amount": 800 },
+    { "id": "C3", "date": "2026-10-11", "status": "lost", "amount": 500 }
+  ],
+  "previous-export": [
+    { "id": "P1", "date": "2026-10-02", "status": "won", "amount": 1000 },
+    { "id": "P2", "date": "2026-10-03", "status": "lost", "amount": 300 },
+    { "id": "P3", "date": "2026-10-04", "status": "lost", "amount": 700 },
+    { "id": "P4", "date": "2026-10-05", "status": "lost", "amount": 500 }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-reverse-lab",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "逆向实验室：核对书面授权，阅读操作者提供的本地样本证据，写出可复核的观察笔记。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "rea",
+          "range": "^0.1.0",
+          "optional": true
+        }
+      ],
+      "agents": [
+        {
+          "id": "authorization-clerk",
+          "mission": "核对书面授权是否点名样本、归属方和允许检查的范围。没有授权就停止。",
+          "skills": ["fact-verification", "task-planning", "agent-handoff"],
+          "expectedOutputs": ["scope.md"]
+        },
+        {
+          "id": "reverse-engineer",
+          "mission": "根据授权范围内的本地样本和操作者附上的证据，写观察笔记：行为、证据路径、限制和未知项。",
+          "skills": ["source-research", "artifact-validation", "agent-handoff"],
+          "expectedOutputs": ["evidence-note.md"]
+        },
+        {
+          "id": "evidence-reviewer",
+          "mission": "核对授权范围、证据笔记和未知项是否一致，退回超出范围的笔记。",
+          "skills": ["fact-verification", "artifact-validation", "agent-handoff"],
+          "expectedOutputs": ["review.md"]
+        }
+      ],
+      "policies": [
+        "authorization-before-analysis",
+        "local-artifact-only",
+        "no-exploit-delivery",
+        "independent-review"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "confirm-scope",
+      "name": "确认样本授权范围",
+      "entryRole": "authorization-clerk",
+      "requiredInputs": ["authorizationRecord", "artifactReference"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "record-scope",
+          "role": "authorization-clerk",
+          "dependsOn": [],
+          "requiredArtifacts": ["scope.md"],
+          "acceptanceCriteria": [
+            "授权记录点名样本和归属方",
+            "允许检查的范围和禁止事项分开写",
+            "没有授权记录时停止，不读取样本"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "analyze-artifact",
+      "name": "授权样本的证据笔记",
+      "entryRole": "authorization-clerk",
+      "requiredInputs": ["authorizationRecord", "artifactReference"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "confirm",
+          "role": "authorization-clerk",
+          "dependsOn": [],
+          "requiredArtifacts": ["scope.md"],
+          "acceptanceCriteria": [
+            "范围覆盖本次样本引用",
+            "授权缺失时后续步骤不开始"
+          ]
+        },
+        {
+          "id": "examine",
+          "role": "reverse-engineer",
+          "dependsOn": ["confirm"],
+          "requiredArtifacts": ["evidence-note.md"],
+          "acceptanceCriteria": [
+            "每条观察对应证据路径或 unknown",
+            "本地分析工具缺失时记 skipped",
+            "笔记只描述观察到的行为、限制和未知项"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "evidence-reviewer",
+          "dependsOn": ["examine"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "笔记没有超出 scope.md",
+            "缺证据的结论保持 unknown",
+            "审稿人不是笔记作者"
+          ]
+        }
+      ]
+    }
+  ]
+}

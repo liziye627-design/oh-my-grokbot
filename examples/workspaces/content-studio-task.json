@@ -1,0 +1,11 @@
+{
+  "eventId": "content-studio-piece-001",
+  "objective": "按内容生产链路完成一篇草稿并等待独立验收。",
+  "inputs": {
+    "idea": "REPLACE_WITH_REAL_REFERENCE:idea",
+    "pastArticles": "REPLACE_WITH_REAL_REFERENCE:pastArticles",
+    "sourceNotes": "REPLACE_WITH_REAL_REFERENCE:sourceNotes",
+    "voiceNotes": "REPLACE_WITH_REAL_REFERENCE:voiceNotes",
+    "targetAccount": "REPLACE_WITH_REAL_REFERENCE:targetAccount"
+  }
+}

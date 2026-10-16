@@ -1,0 +1,335 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-content-studio",
+      "version": "0.3.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "个人内容生产链路：一次把想法做成有来源的公众号正文、标题、X 线程和短帖，审稿后停在发布前。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "capability-selection",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "social-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "routine-design",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "social-publishing",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "baoyu-url-to-markdown",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "baoyu-markdown-to-html",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "baoyu-post-to-wechat",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "khazix-writer",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "zimu-geo-research",
+          "range": "^0.1.0",
+          "optional": false
+        }
+      ],
+      "agents": [
+        {
+          "id": "producer",
+          "mission": "收束一次内容生产的范围，并在独立审稿后准备发布交接。",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "approval-protocol",
+            "capability-selection",
+            "baoyu-post-to-wechat"
+          ],
+          "expectedOutputs": ["brief.md", "handoff.md"]
+        },
+        {
+          "id": "researcher",
+          "mission": "为这篇内容收集可回溯来源，并在复盘时只根据导出数据提出下一题。",
+          "skills": [
+            "source-research",
+            "fact-verification",
+            "social-research",
+            "baoyu-url-to-markdown",
+            "zimu-geo-research"
+          ],
+          "expectedOutputs": ["sources.json", "claims.json", "topic-candidates.md"]
+        },
+        {
+          "id": "voice-keeper",
+          "mission": "用作者旧文确定文风，并在来源齐备后写大纲。",
+          "skills": ["source-research", "khazix-writer", "baoyu-url-to-markdown"],
+          "expectedOutputs": ["voice-profile.md", "outline.md"]
+        },
+        {
+          "id": "drafter",
+          "mission": "按大纲写成公众号正文，分开事实、推断和亲历。",
+          "skills": ["source-research", "fact-verification", "task-planning", "khazix-writer"],
+          "expectedOutputs": ["article.md"]
+        },
+        {
+          "id": "channel-editor",
+          "mission": "从正文产生备选标题、X 线程和一条可单独阅读的短帖。",
+          "skills": [
+            "social-publishing",
+            "agent-handoff",
+            "fact-verification",
+            "baoyu-markdown-to-html"
+          ],
+          "expectedOutputs": ["titles.md", "thread.md", "post-cut.md"]
+        },
+        {
+          "id": "reviewer",
+          "mission": "独立退回没有来源的数字、过度标题和空泛句子。",
+          "skills": [
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "khazix-writer",
+            "zimu-geo-research"
+          ],
+          "expectedOutputs": ["review.md"]
+        }
+      ],
+      "policies": [
+        "evidence-required",
+        "independent-review",
+        "no-fabricated-metrics",
+        "explicit-publication-approval",
+        "draft-only"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "produce-piece",
+      "name": "一篇内容的生产链路",
+      "entryRole": "producer",
+      "requiredInputs": ["idea", "pastArticles", "sourceNotes", "voiceNotes", "targetAccount"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "frame",
+          "role": "producer",
+          "dependsOn": [],
+          "requiredArtifacts": ["brief.md"],
+          "acceptanceCriteria": [
+            "简报写明读者、平台、不写的内容和账户。",
+            "没有把发布写成已经完成。"
+          ]
+        },
+        {
+          "id": "research",
+          "role": "researcher",
+          "dependsOn": ["frame"],
+          "requiredArtifacts": ["sources.json", "claims.json"],
+          "acceptanceCriteria": [
+            "每条来源有位置和观察时间。",
+            "主张标成 supported、unsupported 或 conflicted。"
+          ]
+        },
+        {
+          "id": "voice",
+          "role": "voice-keeper",
+          "dependsOn": ["frame"],
+          "requiredArtifacts": ["voice-profile.md"],
+          "acceptanceCriteria": ["文风只来自作者提供的旧文，并写明样本数。", "样本不足时保持草稿。"]
+        },
+        {
+          "id": "outline",
+          "role": "voice-keeper",
+          "dependsOn": ["research", "voice"],
+          "requiredArtifacts": ["outline.md"],
+          "acceptanceCriteria": ["大纲使用已核对主张，并标出证据缺口。", "不编造阅读量或互动数。"]
+        },
+        {
+          "id": "draft",
+          "role": "drafter",
+          "dependsOn": ["outline"],
+          "requiredArtifacts": ["article.md"],
+          "acceptanceCriteria": [
+            "正文遵循大纲；事实与来源编号保存在独立 claims.json，不混入可发布正文。",
+            "推断和亲历使用不同标记。"
+          ]
+        },
+        {
+          "id": "adapt",
+          "role": "channel-editor",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["titles.md", "thread.md", "post-cut.md"],
+          "acceptanceCriteria": [
+            "标题承诺都能指回正文。",
+            "线程第一条说明读完的收获，此后每条只推进一个要点。",
+            "短帖可以单独阅读，不是正文粘贴。"
+          ]
+        },
+        {
+          "id": "layout",
+          "role": "channel-editor",
+          "dependsOn": ["adapt"],
+          "requiredArtifacts": ["article.html", "render-receipt.json"],
+          "acceptanceCriteria": [
+            "HTML is rendered by the bundled Baoyu runtime from the actual article.",
+            "Receipt records actual command, exit code and source/output hashes; no publication is claimed."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["layout"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "审查者没有撰写正文、标题或线程。",
+            "没有来源的数字和未解决的标题承诺会退回。",
+            "Inspect rendered HTML alongside the source article and channel drafts."
+          ]
+        },
+        {
+          "id": "handoff",
+          "role": "producer",
+          "dependsOn": ["review"],
+          "requiredArtifacts": ["approval-request.json", "handoff.md", "delivery-request.json"],
+          "acceptanceCriteria": [
+            "批准包绑定公众号正文、标题、线程、短帖和目标账户。",
+            "交接保持 needs_human，不编造微信草稿或 X 链接。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next-topics",
+      "name": "用导出数据准备下一题",
+      "entryRole": "researcher",
+      "requiredInputs": ["metricsExport", "metricDefinitions", "publishedNotes"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "read",
+          "role": "researcher",
+          "dependsOn": [],
+          "requiredArtifacts": ["topic-candidates.md"],
+          "acceptanceCriteria": [
+            "候选题目引用导出中的实际行，不补缺失指标。",
+            "相关不被写成因果，也不承诺下一篇的阅读量。"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["read"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": ["审查者按原表抽查合计。", "样本不足或分母缺失时不给出增长结论。"]
+        }
+      ]
+    },
+    {
+      "id": "geo-content-brief",
+      "name": "GEO 研究到内容简报",
+      "entryRole": "researcher",
+      "requiredInputs": ["question", "businessContext", "responseFile"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "trace",
+          "role": "researcher",
+          "dependsOn": [],
+          "requiredArtifacts": ["geo-run.json"],
+          "acceptanceCriteria": [
+            "执行离线 CLI；geo-run.json 记录实际输出目录、输入哈希、退出码和 live/offline/synthetic 来源。",
+            "保留原始响应、查询、搜索来源、最终引用，不模拟隐藏搜索。"
+          ]
+        },
+        {
+          "id": "brief",
+          "role": "researcher",
+          "dependsOn": ["trace"],
+          "requiredArtifacts": ["geo-brief.md"],
+          "acceptanceCriteria": [
+            "主题建议指向实际 call ID/URL，区别来源与最终引用。",
+            "测试夹具不作为市场证据，不承诺流量或排名。"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["brief"],
+          "requiredArtifacts": ["geo-review.md"],
+          "acceptanceCriteria": ["按原始响应核查计数，标明平台、模型、样本和缺失。"]
+        },
+        {
+          "id": "handoff",
+          "role": "producer",
+          "dependsOn": ["review"],
+          "requiredArtifacts": ["geo-handoff.md"],
+          "acceptanceCriteria": [
+            "将已审 geo-brief.md 作为 produce-piece 的 sourceNotes；目标读者和文章方向由用户确定。"
+          ]
+        }
+      ]
+    }
+  ]
+}

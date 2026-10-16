@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+.ohmy/
+.codegraph
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.omo/research/
+artifacts/

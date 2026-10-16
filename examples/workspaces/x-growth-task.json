@@ -1,0 +1,9 @@
+{
+  "eventId": "x-growth-pilot-001",
+  "objective": "完成一次内部试运行，依据真实输入交付成果并等待独立验收。",
+  "inputs": {
+    "brief": "REPLACE_WITH_REAL_REFERENCE:brief",
+    "sourceBundleOrAuthorizedReadAccess": "REPLACE_WITH_REAL_REFERENCE:sourceBundleOrAuthorizedReadAccess",
+    "researchWindow": "REPLACE_WITH_REAL_REFERENCE:researchWindow"
+  }
+}

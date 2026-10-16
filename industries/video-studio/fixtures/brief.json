@@ -1,0 +1,19 @@
+{
+  "fixtureOnly": true,
+  "workflow": "repurpose-media",
+  "brief": "把内部 90 秒培训演示剪成 30 秒竖屏入门片，说明创建任务、提交证据、独立验收三个步骤。",
+  "audience": "首次使用 Oh My Core 的同事",
+  "source-media": "用户需提供 training-demo.mp4；此仓库未包含该视频",
+  "transcript": "fixtures/source-transcript.md",
+  "asset-rights": "演练假设视频自有；实际运行需素材拥有者确认及可追溯授权记录",
+  "delivery-spec": {
+    "durationSeconds": 30,
+    "durationToleranceSeconds": 0.5,
+    "width": 1080,
+    "height": 1920,
+    "captions": "zh-CN",
+    "audioRequired": true,
+    "publication": false,
+    "paidGenerationBudget": 0
+  }
+}

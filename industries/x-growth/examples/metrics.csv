@@ -1,0 +1,4 @@
+post_id,period_start,period_end,impressions,likes,replies,reposts,clicks
+fixture-a,2026-10-01,2026-10-07,1000,30,5,5,20
+fixture-b,2026-10-01,2026-10-07,2000,20,10,10,30
+fixture-c,2026-10-01,2026-10-07,0,0,0,0,0

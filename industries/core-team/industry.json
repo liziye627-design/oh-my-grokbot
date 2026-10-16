@@ -1,0 +1,270 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-core-team",
+      "version": "0.1.2",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "核心参谋团队：拆解任务、独立验收，并把已完成工作沉淀为可复查的知识记录。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": [
+        "grokbot"
+      ],
+      "requirements": [
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "capability-selection",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "cost-awareness",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "routine-design",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        }
+      ],
+      "agents": [
+        {
+          "id": "chief-of-staff",
+          "mission": "作为唯一对操作者说话的岗位，持有全体名单，拆分目标，并只把需要决定的事项交上来。",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "capability-selection",
+            "approval-protocol",
+            "cost-awareness"
+          ],
+          "expectedOutputs": [
+            "assignment.md",
+            "weekly-review.md"
+          ]
+        },
+        {
+          "id": "task-planner",
+          "mission": "把已确认目标写成有负责岗位、输入、产物和验收条件的步骤。",
+          "skills": [
+            "task-planning",
+            "agent-handoff"
+          ],
+          "expectedOutputs": [
+            "work-plan.md"
+          ]
+        },
+        {
+          "id": "evidence-reviewer",
+          "mission": "独立核对上游产物是否满足验收条件，并分开记录通过、退回和证据缺口。",
+          "skills": [
+            "fact-verification",
+            "artifact-validation"
+          ],
+          "expectedOutputs": [
+            "review.md"
+          ]
+        },
+        {
+          "id": "knowledge-keeper",
+          "mission": "在任务分配与验收之后，把已验收材料写入共享知识库，全文留在记录里，短摘要交回幕僚长。",
+          "skills": [
+            "source-research",
+            "routine-design"
+          ],
+          "expectedOutputs": [
+            "knowledge-note.md"
+          ]
+        }
+      ],
+      "policies": [
+        "evidence-required",
+        "independent-review",
+        "no-auto-dispatch"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "assign-work",
+      "name": "任务分配与验收",
+      "entryRole": "chief-of-staff",
+      "requiredInputs": [
+        "objective",
+        "constraints",
+        "availableTeams"
+      ],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "frame",
+          "role": "chief-of-staff",
+          "dependsOn": [],
+          "requiredArtifacts": [
+            "assignment.md"
+          ],
+          "acceptanceCriteria": [
+            "目标、非目标和负责人明确",
+            "未授权团队不被分配",
+            "只有幕僚长对操作者汇报，名单包含本团队和 availableTeams"
+          ]
+        },
+        {
+          "id": "plan",
+          "role": "task-planner",
+          "dependsOn": [
+            "frame"
+          ],
+          "requiredArtifacts": [
+            "work-plan.md"
+          ],
+          "acceptanceCriteria": [
+            "每步有输入、产物和验收条件",
+            "依赖关系无循环"
+          ]
+        },
+        {
+          "id": "accept",
+          "role": "evidence-reviewer",
+          "dependsOn": [
+            "plan"
+          ],
+          "requiredArtifacts": [
+            "review.md"
+          ],
+          "acceptanceCriteria": [
+            "审查者独立于计划和分配作者",
+            "缺项被退回而不是补写"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retain-knowledge",
+      "name": "验收后知识沉淀",
+      "entryRole": "knowledge-keeper",
+      "requiredInputs": [
+        "completedWork",
+        "sourceRefs"
+      ],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "capture",
+          "role": "knowledge-keeper",
+          "dependsOn": [],
+          "requiredArtifacts": [
+            "knowledge-note.md"
+          ],
+          "acceptanceCriteria": [
+            "每条结论能回到来源和验收记录",
+            "未知项保持未知",
+            "全文在知识记录中，短摘要交回幕僚长，记录本身不外发"
+          ]
+        },
+        {
+          "id": "accept",
+          "role": "evidence-reviewer",
+          "dependsOn": [
+            "capture"
+          ],
+          "requiredArtifacts": [
+            "review.md"
+          ],
+          "acceptanceCriteria": [
+            "抽查来源可打开",
+            "过期边界被写明"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "review-week",
+      "name": "周复盘",
+      "entryRole": "chief-of-staff",
+      "requiredInputs": [
+        "weekRecord",
+        "roster",
+        "baselineMinutes",
+        "spentMinutes",
+        "reviewMinutes",
+        "crisisNote",
+        "usageNote",
+        "routineInventory"
+      ],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "review",
+          "role": "chief-of-staff",
+          "dependsOn": [],
+          "requiredArtifacts": [
+            "weekly-review.md"
+          ],
+          "acceptanceCriteria": [
+            "写明省下返工最多的岗位、返工最多的产物、下周是否调整名单",
+            "净分钟等于基线减仍花费再减审阅；零或负数，或任一条全程危机，本周记为未通过",
+            "缺计时、运行次数和用量百分比保持未知，不写成节省或金额",
+            "每条例行写每周次数、无变化是否仍发言、是否挂在主对话上；超过预先烧线的标为停用待查",
+            "例行任务只写成提案，没有运行回执时不标记为已启用",
+            "审批清单列出对外发送、发布、付款、删除和生产变更"
+          ]
+        },
+        {
+          "id": "accept",
+          "role": "evidence-reviewer",
+          "dependsOn": [
+            "review"
+          ],
+          "requiredArtifacts": [
+            "review.md"
+          ],
+          "acceptanceCriteria": [
+            "节省和返工的说法能回到本周记录",
+            "净分钟没有用运行次数或百分比代替",
+            "没有把提案写成已经运行的例行任务"
+          ]
+        }
+      ]
+    }
+  ]
+}

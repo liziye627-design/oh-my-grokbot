@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-16T03:35:13.829Z",
+  "runtime": "Bun 1.4.1",
+  "checks": [
+    {
+      "skill": "baoyu-url-to-markdown",
+      "command": "bun install --frozen-lockfile --ignore-scripts --cwd artifacts/content-validation/runtime/.ohmy/skills/baoyu-url-to-markdown/vendor/scripts",
+      "exitCode": 0,
+      "lockSha256": "be9cb1aa00778c5a255e66deb5bb3c5b088f2134ccfe41d87b485a70386d1ef2",
+      "log": "bun install v1.4.1 (4661e494f)\n\n1 package installed [235.00ms]\n"
+    },
+    {
+      "skill": "baoyu-markdown-to-html",
+      "command": "bun install --frozen-lockfile --ignore-scripts --cwd artifacts/content-validation/runtime/.ohmy/skills/baoyu-markdown-to-html/vendor/scripts",
+      "exitCode": 0,
+      "lockSha256": "663e82b6d0728cb3f5b4f585c3c3fa0d651df95a75661b71efe0803651d2a14b",
+      "log": "bun install v1.4.1 (4661e494f)\n\nDone! Checked 98 packages (no changes) [52.00ms]\n"
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "command": "bun install --frozen-lockfile --ignore-scripts --cwd artifacts/content-validation/runtime/.ohmy/skills/baoyu-post-to-wechat/vendor/scripts",
+      "exitCode": 0,
+      "lockSha256": "c4f5e12265ffd3f1051b4928fb93d581e0323552be4e9b8cf133e03c7718743f",
+      "log": "bun install v1.4.1 (4661e494f)\n\nDone! Checked 165 packages (no changes) [85.00ms]\n"
+    }
+  ]
+}

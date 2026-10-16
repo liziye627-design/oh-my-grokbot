@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "runtime": "Bun 1.4.1",
+  "command": "bun --no-install artifacts/content-validation/runtime/.ohmy/skills/baoyu-markdown-to-html/vendor/scripts/main.ts examples/content-studio/real-article/article.md --theme default --keep-title",
+  "exitCode": 0,
+  "input": {
+    "path": "article.md",
+    "sha256": "20ebc301ec55a8e0302c5e48ade85046ead382bee2c2945c13ed7b0a5af2962b"
+  },
+  "output": {
+    "path": "article.html",
+    "sha256": "1f9d8d6729452a41642f15d4262413190e13840a86b77b8dd0c66c8b0aab58f2"
+  },
+  "toolOutput": {
+    "title": "从一篇初稿到可交付内容：我们怎样搭建内容 Bot 的第二层",
+    "author": "Oh My Grok Bot 项目编辑",
+    "summary": "用一篇真实文章验证素材采集、写作、平台改写与公众号排版，并说明本地运行和账号发布之间还差什么。",
+    "htmlPath": "C:\\Users\\llwxy\\Documents\\ChatGPT\\oh-my-grokbot\\examples\\content-studio\\real-article\\article.html",
+    "backupPath": "C:\\Users\\llwxy\\Documents\\ChatGPT\\oh-my-grokbot\\examples\\content-studio\\real-article\\article.html.bak-20261016111745",
+    "contentImages": [],
+    "mermaidImages": []
+  },
+  "nativeExecution": false,
+  "published": false
+}

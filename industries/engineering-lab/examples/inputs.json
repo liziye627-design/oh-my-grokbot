@@ -1,0 +1,5 @@
+{
+  "deviceRequirements": "synthetic-fixture:deviceRequirements",
+  "constraints": "synthetic-fixture:constraints",
+  "targetBoard": "synthetic-fixture:targetBoard"
+}

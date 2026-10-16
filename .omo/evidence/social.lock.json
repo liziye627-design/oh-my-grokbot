@@ -1,0 +1,911 @@
+{
+  "schemaVersion": "0.1",
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-social",
+      "version": "0.2.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "Core plus social research and publication draft workflows; no live publishing.",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "failure-recovery",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "cost-awareness",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "capability-selection",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "environment-bootstrap",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "secret-handling",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "routine-design",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "social-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "social-publishing",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "x-public-search",
+          "range": "*",
+          "optional": false
+        }
+      ],
+      "agents": [
+        {
+          "id": "social-researcher",
+          "mission": "Produce cited social research and reviewable drafts using authorized read tools.",
+          "skills": [
+            "source-research",
+            "fact-verification",
+            "task-planning",
+            "agent-handoff",
+            "artifact-validation",
+            "failure-recovery",
+            "approval-protocol",
+            "cost-awareness",
+            "capability-selection",
+            "environment-bootstrap",
+            "secret-handling",
+            "routine-design",
+            "social-research",
+            "social-publishing"
+          ],
+          "expectedOutputs": [
+            "Cited social evidence and coverage limits",
+            "Platform-specific drafts and exact approval proposal"
+          ]
+        }
+      ],
+      "policies": [
+        "approval-before-external-actions",
+        "no-plaintext-secrets",
+        "verify-before-completion",
+        "reconcile-before-retry"
+      ]
+    }
+  },
+  "provider": "grokbot",
+  "registryDigest": "e86c613c5be7976d35c29a9d9918a52177bb3b0498bc5aafc660cd8f2f198a2f",
+  "capabilities": [
+    {
+      "id": "source-research",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Research a question across permitted sources and return dated, traceable evidence.",
+      "provides": ["source-research"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/source-research"
+      }
+    },
+    {
+      "id": "fact-verification",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Check claims, numbers, dates and source conflicts before delivery.",
+      "provides": ["fact-verification"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/fact-verification"
+      }
+    },
+    {
+      "id": "task-planning",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Turn an objective into owned steps with concrete inputs, outputs and acceptance checks.",
+      "provides": ["task-planning"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/task-planning"
+      }
+    },
+    {
+      "id": "agent-handoff",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Hand off an authorized task with ownership, context and verifiable expected output.",
+      "provides": ["agent-handoff"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "native-internal-message"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/agent-handoff"
+      }
+    },
+    {
+      "id": "artifact-validation",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Validate a deliverable through its actual use surface before claiming completion.",
+      "provides": ["artifact-validation"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "sandbox-execution"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/artifact-validation"
+      }
+    },
+    {
+      "id": "failure-recovery",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Diagnose failures, reconcile partial effects and retry a safe bounded step.",
+      "provides": ["failure-recovery"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/failure-recovery"
+      }
+    },
+    {
+      "id": "approval-protocol",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Prepare reviewable external actions and bind approval to exact content and destination.",
+      "provides": ["approval-protocol"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/approval-protocol"
+      }
+    },
+    {
+      "id": "cost-awareness",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Bound searches, execution time and paid usage with observable budgets.",
+      "provides": ["cost-awareness"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/cost-awareness"
+      }
+    },
+    {
+      "id": "capability-selection",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Select a reviewed existing capability by source, license, permissions and native fit.",
+      "provides": ["capability-selection"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/capability-selection"
+      }
+    },
+    {
+      "id": "environment-bootstrap",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Stage a pinned capability pack locally and verify native host setup separately.",
+      "provides": ["environment-bootstrap"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/environment-bootstrap"
+      }
+    },
+    {
+      "id": "secret-handling",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Use scoped credential references without leaking credentials into prompts or evidence.",
+      "provides": ["secret-handling"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/secret-handling"
+      }
+    },
+    {
+      "id": "routine-design",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Design a bounded native routine with explicit timezone, overlap and recovery rules.",
+      "provides": ["routine-design"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/routine-design"
+      }
+    },
+    {
+      "id": "social-research",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Research social conversations using bounded read-only connectors and cited evidence.",
+      "provides": ["social-research"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/social-research"
+      }
+    },
+    {
+      "id": "social-publishing",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Prepare platform-specific social drafts and an exact publication approval packet.",
+      "provides": ["social-publishing"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/social-publishing"
+      }
+    },
+    {
+      "id": "grokbot-native-x-read",
+      "version": "0.1.0",
+      "kind": "native",
+      "source": "grokbot-docs",
+      "description": "Native public X read capability; confirm actual account tools before using the CLI fallback",
+      "provides": ["x-public-search"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://docs.x.ai/grok-bot/computer-and-apps",
+        "instructions": "Check native public X search/read availability and run one safe task in the real account; this does not grant posting or DM access."
+      }
+    }
+  ],
+  "files": [
+    {
+      "mode": "bundled",
+      "source": "skills/source-research/licenses/anthropic-work.txt",
+      "target": "skills/source-research/licenses/anthropic-work.txt",
+      "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/source-research/NOTICE.md",
+      "target": "skills/source-research/NOTICE.md",
+      "sha256": "d7e50e8e7cc956cce6d1a52d542ddba30f462b7a874aa574516de70e4048f43c"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/source-research/SKILL.md",
+      "target": "skills/source-research/SKILL.md",
+      "sha256": "f6e8d3a7d57115715aa2ae77288c9f730f84b9968681007ca7fa49c15f2032cb"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/fact-verification/licenses/anthropic-work.txt",
+      "target": "skills/fact-verification/licenses/anthropic-work.txt",
+      "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/fact-verification/NOTICE.md",
+      "target": "skills/fact-verification/NOTICE.md",
+      "sha256": "d7e50e8e7cc956cce6d1a52d542ddba30f462b7a874aa574516de70e4048f43c"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/fact-verification/SKILL.md",
+      "target": "skills/fact-verification/SKILL.md",
+      "sha256": "980ced9f75ecef754448131458fffded816edd1d3c27a9c3aa0193a18d429333"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/task-planning/licenses/superpowers.txt",
+      "target": "skills/task-planning/licenses/superpowers.txt",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/task-planning/NOTICE.md",
+      "target": "skills/task-planning/NOTICE.md",
+      "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/task-planning/SKILL.md",
+      "target": "skills/task-planning/SKILL.md",
+      "sha256": "4c3f60e213937f74df8b7133e15514b02534607445ecffdc67d5a4d5df01f56f"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/agent-handoff/licenses/superpowers.txt",
+      "target": "skills/agent-handoff/licenses/superpowers.txt",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/agent-handoff/NOTICE.md",
+      "target": "skills/agent-handoff/NOTICE.md",
+      "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/agent-handoff/SKILL.md",
+      "target": "skills/agent-handoff/SKILL.md",
+      "sha256": "da7cf980c784ea8ee24c9a555d3cc788db2edd98b9e4af607e9242278ca32423"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/artifact-validation/licenses/superpowers.txt",
+      "target": "skills/artifact-validation/licenses/superpowers.txt",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/artifact-validation/NOTICE.md",
+      "target": "skills/artifact-validation/NOTICE.md",
+      "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/artifact-validation/SKILL.md",
+      "target": "skills/artifact-validation/SKILL.md",
+      "sha256": "5f721b078e823ca5d8122299d9bbabc127bfe24ac4621893976959c99c420407"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/failure-recovery/licenses/superpowers.txt",
+      "target": "skills/failure-recovery/licenses/superpowers.txt",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/failure-recovery/NOTICE.md",
+      "target": "skills/failure-recovery/NOTICE.md",
+      "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/failure-recovery/SKILL.md",
+      "target": "skills/failure-recovery/SKILL.md",
+      "sha256": "b327c63a33d4f5c1188cbd12cf2f395b00dc732deaf204c3808ea86692ab04d9"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/approval-protocol/licenses/github-workflows.txt",
+      "target": "skills/approval-protocol/licenses/github-workflows.txt",
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/approval-protocol/NOTICE.md",
+      "target": "skills/approval-protocol/NOTICE.md",
+      "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/approval-protocol/SKILL.md",
+      "target": "skills/approval-protocol/SKILL.md",
+      "sha256": "40cda13d3a122f4ce42b00cf863649f75dc2961dcaef03765469eecb91706187"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/cost-awareness/licenses/github-workflows.txt",
+      "target": "skills/cost-awareness/licenses/github-workflows.txt",
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/cost-awareness/NOTICE.md",
+      "target": "skills/cost-awareness/NOTICE.md",
+      "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/cost-awareness/SKILL.md",
+      "target": "skills/cost-awareness/SKILL.md",
+      "sha256": "7789aff9ecd75e2d2d6ab8077247cbddc05f3f5780091600248165d2f13932fa"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/capability-selection/licenses/vercel-skills.txt",
+      "target": "skills/capability-selection/licenses/vercel-skills.txt",
+      "sha256": "661142e53c313d2bb5e1b055f5c0a39001450ff1b5e27b89dc4bc7de9a6352ca"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/capability-selection/NOTICE.md",
+      "target": "skills/capability-selection/NOTICE.md",
+      "sha256": "0be2bd567fa72d8f1a1d720a2e62d3404a573a1abe4af3ada2f78ad3a74ef86b"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/capability-selection/SKILL.md",
+      "target": "skills/capability-selection/SKILL.md",
+      "sha256": "36d61dd0d4236813ea3ab6b83d5a6a3a20365652b7df0c5f174abc84af5fff8c"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/environment-bootstrap/licenses/openai-installer.txt",
+      "target": "skills/environment-bootstrap/licenses/openai-installer.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/environment-bootstrap/NOTICE.md",
+      "target": "skills/environment-bootstrap/NOTICE.md",
+      "sha256": "f68dbcc9bdeb3eafcffb5aaf8935e70180df6a22e6ab0be1ee0bcff8fb0238e3"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/environment-bootstrap/SKILL.md",
+      "target": "skills/environment-bootstrap/SKILL.md",
+      "sha256": "1c1cc35e24a6bdf0cbbb3c5797d63a36e7d2ff91e06f7a6f27c54f897ac4b074"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/secret-handling/licenses/github-workflows.txt",
+      "target": "skills/secret-handling/licenses/github-workflows.txt",
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/secret-handling/NOTICE.md",
+      "target": "skills/secret-handling/NOTICE.md",
+      "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/secret-handling/SKILL.md",
+      "target": "skills/secret-handling/SKILL.md",
+      "sha256": "bbbd2ac868ff58ac62c5c3bfdeee74ed3f33a822dfc1fd534beb609b01a56089"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/routine-design/licenses/github-workflows.txt",
+      "target": "skills/routine-design/licenses/github-workflows.txt",
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/routine-design/NOTICE.md",
+      "target": "skills/routine-design/NOTICE.md",
+      "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/routine-design/SKILL.md",
+      "target": "skills/routine-design/SKILL.md",
+      "sha256": "e874f465ba55a2972819728cd5e270cf9e8ff2b2d1bc8b8cc6c4f3dc1db26e0a"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-research/licenses/anthropic-work.txt",
+      "target": "skills/social-research/licenses/anthropic-work.txt",
+      "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-research/licenses/marketing-skills.txt",
+      "target": "skills/social-research/licenses/marketing-skills.txt",
+      "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-research/NOTICE.md",
+      "target": "skills/social-research/NOTICE.md",
+      "sha256": "debc3793fb0c9819dacad1688550943ce9180dd76fb396f64cd957eb7f15b609"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-research/SKILL.md",
+      "target": "skills/social-research/SKILL.md",
+      "sha256": "357c3b468f2a3cffc0183d94e1c5abc3a12c96080b584e8c9b32ca1123bcfb90"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-publishing/licenses/github-workflows.txt",
+      "target": "skills/social-publishing/licenses/github-workflows.txt",
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-publishing/licenses/marketing-skills.txt",
+      "target": "skills/social-publishing/licenses/marketing-skills.txt",
+      "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-publishing/NOTICE.md",
+      "target": "skills/social-publishing/NOTICE.md",
+      "sha256": "2f02ef26323dc4b99f00c6334612832cc66c7bd34daa214cc3e51797613b7b64"
+    },
+    {
+      "mode": "bundled",
+      "source": "skills/social-publishing/SKILL.md",
+      "target": "skills/social-publishing/SKILL.md",
+      "sha256": "d83c00bfea523dae68e6f79a5ec4d7c57c629f98045378ad5a0dbbb6a387c0ed"
+    },
+    {
+      "mode": "generated",
+      "content": "# oh-my-social · grokbot\n\nLocal files are staged only. Native import, authentication, skill visibility and real task execution require separate confirmation.\n\n1. Open the native application and create the smallest required Bot roster below, or import a separately reviewed template link.\n2. Transfer staged Skills through the host's supported skill/plugin workflow. This CLI does not modify private host settings.\n3. Reauthorize connectors on your own account. Do not copy cookies or credentials.\n4. Give each Bot a safe one-time task. Check its skill access and actual output.\n5. Configure and test Routines only after the one-time task succeeds.\n\n## social-researcher\n\nMission: Produce cited social research and reviewable drafts using authorized read tools.\n\nSkills: source-research, fact-verification, task-planning, agent-handoff, artifact-validation, failure-recovery, approval-protocol, cost-awareness, capability-selection, environment-bootstrap, secret-handling, routine-design, social-research, social-publishing\n\nExpected outputs:\n- Cited social evidence and coverage limits\n- Platform-specific drafts and exact approval proposal\n\n## Policies\n\n- approval-before-external-actions\n- no-plaintext-secrets\n- verify-before-completion\n- reconcile-before-retry\n\n## Integration gates\n\nGeneric Feishu → Grok Bot triggering is unverified. Grok Automations webhooks are a separate product surface.\nFeishu Channel SDK, Result MCP and Guardian are subsequent layers, not services deployed by this pack.\nBots on one Grok Bot account share files, sessions and credentials. Role descriptions are not security isolation.\n\nSources: https://docs.x.ai/grok-bot/bots and https://docs.x.ai/grok-bot/skills-routines-and-automations\n",
+      "target": "recipes/oh-my-social/grokbot.md",
+      "sha256": "dbcdbb3a538140dac9bd398978a964bd51c6ec484c2509ccf55b2511b7cecdbf"
+    }
+  ],
+  "checks": [
+    {
+      "name": "oh-my-social",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Pack requires independent review and native verification"
+    },
+    {
+      "name": "source-research",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "source-research:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "fact-verification",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "fact-verification:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "task-planning",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "task-planning:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "agent-handoff",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "agent-handoff:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "artifact-validation",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "artifact-validation:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "failure-recovery",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "failure-recovery:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "approval-protocol",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "approval-protocol:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "cost-awareness",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "cost-awareness:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "capability-selection",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "capability-selection:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "environment-bootstrap",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "environment-bootstrap:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "secret-handling",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "secret-handling:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "routine-design",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "routine-design:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "social-research",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "social-research:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "social-publishing",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "social-publishing:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "grokbot-native-x-read",
+      "status": "needs_human",
+      "code": "RESOURCE_UNVERIFIED",
+      "message": "Reviewed development resource; independent native verification pending"
+    },
+    {
+      "name": "grokbot-native-x-read",
+      "status": "needs_human",
+      "code": "REFERENCE_ONLY",
+      "message": "Check native public X search/read availability and run one safe task in the real account; this does not grant posting or DM access."
+    },
+    {
+      "name": "grokbot-native-x-read:provider",
+      "status": "needs_human",
+      "code": "PROVIDER_CONFIRMATION",
+      "message": "Provider capability is manual; confirm in the native environment"
+    },
+    {
+      "name": "native-smoke",
+      "status": "needs_human",
+      "code": "NATIVE_VERIFICATION_REQUIRED",
+      "message": "Verify Bot creation/import, Skill visibility and one real task in the native host"
+    }
+  ],
+  "permissions": [
+    "native-internal-message",
+    "public-source-read",
+    "sandbox-execution",
+    "workspace-read"
+  ],
+  "skipped": []
+}

@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-14T13:41:09.790Z",
+  "workspace": "C:\\FLUTTE~1\\ohmy-social-qa-中文-cEaMxt",
+  "coreSkills": 12,
+  "coreFiles": 37,
+  "socialSkills": 14,
+  "socialFiles": 45,
+  "results": [
+    {
+      "args": [
+        "plan",
+        "oh-my-core",
+        "--out",
+        "C:\\FLUTTE~1\\ohmy-social-qa-中文-cEaMxt\\core.lock.json"
+      ],
+      "exitCode": 0,
+      "code": "PLAN_CREATED",
+      "status": "passed"
+    },
+    {
+      "args": [
+        "apply",
+        "C:\\FLUTTE~1\\ohmy-social-qa-中文-cEaMxt\\core.lock.json",
+        "--yes",
+        "--allow-unverified"
+      ],
+      "exitCode": 2,
+      "code": "LOCAL_STAGED_NATIVE_PENDING",
+      "status": "needs_human"
+    },
+    {
+      "args": ["verify", "c6ced995-427a-4533-9eb4-47259bc1b99e"],
+      "exitCode": 2,
+      "code": "VERIFICATION_COMPLETE",
+      "status": "needs_human"
+    },
+    {
+      "args": [
+        "apply",
+        "C:\\FLUTTE~1\\ohmy-social-qa-中文-cEaMxt\\core.lock.json",
+        "--yes",
+        "--allow-unverified"
+      ],
+      "exitCode": 2,
+      "code": "LOCAL_STAGED_NATIVE_PENDING",
+      "status": "needs_human"
+    },
+    {
+      "args": ["rollback", "c6ced995-427a-4533-9eb4-47259bc1b99e", "--yes"],
+      "exitCode": 0,
+      "code": "ROLLED_BACK",
+      "status": "passed"
+    },
+    {
+      "args": [
+        "plan",
+        "oh-my-social",
+        "--out",
+        "C:\\FLUTTE~1\\ohmy-social-qa-中文-cEaMxt\\social.lock.json"
+      ],
+      "exitCode": 0,
+      "code": "PLAN_CREATED",
+      "status": "passed"
+    },
+    {
+      "args": [
+        "apply",
+        "C:\\FLUTTE~1\\ohmy-social-qa-中文-cEaMxt\\social.lock.json",
+        "--yes",
+        "--allow-unverified"
+      ],
+      "exitCode": 2,
+      "code": "LOCAL_STAGED_NATIVE_PENDING",
+      "status": "needs_human"
+    },
+    {
+      "args": ["verify", "1f8c21ee-e38a-4723-bbcb-eb47893ab118"],
+      "exitCode": 2,
+      "code": "VERIFICATION_COMPLETE",
+      "status": "needs_human"
+    },
+    {
+      "args": ["social", "list"],
+      "exitCode": 0,
+      "code": "SOCIAL_CONNECTORS",
+      "status": "passed"
+    },
+    {
+      "args": ["social", "search", "x", "grok", "--limit", "1", "--dry-run"],
+      "exitCode": 0,
+      "code": "SOCIAL_READ_PLAN",
+      "status": "passed"
+    },
+    {
+      "args": ["social", "search", "x", "grok"],
+      "exitCode": 2,
+      "code": "CONNECTOR_CREDENTIAL_REQUIRED",
+      "status": "needs_human"
+    },
+    {
+      "args": ["social", "search", "bluesky", "grok", "--limit", "2"],
+      "exitCode": 1,
+      "code": "CONNECTOR_FORBIDDEN",
+      "status": "failed"
+    },
+    {
+      "args": ["rollback", "1f8c21ee-e38a-4723-bbcb-eb47893ab118", "--yes"],
+      "exitCode": 0,
+      "code": "ROLLED_BACK",
+      "status": "passed"
+    }
+  ],
+  "externalGates": [
+    "X/Mastodon/YouTube: credentials intentionally absent",
+    "Bluesky search: HTTP403; health HTTP200; live result parsing not verified",
+    "Native Grok import/execution and all publishing pending"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-14T13:43:32.656Z",
+  "extractedRoot": "C:\\FLUTTE~1\\ohmy-pack-JAogmx\\package",
+  "upstreams": 6,
+  "adaptations": 14,
+  "files": [
+    "biome.json",
+    "dist",
+    "docs",
+    "package.json",
+    "README.md",
+    "registry",
+    "schemas",
+    "skills",
+    "src",
+    "third_party",
+    "tsconfig.build.json",
+    "tsconfig.json"
+  ],
+  "archives": [
+    {
+      "file": "artifacts/oh-my-grokbot-0.1.0-alpha.1.tgz",
+      "sha256": "e11038978a0885ab5186ac7a97ad5ab07549e638e67696940582eb2877126737"
+    },
+    {
+      "file": "artifacts/oh-my-skills-0.2.0.zip",
+      "sha256": "12218e78fa3fe6637831a976fcbf57857a41d0295d22272d77b5cc0257537d1f"
+    }
+  ],
+  "runtimeSmoke": {
+    "productionInstallExit": 0,
+    "provenance": "passed",
+    "socialDryRun": "passed",
+    "packInstallDryRun": "passed",
+    "note": "npm archives exclude pnpm-lock; production install used --no-frozen-lockfile. Nonblocking pnpm Windows Vite dev-bin warning."
+  },
+  "finalArchive": {
+    "at": "2026-10-14T13:46:26.978Z",
+    "provenance": "passed",
+    "readmeMatches": true
+  }
+}

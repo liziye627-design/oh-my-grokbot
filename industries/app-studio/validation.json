@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-15",
+  "packSchema": "passed",
+  "coreSkillReferences": "passed",
+  "rolePrompts": "passed",
+  "orderedDag": "passed",
+  "roles": 5,
+  "workflows": 3,
+  "nativeActivation": "not_verified",
+  "realImplementationRuns": "not_run"
+}

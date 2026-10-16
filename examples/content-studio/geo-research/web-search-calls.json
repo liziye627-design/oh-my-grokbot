@@ -1,0 +1,26 @@
+[
+  {
+    "type": "web_search_call",
+    "id": "fixture-search-1",
+    "status": "completed",
+    "action": {
+      "type": "search",
+      "queries": [
+        "content bot source traceability",
+        "Markdown WeChat HTML workflow"
+      ],
+      "sources": [
+        {
+          "type": "url",
+          "url": "https://example.com/content-workflow",
+          "title": "Synthetic source"
+        },
+        {
+          "type": "url",
+          "url": "https://example.com/formatting",
+          "title": "Synthetic uncited source"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChatGPT Fan-out Queries"
+  short_description: "Capture visible web-search fan-out traces for GEO research"
+  default_prompt: "Use $chatgpt-fanout-queries to capture and explain the visible web-search fan-out for my question."

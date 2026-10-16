@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "0.1",
+  "host": "127.0.0.1",
+  "port": 19741,
+  "principals": [
+    {
+      "id": "owner",
+      "tenantId": "local-team",
+      "role": "operator",
+      "tokenEnv": "OHMY_OPERATOR_TOKEN"
+    },
+    {
+      "id": "reviewer",
+      "tenantId": "local-team",
+      "role": "verifier",
+      "tokenEnv": "OHMY_VERIFIER_TOKEN"
+    }
+  ]
+}

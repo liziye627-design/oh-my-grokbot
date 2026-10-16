@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "readOnly": true,
+  "type": "object",
+  "properties": {
+    "platform": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "read_adapter",
+        "reference_only"
+      ]
+    },
+    "auth": {
+      "type": "string",
+      "enum": [
+        "public",
+        "bearer",
+        "api_key",
+        "oauth_app_review"
+      ]
+    },
+    "credentialEnv": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]+$"
+    },
+    "readOperations": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "const": "search"
+      }
+    },
+    "writeOperations": {
+      "readOnly": true,
+      "minItems": 0,
+      "maxItems": 0,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "documentation": {
+      "type": "string",
+      "format": "uri"
+    },
+    "limitations": {
+      "readOnly": true,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "platform",
+    "stage",
+    "auth",
+    "readOperations",
+    "writeOperations",
+    "documentation",
+    "limitations"
+  ],
+  "additionalProperties": false
+}
