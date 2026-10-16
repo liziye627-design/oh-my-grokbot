@@ -7,6 +7,7 @@ const series = [
   "oh-my-business-operations",
   "oh-my-content-studio",
   "oh-my-core-team",
+  "oh-my-design-studio",
   "oh-my-engineering-lab",
   "oh-my-market-desk",
   "oh-my-office-team",
@@ -118,9 +119,9 @@ it("installs the employee series from reviewed reference upstreams when licenses
   ]);
   expect(market?.workflows.every((workflow) => workflow.approvalRequired)).toBe(true);
   expect(manifests.reduce((count, manifest) => count + manifest.pack.spec.agents.length, 0)).toBe(
-    70,
+    75,
   );
-  expect(manifests.reduce((count, manifest) => count + manifest.workflows.length, 0)).toBe(38);
+  expect(manifests.reduce((count, manifest) => count + manifest.workflows.length, 0)).toBe(40);
   for (const manifest of manifests) {
     expect(manifest.pack.spec.agents.length).toBeGreaterThanOrEqual(2);
     expect(manifest.pack.spec.agents.length).toBeLessThanOrEqual(6);

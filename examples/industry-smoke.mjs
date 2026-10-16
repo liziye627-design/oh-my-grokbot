@@ -77,7 +77,7 @@ try {
   const listed = z
     .object({ items: z.array(z.object({ id: z.string() })) })
     .parse((await cli(["industry", "list"])).context);
-  assert.equal(listed.items.length, 15);
+  assert.equal(listed.items.length, 16);
   service = await startGateway(workspace, config, env, () => undefined);
   const address = service.server.address();
   assert.ok(address && typeof address !== "string");

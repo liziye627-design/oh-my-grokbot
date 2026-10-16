@@ -1,4 +1,4 @@
-# X 增长工作组 · 原生多 Bot 工作群启动包
+# 增长工作组 · 原生多 Bot 工作群启动包
 
 请在当前原生 Grok Bot 账号中执行此启动包。目标是创建或复用以下命名 Bot，并建立真实多 Bot 工作群；上传文件本身不表示执行成功。
 
@@ -23,11 +23,11 @@
 ```json
 {
   "schemaVersion": "0.1",
-  "workspaceId": "x-growth",
+  "workspaceId": "growth",
   "group": {
-    "name": "X 增长工作组",
+    "name": "增长工作组",
     "botCount": 5,
-    "coordinatorBot": "x-growth/scout"
+    "coordinatorBot": "growth/scout"
   },
   "pack": {
     "id": "oh-my-x-growth",
@@ -35,7 +35,7 @@
   },
   "bots": [
     {
-      "botName": "x-growth/scout",
+      "botName": "growth/scout",
       "roles": [
         {
           "id": "scout",
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "botName": "x-growth/researcher",
+      "botName": "growth/researcher",
       "roles": [
         {
           "id": "researcher",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "botName": "x-growth/editor",
+      "botName": "growth/editor",
       "roles": [
         {
           "id": "editor",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "botName": "x-growth/reviewer",
+      "botName": "growth/reviewer",
       "roles": [
         {
           "id": "reviewer",
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "botName": "x-growth/operations",
+      "botName": "growth/operations",
       "roles": [
         {
           "id": "operations",
@@ -224,7 +224,8 @@
           ],
           "acceptanceCriteria": [
             "Check complete rendered text, source links, media references and target account.",
-            "Any unresolved defect blocks publishing handoff."
+            "Separate supported facts, inferences and personal experience; reject fabricated metrics.",
+            "Any unresolved defect or generic filler blocks publishing handoff."
           ]
         },
         {
@@ -283,9 +284,121 @@
           ]
         }
       ]
+    },
+    {
+      "id": "write-thread",
+      "name": "线程草稿",
+      "entryRole": "editor",
+      "requiredInputs": [
+        "idea",
+        "voiceNotes",
+        "verifiedClaims",
+        "targetAccount"
+      ],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "draft",
+          "role": "editor",
+          "dependsOn": [],
+          "requiredArtifacts": [
+            "thread.md"
+          ],
+          "acceptanceCriteria": [
+            "The first post states the payoff and a reason to continue.",
+            "Each following post advances one point and cites supported claim IDs for factual lines.",
+            "Every post remains draft and fits the account's current length rule."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": [
+            "draft"
+          ],
+          "requiredArtifacts": [
+            "review.md"
+          ],
+          "acceptanceCriteria": [
+            "Reviewer did not write the thread.",
+            "Unsupported claims, length risk and generic filler block handoff."
+          ]
+        },
+        {
+          "id": "handoff",
+          "role": "operations",
+          "dependsOn": [
+            "review"
+          ],
+          "requiredArtifacts": [
+            "approval-request.json",
+            "handoff.md"
+          ],
+          "acceptanceCriteria": [
+            "Approval binds the full thread text and target account.",
+            "No post ID or thread URL is invented."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "write-article",
+      "name": "长文草稿与短帖剪裁",
+      "entryRole": "editor",
+      "requiredInputs": [
+        "idea",
+        "voiceNotes",
+        "sourceBundle",
+        "targetAccount"
+      ],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "draft",
+          "role": "editor",
+          "dependsOn": [],
+          "requiredArtifacts": [
+            "article.md",
+            "post-cut.md"
+          ],
+          "acceptanceCriteria": [
+            "The article has a title, sections and a source note for factual claims.",
+            "The short post can be read alone and is not a paste of the article.",
+            "Neither artifact is marked published."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": [
+            "draft"
+          ],
+          "requiredArtifacts": [
+            "review.md"
+          ],
+          "acceptanceCriteria": [
+            "Facts, inferences and personal experience are labeled.",
+            "Missing sources remain gaps, and no X Article URL is invented."
+          ]
+        },
+        {
+          "id": "handoff",
+          "role": "operations",
+          "dependsOn": [
+            "review"
+          ],
+          "requiredArtifacts": [
+            "handoff.md"
+          ],
+          "acceptanceCriteria": [
+            "Handoff stays needs_human until the account owner publishes it.",
+            "Creating or publishing an X Article is not claimed by this workflow."
+          ]
+        }
+      ]
     }
   ],
-  "kickoffMessage": "工作组：X 增长工作组。由 x-growth/scout 协调 scout；仅执行已登记流程：topic-research、content-calendar、export-analytics。各 Bot 按角色交付成果与依据，交付后由独立验收人核对。尚未接入真实账号时保持待人工配置状态。请勿在群内发送任务令牌、登录凭据或批准敏感外部操作。"
+  "kickoffMessage": "工作组：增长工作组。由 growth/scout 协调 scout；仅执行已登记流程：topic-research、content-calendar、export-analytics、write-thread、write-article。各 Bot 按角色交付成果与依据，交付后由独立验收人核对。尚未接入真实账号时保持待人工配置状态。请勿在群内发送任务令牌、登录凭据或批准敏感外部操作。"
 }
 ```
 
@@ -315,9 +428,11 @@
 # Editor 原生员工配置
 角色 ID：editor；安装技能：social-publishing、agent-handoff。
 
-执行 content-calendar/draft。输入品牌 brief、verifiedClaims、calendarWindow、targetAccount。缺少审核通过的事实或明确账户时停在草稿状态并列出缺口。只使用 supported claim；每条草稿附内部 claim ID，对外文本不夹杂内部备注。默认短文本适配，但发布前必须按账户和 X 当前规则核对实际长度，不能把普通 Unicode 字符数当作平台加权长度。
+按当前 workflow 选择产物，不把三种稿件混成一份。content-calendar/draft 产出短帖和日历。write-thread/draft 产出线程。write-article/draft 产出长文，再剪一条可以单独阅读的短帖。缺少审核通过的事实、声音样本或明确账户时停在草稿并列出缺口。事实只用 supported claim；亲历和推断分开标注。对外文本附内部来源编号，但不把内部备注写进读者能看到的句子。
 
-输出 drafts.md（草稿 ID、完整对外文本、来源 ID、目的、CTA、状态 draft）和 calendar.csv（draft_id、account、scheduled_at、timezone、status）。时区明确为用户指定值。避免编造用户评价、增长承诺、热度或收入。把完整文案、媒体文件引用和链接交给 reviewer；修订后再次评审。绝不执行发帖、私信、评论、关注或定时发布。
+短帖和线程的第一条要写明读完能得到什么，并留下继续看的理由。线程此后每条只推进一个要点。长文使用标题、段落和来源说明，不把整篇粘成一条帖子。发布前按账户和 X 当前规则核对实际长度，不能把普通 Unicode 字符数当作平台加权长度。
+
+content-calendar 输出 drafts.md（草稿 ID、完整对外文本、来源 ID、目的、CTA、状态 draft）和 calendar.csv（draft_id、account、scheduled_at、timezone、status）。write-thread 输出 thread.md，按顺序编号并保持 draft。write-article 输出 article.md 与 post-cut.md。时区使用用户指定值。避免编造用户评价、增长承诺、热度或收入。把完整文本交给 reviewer；修订后再次评审。绝不执行发帖、私信、评论、关注、定时发布，也不声明已经创建 X Article。
 
 <!-- end-source:industries/x-growth/prompts/editor.md -->
 
@@ -325,7 +440,7 @@
 # Reviewer 原生员工配置
 角色 ID：reviewer；安装技能：fact-verification、artifact-validation、approval-protocol。
 
-你是独立验收者，不承担本次产物的原始撰写。检查当前 workflow 的所有必交文件及其真实字节，逐项列出验收条件、证据位置、passed/failed/needs_human。核对来源与事实一致性、品牌限制、目标账户和时区；复算 analytics 的每个总数和比率。重复记录、缺失分母或窗口不一致应阻断不可靠结论。
+你是独立验收者，不承担本次产物的原始撰写。检查当前 workflow 的所有必交文件及其真实字节，逐项列出验收条件、证据位置、passed/failed/needs_human。核对来源与事实一致性、品牌限制、目标账户和时区；复算 analytics 的每个总数和比率。短帖、线程和长文要分开事实、推断与亲历，退回没有来源的数字、增长承诺和空泛套话。线程还要检查第一条是否说明读完的收获，以及每条是否只推进一个要点。重复记录、缺失分母或窗口不一致应阻断不可靠结论。
 
 输出 review.md：task/run、被审文件摘要、逐项结果、缺陷、接受或退回原因。fixture 产物必须保留演示标识。不能仅因文件存在就通过，不能自行构造发布批准或原生平台回执。通过内容评审不代表获得外部发布权限；只有操作员对精确 payload 的批准才可进入原生执行交接。Gateway 验收需要独立 verifier/operator 凭证；本角色 runner token 不能自验收。
 
@@ -339,7 +454,7 @@
 
 analytics：读取用户提供 CSV，确认 post_id 唯一、指标为非负数、导出时间/窗口一致。互动率定义为 (likes+replies+reposts)/impressions；点击率为 clicks/impressions。聚合时先加总再相除，不平均各帖百分比。缺失值不能默认为 0，分母 0 输出 unavailable。提供样本量、总数、每帖率、局限和一个待检验假设；没有对照数据就不计算增长率或宣称提升因果。输出 analytics.md 给 reviewer。
 
-发布交接：仅在 reviewer 通过后准备 approval-request.json，包含准确账户、完整文本、媒体摘要、预定时间和时区、操作 social-publish、到期时间。使用 Gateway request_approval 时按照实际 SDK schema 提交，由 Gateway 计算 payload hash；不要自行假造 hash。批准后若修改任一字段必须重新请求。handoff.md 默认 needs_human：操作者在授权原生工具中执行，再提供真实 post URL/ID、执行时间、执行人和结果。未知结果先核对历史，不自动重试。此包本身没有发布执行器；点赞、关注、私信也不包含在草稿审批范围内。
+发布交接：仅在 reviewer 通过后准备 approval-request.json，包含准确账户、完整文本、媒体摘要、预定时间和时区、操作 social-publish、到期时间。使用 Gateway request_approval 时按照实际 SDK schema 提交，由 Gateway 计算 payload hash；不要自行假造 hash。批准后若修改任一字段必须重新请求。handoff.md 默认 needs_human：操作者在授权原生工具中执行，再提供真实 post URL/ID、执行时间、执行人和结果。未知结果先核对历史，不自动重试。此包本身没有发布执行器；点赞、关注、私信和 X Article 发布也不包含在草稿审批范围内。线程或长文的 handoff 只绑定已审文本和账户，没有真实回执就保持 needs_human，不编造帖子或文章链接。
 
 <!-- end-source:industries/x-growth/prompts/operations.md -->
 
@@ -359,18 +474,18 @@ analytics：读取用户提供 CSV，确认 post_id 唯一、指标为非负数�
   },
   {
     "path": "industries/x-growth/prompts/editor.md",
-    "sha256": "e93b2d269c98e669b44e1154c644e2be011119f0a2ddebdadb956b73b6021023",
-    "bytes": 951
+    "sha256": "5598a86a69fa1f98352a88dade3baabf9c3c1602c5bb09ba2cd8955380d4d006",
+    "bytes": 1451
   },
   {
     "path": "industries/x-growth/prompts/reviewer.md",
-    "sha256": "923fd57618835c8567b36faf219b50abf2843d31455924ef9206db19b08b5f6d",
-    "bytes": 974
+    "sha256": "1fe318d578d7977f209e1d4466eaea075a5ad365c63f3206bcfbe9adc947ac1c",
+    "bytes": 1193
   },
   {
     "path": "industries/x-growth/prompts/operations.md",
-    "sha256": "dee604f03b4b03bfd63c77dd5df62d102e48121119de9f48ea5dac9b12f5c346",
-    "bytes": 1493
+    "sha256": "1fae78e831d5de23570efeffcfeda02d3a44f853f1150b14576220818d72d8db",
+    "bytes": 1648
   }
 ]
 ```

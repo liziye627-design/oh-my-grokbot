@@ -683,6 +683,24 @@
           "role": "reference"
         }
       ]
+    },
+    {
+      "id": "ui-skills",
+      "repository": "https://github.com/ibelick/ui-skills",
+      "commit": "3434a7633027ec6dccfa80ed1eb5716befd4e766",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/ui-skills/LICENSE",
+          "sha256": "c615621c4cc1676ccde194e7a01b6469ba477780251bd71e007fc473a49c2c2b",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/ui-skills/README.md",
+          "sha256": "4dc3e9f0216a750d980f55db8412f5c8d656066bc9aadd26deeb8fd4798f991d",
+          "role": "reference"
+        }
+      ]
     }
   ],
   "adaptations": [
@@ -1486,6 +1504,48 @@
         {
           "path": "skills/market-research/SKILL.md",
           "sha256": "f6feb8502020fb9dd5c7345a0f8c2783f3e2352725e5a71ad2ef94db071d1c11"
+        }
+      ]
+    },
+    {
+      "skill": "design-atelier",
+      "directory": "skills/design-atelier",
+      "upstreams": ["ui-skills"],
+      "files": [
+        {
+          "path": "skills/design-atelier/licenses/ui-skills.txt",
+          "sha256": "c615621c4cc1676ccde194e7a01b6469ba477780251bd71e007fc473a49c2c2b"
+        },
+        {
+          "path": "skills/design-atelier/NOTICE.md",
+          "sha256": "9f38c7649e711986b9c310921e12756813bb705fcd268f1ceb7b2b75f21a6ccd"
+        },
+        {
+          "path": "skills/design-atelier/SKILL.md",
+          "sha256": "0be83291ae3c2e65102620f3428fa47784a2ce200c84afb68a8a988977ae5363"
+        },
+        {
+          "path": "skills/design-atelier/references.md",
+          "sha256": "cd33ae4b2d341c6860d4b8175f149ef7064409d0ef0d633434ec53562d5fb376"
+        }
+      ]
+    },
+    {
+      "skill": "visual-generation",
+      "directory": "skills/visual-generation",
+      "upstreams": ["ui-skills"],
+      "files": [
+        {
+          "path": "skills/visual-generation/licenses/ui-skills.txt",
+          "sha256": "c615621c4cc1676ccde194e7a01b6469ba477780251bd71e007fc473a49c2c2b"
+        },
+        {
+          "path": "skills/visual-generation/NOTICE.md",
+          "sha256": "0dd6823dbdc15f8c9eaf7afe879383c5a0cd662dfbe9cb131f30726ca8dd3197"
+        },
+        {
+          "path": "skills/visual-generation/SKILL.md",
+          "sha256": "05f9771b4660a967c9262aab42f3ce07adf34af8a5d0747d3aef4e6df5919b42"
         }
       ]
     }

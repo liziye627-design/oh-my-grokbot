@@ -2,14 +2,16 @@
 
 行业层复用 Core Installer、Gateway、Result MCP、审批和 Outbox。原生 Grok Bot
 执行岗位任务与 Bot 交接；行业层提供可安装的团队资源、经过校验的流程和任务输入。
+岗位职责和推荐组合见 [Bot 操作指南](bot-playbook.md)。
 
 ## 团队目录
 
 | 行业包 | 业务范围 | 资源与验收案例 |
 | --- | --- | --- |
+| `oh-my-design-studio` | 组件需求、点名动效、参考架和独立验收 | [设计工作室](../industries/design-studio/README.md) |
 | `oh-my-content-studio` | 一篇内容从简报到公众号正文、X 剪裁和发布前交接 | [Content Studio](../industries/content-studio/README.md) |
 | `oh-my-research-lab` | 来源研究、行业与竞品、事实审查 | [Research Lab](../industries/research-lab/README.md) |
-| `oh-my-x-growth` | X 短帖、线程、长文草稿和数据复盘 | [X Growth](../industries/x-growth/README.md) |
+| `oh-my-x-growth` | 增长工作组的当前渠道：短帖、线程、长文草稿和数据复盘。后续平台加入同一工作组 | [增长工作组](../industries/x-growth/README.md) |
 | `oh-my-wechat` | 个人公众号文风、大纲、正文、标题和审稿 | [WeChat](../industries/wechat/README.md) |
 | `oh-my-app-studio` | 产品规格、开发、缺陷修复、测试与发布准备 | [App Studio](../industries/app-studio/README.md) |
 | `oh-my-video-studio` | 策划、脚本、素材、剪辑与媒体验收 | [Video Studio](../industries/video-studio/README.md) |
@@ -23,14 +25,14 @@
 | `oh-my-solo-company` | 机会、报价草稿、交付清单、经营复盘 | [Solo Company](../industries/solo-company/README.md) |
 
 岗位说明、示例和验收标准保存在各行业目录。示例数据是测试材料，不能当成真实客户
-结果。当前共 70 个岗位、38 条工作流。行业清单由 `industry.json` 声明，引用已冻结的 Core Skills；原生账号、连接器
+结果。当前共 75 个岗位、40 条工作流。行业清单由 `industry.json` 声明，引用已冻结的 Core Skills；原生账号、连接器
 授权与外部工具安装不会随模板复制。外部引擎、浏览器、编码工作区、媒体工具和连接器在注册表中是 reference，缺失时为 skipped。
 
 ## 内容生产链路
 
 个人创作优先安装 `oh-my-content-studio`。`produce-piece` 把简报、来源、文风、大纲、公众号正文、标题、X 线程和短帖放在同一次交接里，审稿后停在发布前。`next-topics` 只根据作者导出的数据准备下一题。
 
-只做 X 时用 `oh-my-x-growth`。只做公众号时用 `oh-my-wechat`。排版、微信草稿箱和 X 发帖仍由作者在对应后台确认。
+增长工作组当前用 `oh-my-x-growth` 跑选题、草稿和复盘，后续平台的增长流程加进同一组。只做公众号时用 `oh-my-wechat`。排版、微信草稿箱和各平台发布仍由作者在对应后台确认。
 
 ## 安装与使用
 

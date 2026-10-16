@@ -21,7 +21,7 @@ it("completes local protocol acceptance for every employee pack when compiled su
       localFixtureOnly: z.literal(true),
       liveNative: z.literal(false),
       liveFeishu: z.literal(false),
-      localSinkDeliveries: z.literal(15),
+      localSinkDeliveries: z.literal(16),
       industries: z
         .array(
           z.object({
@@ -33,7 +33,7 @@ it("completes local protocol acceptance for every employee pack when compiled su
             businessWorkPerformed: z.literal(false),
           }),
         )
-        .length(15),
+        .length(16),
     })
     .parse(JSON.parse(child.stdout));
   expect(result.industries.map((industry) => industry.pack).sort()).toEqual([
@@ -41,6 +41,7 @@ it("completes local protocol acceptance for every employee pack when compiled su
     "oh-my-business-operations",
     "oh-my-content-studio",
     "oh-my-core-team",
+    "oh-my-design-studio",
     "oh-my-engineering-lab",
     "oh-my-market-desk",
     "oh-my-office-team",

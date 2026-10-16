@@ -128,7 +128,7 @@ pnpm audit --prod --registry=https://registry.npmjs.org
 - Alpha 1：Core Installer 与 Skills 已实现。
 - Alpha 2：本地 Gateway、SQLite 任务账本、Result MCP、身份/租户授权、审批与 Outbox 已实现；真实账号及原生连接待验收。
 - Alpha 3：Guardian、进程/环境/任务恢复与外部操作状态核对。
-- 行业层：十五套可安装团队。先用 `industry choose` 勾选，再对选中的包执行 `install`。个人内容生产优先看 [内容生产链路](docs/industry-employees.md#内容生产链路)。公开市场研究看 [Market Desk](industries/market-desk/README.md)。
+- 行业层：十六套可安装团队。先用 `industry choose` 勾选，再对选中的包执行 `install`。岗位职责和团队组合见 [Bot 操作指南](docs/bot-playbook.md)。个人内容生产优先看 [内容生产链路](docs/industry-employees.md#内容生产链路)。公开市场研究看 [Market Desk](industries/market-desk/README.md)。
 
 参见 [架构与契约](docs/core-architecture.md)、[原生连接验证](docs/integration-spike.md)
 和 [本次实现记录](.omo/evidence/core-foundation.md)。
@@ -142,7 +142,7 @@ pnpm audit --prod --registry=https://registry.npmjs.org
 
 ## 原生群组
 
-示例工作区仍为 X Growth、App Studio、Video Studio、Business Operations 四组上传包；其余团队用同一条 bundle 命令按需生成。成员隔离及协作链路见 [原生群组说明](docs/native-groups.md)。本地链路已实现，原生账号创建与连接仍需实际回执验证。
+各团队的上传包在 `examples/workspaces/generated/`。成员隔离、已创建的 Bot 标识和协作链路见 [原生群组说明](docs/native-groups.md)。岗位怎么配合见 [Bot 操作指南](docs/bot-playbook.md)。本地链路已实现，原生账号创建与连接仍需实际回执验证。
 
 ### 第二层内容 Bot 核心
 

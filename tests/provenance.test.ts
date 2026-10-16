@@ -24,10 +24,10 @@ async function save(value: unknown) {
   await writeFile(join(root, "registry/upstreams.lock.json"), JSON.stringify(value));
 }
 describe("Pinned licensed upstream distribution", () => {
-  it("verifies all original snapshots and twenty adapted Skill trees", async () => {
+  it("verifies all original snapshots and twenty-two adapted Skill trees", async () => {
     const result = await verifyProvenance(root, "registry/upstreams.lock.json");
-    expect(result.sources).toHaveLength(11);
-    expect(result.adaptations).toHaveLength(20);
+    expect(result.sources).toHaveLength(12);
+    expect(result.adaptations).toHaveLength(22);
     expect((await loadCatalog(join(root, "registry/catalog.json"))).data.packs).toHaveLength(2);
   });
   it("rejects changed upstream bytes at catalog load before planning", async () => {
