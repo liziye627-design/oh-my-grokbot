@@ -4,22 +4,22 @@
   "port": 19741,
   "principals": [
     {
-      "id": "x-growth-owner",
-      "tenantId": "x-growth",
+      "id": "growth-owner",
+      "tenantId": "growth",
       "role": "operator",
-      "tokenEnv": "X_GROWTH_OWNER_TOKEN"
+      "tokenEnv": "GROWTH_OWNER_TOKEN"
     },
     {
-      "id": "x-growth-colleague",
-      "tenantId": "x-growth",
+      "id": "growth-colleague",
+      "tenantId": "growth",
       "role": "operator",
-      "tokenEnv": "X_GROWTH_COLLEAGUE_TOKEN"
+      "tokenEnv": "GROWTH_COLLEAGUE_TOKEN"
     },
     {
-      "id": "x-growth-reviewer",
-      "tenantId": "x-growth",
+      "id": "growth-reviewer",
+      "tenantId": "growth",
       "role": "verifier",
-      "tokenEnv": "X_GROWTH_REVIEWER_TOKEN"
+      "tokenEnv": "GROWTH_REVIEWER_TOKEN"
     },
     {
       "id": "app-studio-owner",
@@ -128,41 +128,209 @@
       "tenantId": "market-desk",
       "role": "verifier",
       "tokenEnv": "MARKET_DESK_REVIEWER_TOKEN"
+    },
+    {
+      "id": "core-team-owner",
+      "tenantId": "core-team",
+      "role": "operator",
+      "tokenEnv": "CORE_TEAM_OWNER_TOKEN"
+    },
+    {
+      "id": "core-team-colleague",
+      "tenantId": "core-team",
+      "role": "operator",
+      "tokenEnv": "CORE_TEAM_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "core-team-reviewer",
+      "tenantId": "core-team",
+      "role": "verifier",
+      "tokenEnv": "CORE_TEAM_REVIEWER_TOKEN"
+    },
+    {
+      "id": "wechat-owner",
+      "tenantId": "wechat",
+      "role": "operator",
+      "tokenEnv": "WECHAT_OWNER_TOKEN"
+    },
+    {
+      "id": "wechat-colleague",
+      "tenantId": "wechat",
+      "role": "operator",
+      "tokenEnv": "WECHAT_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "wechat-reviewer",
+      "tenantId": "wechat",
+      "role": "verifier",
+      "tokenEnv": "WECHAT_REVIEWER_TOKEN"
+    },
+    {
+      "id": "solo-company-owner",
+      "tenantId": "solo-company",
+      "role": "operator",
+      "tokenEnv": "SOLO_COMPANY_OWNER_TOKEN"
+    },
+    {
+      "id": "solo-company-colleague",
+      "tenantId": "solo-company",
+      "role": "operator",
+      "tokenEnv": "SOLO_COMPANY_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "solo-company-reviewer",
+      "tenantId": "solo-company",
+      "role": "verifier",
+      "tokenEnv": "SOLO_COMPANY_REVIEWER_TOKEN"
+    },
+    {
+      "id": "sales-team-owner",
+      "tenantId": "sales-team",
+      "role": "operator",
+      "tokenEnv": "SALES_TEAM_OWNER_TOKEN"
+    },
+    {
+      "id": "sales-team-colleague",
+      "tenantId": "sales-team",
+      "role": "operator",
+      "tokenEnv": "SALES_TEAM_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "sales-team-reviewer",
+      "tenantId": "sales-team",
+      "role": "verifier",
+      "tokenEnv": "SALES_TEAM_REVIEWER_TOKEN"
+    },
+    {
+      "id": "research-lab-owner",
+      "tenantId": "research-lab",
+      "role": "operator",
+      "tokenEnv": "RESEARCH_LAB_OWNER_TOKEN"
+    },
+    {
+      "id": "research-lab-colleague",
+      "tenantId": "research-lab",
+      "role": "operator",
+      "tokenEnv": "RESEARCH_LAB_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "research-lab-reviewer",
+      "tenantId": "research-lab",
+      "role": "verifier",
+      "tokenEnv": "RESEARCH_LAB_REVIEWER_TOKEN"
+    },
+    {
+      "id": "office-team-owner",
+      "tenantId": "office-team",
+      "role": "operator",
+      "tokenEnv": "OFFICE_TEAM_OWNER_TOKEN"
+    },
+    {
+      "id": "office-team-colleague",
+      "tenantId": "office-team",
+      "role": "operator",
+      "tokenEnv": "OFFICE_TEAM_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "office-team-reviewer",
+      "tenantId": "office-team",
+      "role": "verifier",
+      "tokenEnv": "OFFICE_TEAM_REVIEWER_TOKEN"
+    },
+    {
+      "id": "engineering-lab-owner",
+      "tenantId": "engineering-lab",
+      "role": "operator",
+      "tokenEnv": "ENGINEERING_LAB_OWNER_TOKEN"
+    },
+    {
+      "id": "engineering-lab-colleague",
+      "tenantId": "engineering-lab",
+      "role": "operator",
+      "tokenEnv": "ENGINEERING_LAB_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "engineering-lab-reviewer",
+      "tenantId": "engineering-lab",
+      "role": "verifier",
+      "tokenEnv": "ENGINEERING_LAB_REVIEWER_TOKEN"
+    },
+    {
+      "id": "specialist-lab-owner",
+      "tenantId": "specialist-lab",
+      "role": "operator",
+      "tokenEnv": "SPECIALIST_LAB_OWNER_TOKEN"
+    },
+    {
+      "id": "specialist-lab-colleague",
+      "tenantId": "specialist-lab",
+      "role": "operator",
+      "tokenEnv": "SPECIALIST_LAB_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "specialist-lab-reviewer",
+      "tenantId": "specialist-lab",
+      "role": "verifier",
+      "tokenEnv": "SPECIALIST_LAB_REVIEWER_TOKEN"
+    },
+    {
+      "id": "design-studio-owner",
+      "tenantId": "design-studio",
+      "role": "operator",
+      "tokenEnv": "DESIGN_STUDIO_OWNER_TOKEN"
+    },
+    {
+      "id": "design-studio-colleague",
+      "tenantId": "design-studio",
+      "role": "operator",
+      "tokenEnv": "DESIGN_STUDIO_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "design-studio-reviewer",
+      "tenantId": "design-studio",
+      "role": "verifier",
+      "tokenEnv": "DESIGN_STUDIO_REVIEWER_TOKEN"
     }
   ],
   "workspaces": [
     {
-      "id": "x-growth",
-      "name": "X 增长工作组",
-      "tenantId": "x-growth",
+      "id": "growth",
+      "name": "增长工作组",
+      "tenantId": "growth",
       "pack": "oh-my-x-growth",
-      "workflows": ["topic-research", "content-calendar", "export-analytics"],
+      "workflows": [
+        "topic-research",
+        "content-calendar",
+        "export-analytics",
+        "write-thread",
+        "write-article"
+      ],
       "coordinatorRole": "scout",
       "bindings": [
         {
           "role": "scout",
-          "botName": "x-growth/scout"
+          "botName": "growth/scout"
         },
         {
           "role": "researcher",
-          "botName": "x-growth/researcher"
+          "botName": "growth/researcher"
         },
         {
           "role": "editor",
-          "botName": "x-growth/editor"
+          "botName": "growth/editor"
         },
         {
           "role": "reviewer",
-          "botName": "x-growth/reviewer"
+          "botName": "growth/reviewer"
         },
         {
           "role": "operations",
-          "botName": "x-growth/operations"
+          "botName": "growth/operations"
         }
       ],
       "members": {
-        "operators": ["x-growth-owner", "x-growth-colleague"],
-        "verifiers": ["x-growth-reviewer"]
+        "operators": ["growth-owner", "growth-colleague"],
+        "verifiers": ["growth-reviewer"]
       }
     },
     {
@@ -318,6 +486,173 @@
       "members": {
         "operators": ["market-desk-owner", "market-desk-colleague"],
         "verifiers": ["market-desk-reviewer"]
+      }
+    },
+    {
+      "id": "core-team",
+      "name": "核心团队",
+      "tenantId": "core-team",
+      "pack": "oh-my-core-team",
+      "workflows": ["assign-work", "retain-knowledge", "review-week"],
+      "coordinatorRole": "chief-of-staff",
+      "bindings": [
+        { "role": "chief-of-staff", "botName": "core-team/chief-of-staff" },
+        { "role": "task-planner", "botName": "core-team/task-planner" },
+        { "role": "evidence-reviewer", "botName": "core-team/evidence-reviewer" },
+        { "role": "knowledge-keeper", "botName": "core-team/knowledge-keeper" }
+      ],
+      "members": {
+        "operators": ["core-team-owner", "core-team-colleague"],
+        "verifiers": ["core-team-reviewer"]
+      }
+    },
+    {
+      "id": "wechat",
+      "name": "公众号工作组",
+      "tenantId": "wechat",
+      "pack": "oh-my-wechat",
+      "workflows": ["capture-voice", "write-article"],
+      "coordinatorRole": "voice-keeper",
+      "bindings": [
+        { "role": "voice-keeper", "botName": "wechat/voice-keeper" },
+        { "role": "drafter", "botName": "wechat/drafter" },
+        { "role": "title-editor", "botName": "wechat/title-editor" },
+        { "role": "reviewer", "botName": "wechat/reviewer" }
+      ],
+      "members": {
+        "operators": ["wechat-owner", "wechat-colleague"],
+        "verifiers": ["wechat-reviewer"]
+      }
+    },
+    {
+      "id": "solo-company",
+      "name": "一人公司",
+      "tenantId": "solo-company",
+      "pack": "oh-my-solo-company",
+      "workflows": ["operate-engagement"],
+      "coordinatorRole": "chief-of-staff",
+      "bindings": [
+        { "role": "chief-of-staff", "botName": "solo-company/chief-of-staff" },
+        { "role": "opportunity-researcher", "botName": "solo-company/opportunity-researcher" },
+        { "role": "sales-lead", "botName": "solo-company/sales-lead" },
+        { "role": "delivery-engineer", "botName": "solo-company/delivery-engineer" },
+        { "role": "finance-reviewer", "botName": "solo-company/finance-reviewer" }
+      ],
+      "members": {
+        "operators": ["solo-company-owner", "solo-company-colleague"],
+        "verifiers": ["solo-company-reviewer"]
+      }
+    },
+    {
+      "id": "sales-team",
+      "name": "销售工作组",
+      "tenantId": "sales-team",
+      "pack": "oh-my-sales-team",
+      "workflows": ["qualify-lead", "write-proposal"],
+      "coordinatorRole": "lead-hunter",
+      "bindings": [
+        { "role": "lead-hunter", "botName": "sales-team/lead-hunter" },
+        { "role": "company-researcher", "botName": "sales-team/company-researcher" },
+        { "role": "sales-engineer", "botName": "sales-team/sales-engineer" },
+        { "role": "proposal-writer", "botName": "sales-team/proposal-writer" },
+        { "role": "crm-manager", "botName": "sales-team/crm-manager" }
+      ],
+      "members": {
+        "operators": ["sales-team-owner", "sales-team-colleague"],
+        "verifiers": ["sales-team-reviewer"]
+      }
+    },
+    {
+      "id": "research-lab",
+      "name": "研究实验室",
+      "tenantId": "research-lab",
+      "pack": "oh-my-research-lab",
+      "workflows": ["deep-report", "competitor-scan", "trend-scan"],
+      "coordinatorRole": "research-director",
+      "bindings": [
+        { "role": "research-director", "botName": "research-lab/research-director" },
+        { "role": "source-researcher", "botName": "research-lab/source-researcher" },
+        { "role": "industry-analyst", "botName": "research-lab/industry-analyst" },
+        { "role": "competitor-scout", "botName": "research-lab/competitor-scout" },
+        { "role": "fact-checker", "botName": "research-lab/fact-checker" },
+        { "role": "trend-hunter", "botName": "research-lab/trend-hunter" }
+      ],
+      "members": {
+        "operators": ["research-lab-owner", "research-lab-colleague"],
+        "verifiers": ["research-lab-reviewer"]
+      }
+    },
+    {
+      "id": "office-team",
+      "name": "办公室工作组",
+      "tenantId": "office-team",
+      "pack": "oh-my-office-team",
+      "workflows": ["meeting-pack", "data-brief"],
+      "coordinatorRole": "meeting-secretary",
+      "bindings": [
+        { "role": "meeting-secretary", "botName": "office-team/meeting-secretary" },
+        { "role": "document-specialist", "botName": "office-team/document-specialist" },
+        { "role": "data-analyst", "botName": "office-team/data-analyst" },
+        { "role": "schedule-manager", "botName": "office-team/schedule-manager" }
+      ],
+      "members": {
+        "operators": ["office-team-owner", "office-team-colleague"],
+        "verifiers": ["office-team-reviewer"]
+      }
+    },
+    {
+      "id": "engineering-lab",
+      "name": "工程实验室",
+      "tenantId": "engineering-lab",
+      "pack": "oh-my-engineering-lab",
+      "workflows": ["firmware-delivery", "model-delivery"],
+      "coordinatorRole": "requirements-engineer",
+      "bindings": [
+        { "role": "requirements-engineer", "botName": "engineering-lab/requirements-engineer" },
+        { "role": "embedded-engineer", "botName": "engineering-lab/embedded-engineer" },
+        { "role": "ai-engineer", "botName": "engineering-lab/ai-engineer" },
+        { "role": "test-engineer", "botName": "engineering-lab/test-engineer" }
+      ],
+      "members": {
+        "operators": ["engineering-lab-owner", "engineering-lab-colleague"],
+        "verifiers": ["engineering-lab-reviewer"]
+      }
+    },
+    {
+      "id": "specialist-lab",
+      "name": "专项实验室",
+      "tenantId": "specialist-lab",
+      "pack": "oh-my-specialist-lab",
+      "workflows": ["vision-check", "game-concept", "market-study"],
+      "coordinatorRole": "computer-vision-engineer",
+      "bindings": [
+        { "role": "computer-vision-engineer", "botName": "specialist-lab/computer-vision-engineer" },
+        { "role": "game-designer", "botName": "specialist-lab/game-designer" },
+        { "role": "financial-researcher", "botName": "specialist-lab/financial-researcher" },
+        { "role": "model-evaluator", "botName": "specialist-lab/model-evaluator" }
+      ],
+      "members": {
+        "operators": ["specialist-lab-owner", "specialist-lab-colleague"],
+        "verifiers": ["specialist-lab-reviewer"]
+      }
+    },
+    {
+      "id": "design-studio",
+      "name": "设计工作室",
+      "tenantId": "design-studio",
+      "pack": "oh-my-design-studio",
+      "workflows": ["specify-component", "motion-audit"],
+      "coordinatorRole": "art-director",
+      "bindings": [
+        { "role": "art-director", "botName": "design-studio/art-director" },
+        { "role": "reference-scout", "botName": "design-studio/reference-scout" },
+        { "role": "interface-designer", "botName": "design-studio/interface-designer" },
+        { "role": "motion-designer", "botName": "design-studio/motion-designer" },
+        { "role": "design-reviewer", "botName": "design-studio/design-reviewer" }
+      ],
+      "members": {
+        "operators": ["design-studio-owner", "design-studio-colleague"],
+        "verifiers": ["design-studio-reviewer"]
       }
     }
   ]

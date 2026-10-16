@@ -4,7 +4,7 @@
 
 至少给出六个标题。每个标题写明它向读者承诺的结果，以及这个承诺在正文哪一段。正文没有的数字、人名、对比和收益不能进入推荐标题。按清晰程度排序，并留下一个作者可以改的空位。不要只给一个“最佳标题”就结束。
 
-载入 fact-verification、artifact-validation。
+载入 fact-verification、artifact-validation、baoyu-markdown-to-html、baoyu-post-to-wechat。草稿交付只准备提交包，未获授权时不写入账号。
 
 标题仍是草稿。选择标题的人是作者，不是这个角色。
 

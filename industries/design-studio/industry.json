@@ -1,0 +1,166 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-design-studio",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "设计工作室：为每个组件写需求并点名动效。艺术指导能出图；视频和三维模型在运行时返回文件后记入同一张回执。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        { "capability": "task-planning", "range": "^0.2.0", "optional": false },
+        { "capability": "agent-handoff", "range": "^0.2.0", "optional": false },
+        { "capability": "source-research", "range": "^0.2.0", "optional": false },
+        { "capability": "fact-verification", "range": "^0.2.0", "optional": false },
+        { "capability": "artifact-validation", "range": "^0.2.0", "optional": false },
+        { "capability": "approval-protocol", "range": "^0.2.0", "optional": false },
+        { "capability": "capability-selection", "range": "^0.2.0", "optional": false },
+        { "capability": "design-atelier", "range": "^0.1.0", "optional": false },
+        { "capability": "visual-generation", "range": "^0.1.0", "optional": false },
+        { "capability": "ui-skills", "range": "^0.1.0", "optional": false },
+        { "capability": "transitions-dev", "range": "^0.1.0", "optional": false },
+        { "capability": "comfyui", "range": "^0.1.0", "optional": true },
+        { "capability": "remotion", "range": "^0.1.0", "optional": true },
+        { "capability": "video-use", "range": "^0.1.0", "optional": true },
+        { "capability": "native-agent-team", "range": "^0.1.0", "optional": false }
+      ],
+      "agents": [
+        {
+          "id": "art-director",
+          "mission": "把功能、受众和核心信息写成审美方向。需要画面时生成静帧；视频和三维模型只在运行时返回文件后写入回执。",
+          "skills": ["task-planning", "agent-handoff", "design-atelier", "visual-generation", "capability-selection"],
+          "expectedOutputs": ["direction.md", "component-brief.md", "visual-receipt.json"]
+        },
+        {
+          "id": "reference-scout",
+          "mission": "按组件类型打开对应参考架，缺页时做网页搜索，记录实际打开的页面和取用的一点。",
+          "skills": ["design-atelier", "source-research", "fact-verification"],
+          "expectedOutputs": ["references.md"]
+        },
+        {
+          "id": "interface-designer",
+          "mission": "按组件写出需求：状态、层级、核心信息、尺寸与不做什么。",
+          "skills": ["design-atelier", "ui-skills", "artifact-validation", "task-planning"],
+          "expectedOutputs": ["component-spec.md"]
+        },
+        {
+          "id": "motion-designer",
+          "mission": "为每个组件指定 transitions.dev 的一条过渡，写明功能、韵律、效率和情绪。",
+          "skills": ["design-atelier", "transitions-dev", "artifact-validation", "capability-selection"],
+          "expectedOutputs": ["motion-spec.md"]
+        },
+        {
+          "id": "design-reviewer",
+          "mission": "退回没有功能理由的动效、即兴动画，以及没有来源的审美判断。",
+          "skills": ["design-atelier", "fact-verification", "artifact-validation", "approval-protocol"],
+          "expectedOutputs": ["review.md"]
+        }
+      ],
+      "policies": [
+        "motion-serves-function",
+        "named-transition-only",
+        "reference-before-taste",
+        "no-library-redistribution",
+        "generated-file-or-skipped",
+        "independent-review"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "specify-component",
+      "name": "组件需求与点名动效",
+      "entryRole": "art-director",
+      "requiredInputs": ["productGoal", "componentList", "audience", "coreMessage"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "frame",
+          "role": "art-director",
+          "dependsOn": [],
+          "requiredArtifacts": ["direction.md", "component-brief.md", "visual-receipt.json"],
+          "acceptanceCriteria": [
+            "每个组件都有功能和核心信息",
+            "动效原则写进简报：围绕功能、韵律与拟物、高效、聚焦核心信息、传递情绪",
+            "出图回执带真实文件哈希，或写明运行时缺失；视频和模型没有文件时保持 skipped"
+          ]
+        },
+        {
+          "id": "gather",
+          "role": "reference-scout",
+          "dependsOn": ["frame"],
+          "requiredArtifacts": ["references.md"],
+          "acceptanceCriteria": [
+            "每个取用点有网址和检索时间",
+            "同一组件最多三个参考页"
+          ]
+        },
+        {
+          "id": "specify",
+          "role": "interface-designer",
+          "dependsOn": ["gather"],
+          "requiredArtifacts": ["component-spec.md"],
+          "acceptanceCriteria": [
+            "状态、层级和不做什么都写了",
+            "ui-skills 要么记录所用技能编号，要么标明 skipped"
+          ]
+        },
+        {
+          "id": "motion",
+          "role": "motion-designer",
+          "dependsOn": ["specify"],
+          "requiredArtifacts": ["motion-spec.md"],
+          "acceptanceCriteria": [
+            "每个组件点名一条 transitions.dev 过渡",
+            "没有对应条目时记缺口，不另写即兴动画"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "design-reviewer",
+          "dependsOn": ["motion"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "没有功能的动效被退回",
+            "未拉取的代码没有被写成已经安装"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motion-audit",
+      "name": "已有界面的动效核对",
+      "entryRole": "art-director",
+      "requiredInputs": ["existingInterface", "componentList", "coreMessage"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "frame",
+          "role": "art-director",
+          "dependsOn": [],
+          "requiredArtifacts": ["component-brief.md"],
+          "acceptanceCriteria": ["现有组件各自的核心信息被点名"]
+        },
+        {
+          "id": "bind",
+          "role": "motion-designer",
+          "dependsOn": ["frame"],
+          "requiredArtifacts": ["motion-spec.md"],
+          "acceptanceCriteria": ["每条动效对应 transitions.dev 的一个名称或一条明确缺口"]
+        },
+        {
+          "id": "check",
+          "role": "design-reviewer",
+          "dependsOn": ["bind"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": ["即兴动效被退回", "减少动效后功能仍然成立"]
+        }
+      ]
+    }
+  ]
+}

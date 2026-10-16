@@ -342,6 +342,24 @@
       "redistribution": "reference_only",
       "verification": "reviewed",
       "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "ui-skills",
+      "url": "https://github.com/ibelick/ui-skills",
+      "author": "Julien Thibeaut",
+      "license": "MIT. Skill bodies are not bundled. Use the CLI when it is installed.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "transitions-dev",
+      "url": "https://github.com/Jakubantalik/transitions.dev",
+      "author": "Jakub Antalik",
+      "license": "Tooling MIT. Transition library may be used in a product and may not be redistributed as a competing motion kit. Snippets are not bundled.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
     }
   ],
   "capabilities": [
@@ -1359,6 +1377,92 @@
       "delivery": {
         "mode": "bundled",
         "directory": "skills/zimu-geo-research"
+      }
+    },
+    {
+      "id": "design-atelier",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Write a component requirement and name one transitions.dev motion. Open one reference shelf, then search the web for gaps.",
+      "taskFit": ["text"],
+      "provides": ["design-atelier"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/design-atelier"
+      }
+    },
+    {
+      "id": "visual-generation",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Record an image, video, or 3D model file from a runtime that actually ran. A missing runtime stays skipped.",
+      "taskFit": ["image"],
+      "provides": ["visual-generation"],
+      "dependencies": [],
+      "permissions": ["local-image-generation", "local-render"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/visual-generation"
+      }
+    },
+    {
+      "id": "ui-skills",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "ui-skills",
+      "description": "Reference CLI for design-engineer skills. Bodies are not bundled.",
+      "taskFit": ["text"],
+      "provides": ["ui-skills"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/ibelick/ui-skills",
+        "instructions": "MIT. Run npx ui-skills list when the CLI exists and record the skill id. A missing CLI is skipped and is not an installed skill."
+      }
+    },
+    {
+      "id": "transitions-dev",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "transitions-dev",
+      "description": "Named UI transitions. The library is not bundled.",
+      "taskFit": ["text"],
+      "provides": ["transitions-dev"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/Jakubantalik/transitions.dev",
+        "instructions": "Name a transition shown on https://transitions.dev or by npx transitions-dev list. Do not copy the collection into this repository. A missing CLI is a gap, not a license to improvise."
       }
     }
   ],

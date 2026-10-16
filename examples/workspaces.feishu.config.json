@@ -4,80 +4,86 @@
   "port": 19741,
   "principals": [
     {
-      "id": "x-growth-owner",
-      "tenantId": "x-growth",
+      "id": "growth-owner",
+      "tenantId": "growth",
       "role": "operator",
-      "tokenEnv": "X_GROWTH_OWNER_TOKEN"
+      "tokenEnv": "GROWTH_OWNER_TOKEN"
     },
     {
-      "id": "x-growth-colleague",
-      "tenantId": "x-growth",
+      "id": "growth-colleague",
+      "tenantId": "growth",
       "role": "operator",
-      "tokenEnv": "X_GROWTH_COLLEAGUE_TOKEN"
+      "tokenEnv": "GROWTH_COLLEAGUE_TOKEN"
     },
     {
-      "id": "x-growth-reviewer",
-      "tenantId": "x-growth",
+      "id": "growth-reviewer",
+      "tenantId": "growth",
       "role": "verifier",
-      "tokenEnv": "X_GROWTH_REVIEWER_TOKEN"
+      "tokenEnv": "GROWTH_REVIEWER_TOKEN"
     },
     {
-      "id": "x-growth-feishu",
-      "tenantId": "x-growth",
+      "id": "growth-feishu",
+      "tenantId": "growth",
       "role": "channel",
-      "tokenEnv": "X_GROWTH_CHANNEL_TOKEN",
+      "tokenEnv": "GROWTH_CHANNEL_TOKEN",
       "chats": ["REPLACE_FEISHU_CHAT_ID"],
       "senders": ["REPLACE_FEISHU_USER_ID"]
     }
   ],
   "workspaces": [
     {
-      "id": "x-growth",
-      "name": "X 增长工作组",
-      "tenantId": "x-growth",
+      "id": "growth",
+      "name": "增长工作组",
+      "tenantId": "growth",
       "pack": "oh-my-x-growth",
-      "workflows": ["topic-research", "content-calendar", "export-analytics"],
+      "workflows": [
+        "topic-research",
+        "content-calendar",
+        "export-analytics",
+        "write-thread",
+        "write-article"
+      ],
       "coordinatorRole": "scout",
       "bindings": [
         {
           "role": "scout",
-          "botName": "x-growth/scout"
+          "botName": "growth/scout"
         },
         {
           "role": "researcher",
-          "botName": "x-growth/researcher"
+          "botName": "growth/researcher"
         },
         {
           "role": "editor",
-          "botName": "x-growth/editor"
+          "botName": "growth/editor"
         },
         {
           "role": "reviewer",
-          "botName": "x-growth/reviewer"
+          "botName": "growth/reviewer"
         },
         {
           "role": "operations",
-          "botName": "x-growth/operations"
+          "botName": "growth/operations"
         }
       ],
       "members": {
-        "operators": ["x-growth-owner", "x-growth-colleague"],
-        "verifiers": ["x-growth-reviewer"]
+        "operators": ["growth-owner", "growth-colleague"],
+        "verifiers": ["growth-reviewer"]
       },
       "feishu": {
-        "principalId": "x-growth-feishu",
+        "principalId": "growth-feishu",
         "chatId": "REPLACE_FEISHU_CHAT_ID",
         "senders": [
           {
             "senderId": "REPLACE_FEISHU_USER_ID",
-            "principalId": "x-growth-owner"
+            "principalId": "growth-owner"
           }
         ]
       }
     }
   ],
   "feishu": {
-    "principalId": "x-growth-feishu",
+    "principalId": "growth-feishu",
     "appIdEnv": "FEISHU_APP_ID",
     "appSecretEnv": "FEISHU_APP_SECRET"
   }

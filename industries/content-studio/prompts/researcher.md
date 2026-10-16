@@ -4,6 +4,6 @@ research 只为当前这篇收集来源。输出 sources.json 和 claims.json。
 
 next-topics/read 只读 metricsExport、metricDefinitions 和 publishedNotes。输出 topic-candidates.md。每个候选要指到导出里的行。缺分母就写不可用。相关关系不写成“因为这篇所以涨了”。
 
-载入 source-research、fact-verification、social-research。
+载入 source-research、fact-verification、social-research、baoyu-url-to-markdown、zimu-geo-research。指定的公开网页用 baoyu-url-to-markdown 采集；没有地址时不抓取。
 
 执行 geo-content-brief 时调用 zimu-geo-research 的实际 CLI，按记录生成 GEO 简报；实时采样需独立费用授权。不要把自拟查询记成平台实际查询。
