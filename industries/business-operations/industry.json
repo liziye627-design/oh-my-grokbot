@@ -1,0 +1,252 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-business-operations",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "Business operations native employee recipes for supplied records and reviewed internal drafts.",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "secret-handling",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "failure-recovery",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "activepieces",
+          "range": "^0.1.0",
+          "optional": true
+        }
+      ],
+      "agents": [
+        {
+          "id": "operations-coordinator",
+          "mission": "Coordinate scoped internal work, preserve owners and unresolved decisions.",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "secret-handling",
+            "failure-recovery"
+          ],
+          "expectedOutputs": ["intake.md", "actions.md", "followup-drafts.md"]
+        },
+        {
+          "id": "operations-analyst",
+          "mission": "Calculate business metrics from supplied exports with explicit definitions.",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "secret-handling",
+            "failure-recovery"
+          ],
+          "expectedOutputs": ["metrics.md", "weekly-report.md"]
+        },
+        {
+          "id": "customer-support",
+          "mission": "Triage supplied tickets and draft bounded responses without commitments.",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "secret-handling",
+            "failure-recovery"
+          ],
+          "expectedOutputs": ["triage.md", "response-drafts.md"]
+        },
+        {
+          "id": "operations-reviewer",
+          "mission": "Independently check provenance, calculations, coverage and approval boundaries.",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "secret-handling",
+            "failure-recovery"
+          ],
+          "expectedOutputs": ["review.md"]
+        }
+      ],
+      "policies": [
+        "approval-before-external-actions",
+        "no-plaintext-secrets",
+        "verify-before-completion",
+        "reconcile-before-retry"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "meeting-followup",
+      "name": "会议行动项与跟进草稿",
+      "entryRole": "operations-coordinator",
+      "requiredInputs": ["meeting-notes", "owner-directory", "timezone"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "extract",
+          "role": "operations-coordinator",
+          "dependsOn": [],
+          "requiredArtifacts": ["actions.md"],
+          "acceptanceCriteria": [
+            "Every action cites a note ID; missing owner/date remains unresolved.",
+            "Separate decisions from proposals; do not assign unconfirmed owners."
+          ]
+        },
+        {
+          "id": "draft",
+          "role": "operations-coordinator",
+          "dependsOn": ["extract"],
+          "requiredArtifacts": ["followup-drafts.md"],
+          "acceptanceCriteria": [
+            "Draft recipients are named from directory and labeled unsent.",
+            "No calendar creation, messages, or CRM updates."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "operations-reviewer",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Check all source notes and recipient mappings.",
+            "Reject invented due dates or silent external writes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support-triage",
+      "name": "客户工单分流与回复草稿",
+      "entryRole": "customer-support",
+      "requiredInputs": ["ticket-export", "support-policy", "as-of"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "triage",
+          "role": "customer-support",
+          "dependsOn": [],
+          "requiredArtifacts": ["triage.md"],
+          "acceptanceCriteria": [
+            "Each ticket ID appears exactly once.",
+            "Priority follows supplied policy; uncertain security incidents escalate without confirming breach."
+          ]
+        },
+        {
+          "id": "draft",
+          "role": "customer-support",
+          "dependsOn": ["triage"],
+          "requiredArtifacts": ["response-drafts.md"],
+          "acceptanceCriteria": [
+            "No invented refunds, resolution promises or account access.",
+            "Minimize customer identifiers and quote the applicable policy."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "operations-reviewer",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Verify priority and coverage against export.",
+            "All responses remain unsent; urgent cases include a human escalation proposal."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business-weekly",
+      "name": "经营周报",
+      "entryRole": "operations-analyst",
+      "requiredInputs": [
+        "current-export",
+        "previous-export",
+        "metric-definitions",
+        "period-timezone"
+      ],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "calculate",
+          "role": "operations-analyst",
+          "dependsOn": [],
+          "requiredArtifacts": ["metrics.md"],
+          "acceptanceCriteria": [
+            "Document units, time boundaries, filters, deduplication and denominator.",
+            "Reconcile aggregate numbers to source row IDs; missing data is not zero."
+          ]
+        },
+        {
+          "id": "draft",
+          "role": "operations-analyst",
+          "dependsOn": ["calculate"],
+          "requiredArtifacts": ["weekly-report.md"],
+          "acceptanceCriteria": [
+            "Separate measured changes from hypotheses.",
+            "No financial forecasts, CRM mutation or externally published claims."
+          ]
+        },
+        {
+          "id": "review",
+          "role": "operations-reviewer",
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "Recalculate totals and percentage changes.",
+            "Reject unsupported causality and detect duplicate IDs."
+          ]
+        }
+      ]
+    }
+  ]
+}

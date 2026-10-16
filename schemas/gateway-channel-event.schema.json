@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "readOnly": true,
+  "type": "object",
+  "properties": {
+    "messageId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "chatId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "senderId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16000
+    },
+    "mentionedBot": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "messageId",
+    "chatId",
+    "senderId",
+    "content",
+    "mentionedBot"
+  ],
+  "additionalProperties": false
+}

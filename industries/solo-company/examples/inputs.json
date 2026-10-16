@@ -1,0 +1,5 @@
+{
+  "objective": "synthetic-fixture:objective",
+  "capacity": "synthetic-fixture:capacity",
+  "offerConstraints": "synthetic-fixture:offerConstraints"
+}

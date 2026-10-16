@@ -1,0 +1,308 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-app-studio",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "原生数字开发团队：需求、架构、实现、独立测试、审阅与发布准备。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "capability-selection",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "environment-bootstrap",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "secret-handling",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "failure-recovery",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "cost-awareness",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "openhands-sdk",
+          "range": "^0.1.0",
+          "optional": true
+        }
+      ],
+      "agents": [
+        {
+          "id": "product-analyst",
+          "mission": "将用户目标转化为可验证的需求、非目标和验收样例。",
+          "skills": ["source-research", "fact-verification", "task-planning", "agent-handoff"],
+          "expectedOutputs": ["spec.md"]
+        },
+        {
+          "id": "architect",
+          "mission": "检查现有代码和约束，设计最小变更与接口，记录风险和依赖。",
+          "skills": [
+            "capability-selection",
+            "environment-bootstrap",
+            "task-planning",
+            "secret-handling",
+            "agent-handoff"
+          ],
+          "expectedOutputs": ["design.md"]
+        },
+        {
+          "id": "implementer",
+          "mission": "在授权工作区实现审定需求，保留他人变更，交付可应用补丁和复现步骤。",
+          "skills": ["task-planning", "failure-recovery", "secret-handling", "agent-handoff"],
+          "expectedOutputs": ["changes.patch", "implementation.md"]
+        },
+        {
+          "id": "reviewer",
+          "mission": "独立检查需求覆盖、代码缺陷、权限和发布证据，作出通过或退回结论。",
+          "skills": [
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol",
+            "agent-handoff"
+          ],
+          "expectedOutputs": ["review.md", "delivery.md"]
+        },
+        {
+          "id": "qa",
+          "mission": "通过真实测试与使用入口验证需求，保存命令、退出码和失败证据。",
+          "skills": [
+            "artifact-validation",
+            "failure-recovery",
+            "fact-verification",
+            "cost-awareness",
+            "agent-handoff"
+          ],
+          "expectedOutputs": ["test-results.json", "qa.md"]
+        }
+      ],
+      "policies": [
+        "approval-before-external-actions",
+        "no-plaintext-secrets",
+        "verify-before-completion",
+        "reconcile-before-retry"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "build-feature",
+      "name": "需求到可验收应用变更",
+      "entryRole": "product-analyst",
+      "requiredInputs": ["objective", "repositoryPath", "allowedChanges", "acceptanceExamples"],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "spec",
+          "role": "product-analyst",
+          "dependsOn": [],
+          "requiredArtifacts": ["spec.md"],
+          "acceptanceCriteria": ["每项需求有正常、异常和边界验收样例", "明确不做事项及未解决问题"]
+        },
+        {
+          "id": "design",
+          "role": "architect",
+          "dependsOn": ["spec"],
+          "requiredArtifacts": ["design.md"],
+          "acceptanceCriteria": [
+            "引用已检查的真实文件路径",
+            "设计覆盖接口、数据和错误处理且不创造替代模型运行时"
+          ]
+        },
+        {
+          "id": "implement",
+          "role": "implementer",
+          "dependsOn": ["design"],
+          "requiredArtifacts": ["changes.patch", "implementation.md"],
+          "acceptanceCriteria": ["补丁仅覆盖允许范围且可应用", "记录依赖、启动命令和剩余限制"]
+        },
+        {
+          "id": "test",
+          "role": "qa",
+          "dependsOn": ["implement"],
+          "requiredArtifacts": ["test-results.json", "qa.md"],
+          "acceptanceCriteria": [
+            "真实执行相关测试并记录环境、命令和退出码",
+            "功能经实际入口验证；未执行项明确标为未验证"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["test"],
+          "requiredArtifacts": ["review.md", "delivery.md"],
+          "acceptanceCriteria": [
+            "独立复核验收样例和关键差异",
+            "所有阻塞缺陷已解决或明确退回；交付路径可访问"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix-bug",
+      "name": "已有仓库故障定位与回归修复",
+      "entryRole": "product-analyst",
+      "requiredInputs": [
+        "repositoryPath",
+        "reproductionSteps",
+        "expectedBehavior",
+        "allowedChanges"
+      ],
+      "approvalRequired": false,
+      "steps": [
+        {
+          "id": "triage",
+          "role": "product-analyst",
+          "dependsOn": [],
+          "requiredArtifacts": ["reproduction.md"],
+          "acceptanceCriteria": ["记录输入、实际与预期行为", "若不能重现则报告阻塞，不虚构根因"]
+        },
+        {
+          "id": "diagnose",
+          "role": "architect",
+          "dependsOn": ["triage"],
+          "requiredArtifacts": ["root-cause.md"],
+          "acceptanceCriteria": ["用执行证据解释故障链路", "提出最小修复与回归检查"]
+        },
+        {
+          "id": "repair",
+          "role": "implementer",
+          "dependsOn": ["diagnose"],
+          "requiredArtifacts": ["changes.patch", "implementation.md"],
+          "acceptanceCriteria": ["修复根因并保留已有功能", "新增有意义的回归检查或解释无需新增原因"]
+        },
+        {
+          "id": "regression",
+          "role": "qa",
+          "dependsOn": ["repair"],
+          "requiredArtifacts": ["test-results.json", "qa.md"],
+          "acceptanceCriteria": [
+            "修复前重现失败、修复后同输入通过",
+            "相关功能回归通过且记录实际退出码"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "reviewer",
+          "dependsOn": ["regression"],
+          "requiredArtifacts": ["review.md", "delivery.md"],
+          "acceptanceCriteria": ["验证修复与故障因果关系", "交付可审阅补丁而非擅自推送"]
+        }
+      ]
+    },
+    {
+      "id": "prepare-release",
+      "name": "发布准备与审批包",
+      "entryRole": "product-analyst",
+      "requiredInputs": [
+        "repositoryPath",
+        "releaseVersion",
+        "targetEnvironment",
+        "releaseScope",
+        "rollbackConstraints"
+      ],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "scope",
+          "role": "product-analyst",
+          "dependsOn": [],
+          "requiredArtifacts": ["release-scope.md"],
+          "acceptanceCriteria": ["明确版本、包含变更和目标环境"]
+        },
+        {
+          "id": "plan",
+          "role": "architect",
+          "dependsOn": ["scope"],
+          "requiredArtifacts": ["release-plan.md", "rollback-plan.md"],
+          "acceptanceCriteria": [
+            "列出构建、迁移、健康检查与回滚前提",
+            "未知凭证只引用名称，不写入文件"
+          ]
+        },
+        {
+          "id": "package",
+          "role": "implementer",
+          "dependsOn": ["plan"],
+          "requiredArtifacts": ["release-manifest.json", "release-notes.md"],
+          "acceptanceCriteria": [
+            "记录实际构建产物路径与SHA256",
+            "不执行部署、远程推送或创建公开版本"
+          ]
+        },
+        {
+          "id": "validate",
+          "role": "qa",
+          "dependsOn": ["package"],
+          "requiredArtifacts": ["test-results.json", "qa.md"],
+          "acceptanceCriteria": [
+            "在允许的本地或测试环境运行必要检查",
+            "无法演练的迁移和回滚明确记为待人工验证"
+          ]
+        },
+        {
+          "id": "approval",
+          "role": "reviewer",
+          "dependsOn": ["validate"],
+          "requiredArtifacts": ["review.md", "approval-request.json", "delivery.md"],
+          "acceptanceCriteria": [
+            "审批包绑定目标、版本、产物SHA256、操作和有效期",
+            "所有未验证事项可见；仅准备发布，不将审批等同执行"
+          ]
+        }
+      ]
+    }
+  ]
+}

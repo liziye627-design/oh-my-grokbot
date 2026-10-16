@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-15T07:49:47.259Z",
+  "status": "passed",
+  "realHTTP": true,
+  "officialMCP": true,
+  "localFixtureOnly": true,
+  "liveNative": false,
+  "liveFeishu": false,
+  "industries": [
+    {
+      "pack": "oh-my-app-studio",
+      "workflow": "build-feature",
+      "roles": 5,
+      "installRollback": true,
+      "missingInputsDenied": true,
+      "durableWorkflowViaMCP": true,
+      "protocolFixtureReviewed": true,
+      "businessWorkPerformed": false
+    },
+    {
+      "pack": "oh-my-business-operations",
+      "workflow": "meeting-followup",
+      "roles": 4,
+      "installRollback": true,
+      "missingInputsDenied": true,
+      "durableWorkflowViaMCP": true,
+      "protocolFixtureReviewed": true,
+      "businessWorkPerformed": false
+    },
+    {
+      "pack": "oh-my-video-studio",
+      "workflow": "produce-video",
+      "roles": 5,
+      "installRollback": true,
+      "missingInputsDenied": true,
+      "durableWorkflowViaMCP": true,
+      "protocolFixtureReviewed": true,
+      "businessWorkPerformed": false
+    },
+    {
+      "pack": "oh-my-x-growth",
+      "workflow": "topic-research",
+      "roles": 5,
+      "installRollback": true,
+      "missingInputsDenied": true,
+      "durableWorkflowViaMCP": true,
+      "protocolFixtureReviewed": true,
+      "businessWorkPerformed": false
+    }
+  ],
+  "localSinkDeliveries": 4
+}

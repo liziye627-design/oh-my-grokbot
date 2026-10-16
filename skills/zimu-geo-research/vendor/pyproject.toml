@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-research"
+version = "0.1.0"
+description = "Capture Responses API web search traces for GEO research"
+requires-python = ">=3.10"
+dependencies = ["openai>=2.0,<3", "python-dotenv>=1.0,<2"]
+
+[project.scripts]
+geo-research = "geo_research.cli:main"
+geo-fanout-report = "geo_research.html_report:main"
+
+[tool.setuptools.packages.find]
+include = ["geo_research*"]
+
+[tool.setuptools.package-data]
+geo_research = ["templates/*.html"]

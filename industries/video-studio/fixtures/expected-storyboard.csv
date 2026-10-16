@@ -1,0 +1,4 @@
+shotId,startSeconds,endSeconds,sourceAssetId,sourceInSeconds,sourceOutSeconds,visual,narration,caption,claimRefs
+s1,0,10,training-demo,5,15,待核验实际任务创建画面,创建任务时写清楚希望得到什么以及怎样算完成,1 写清目标与验收标准,fixture-transcript-1
+s2,10,20,training-demo,30,40,待核验实际成果提交画面,提交实际产物和可追溯的证据不能只说已经做完,2 提交产物和证据,fixture-transcript-2
+s3,20,30,training-demo,60,70,待核验独立验收画面,最后由独立验收者检查产物提交不等于验收通过,3 独立验收,fixture-transcript-3

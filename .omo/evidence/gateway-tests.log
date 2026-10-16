@@ -1,0 +1,65 @@
+$ pnpm build && vitest run --maxWorkers=4
+$ tsc -p tsconfig.build.json
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/<user>/Documents/ChatGPT/oh-my-grokbot[39m
+
+ [32m✓[39m tests/provenance.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1754[2mms[22m[39m
+   [32m✓[39m Pinned licensed upstream distribution [2m(5)[22m
+     [33m[2m✓[22m[39m verifies all original snapshots and fourteen adapted Skill trees[33m 634[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects modified adapted Skill content and unexpected executable files[33m 421[2mms[22m[39m
+ [32m✓[39m tests/social-cli.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1977[2mms[22m[39m
+   [32m✓[39m Built social CLI [2m(3)[22m
+     [33m[2m✓[22m[39m lists four read adapters and five reference-only platform entries[33m 579[2mms[22m[39m
+     [33m[2m✓[22m[39m plans X reads without credentials and reports a real credential gate separately[33m 695[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects unsupported platforms and invalid budgets before dispatch[33m 701[2mms[22m[39m
+(node:20388) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/gateway/lifecycle.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 239[2mms[22m[39m
+ [32m✓[39m tests/installer.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 2674[2mms[22m[39m
+   [32m✓[39m Local installer lifecycle [2m(10)[22m
+     [33m[2m✓[22m[39m stages twelve licensed Skills but keeps native verification pending[33m 307[2mms[22m[39m
+     [33m[2m✓[22m[39m reuses the same installation when applied twice[33m 400[2mms[22m[39m
+     [33m[2m✓[22m[39m removes owned files and preserves unrelated files during rollback[33m 340[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves existing identical files that the installer did not create[33m 360[2mms[22m[39m
+     [33m[2m✓[22m[39m detects drift and refuses to delete edited files[33m 319[2mms[22m[39m
+ [32m✓[39m tests/resolver.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 212[2mms[22m[39m
+ [32m✓[39m tests/filesystem-safety.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1056[2mms[22m[39m
+   [32m✓[39m Filesystem and trust boundaries [2m(6)[22m
+     [33m[2m✓[22m[39m refuses a second installer while the workspace is locked[33m 406[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves a conflicting file instead of overwriting it[33m 336[2mms[22m[39m
+(node:3296) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:15108) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/gateway/mcp-http.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 195[2mms[22m[39m
+(node:40488) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/gateway/approvals.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 126[2mms[22m[39m
+ [32m✓[39m tests/gateway/outbox.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 117[2mms[22m[39m
+(node:13096) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/cli.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 4076[2mms[22m[39m
+   [32m✓[39m Built CLI end to end [2m(4)[22m
+     [33m[2m✓[22m[39m round-trips a lockfile through apply, verify and rollback[33m 2478[2mms[22m[39m
+     [33m[2m✓[22m[39m reports unsupported provider selection as a failure[33m 545[2mms[22m[39m
+     [33m[2m✓[22m[39m reports external integration checks as pending rather than passed[33m 339[2mms[22m[39m
+     [33m[2m✓[22m[39m refuses a default installation of development resources[33m 713[2mms[22m[39m
+(node:33604) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3552) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/transport.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 29[2mms[22m[39m
+ [32m✓[39m tests/gateway/http.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 128[2mms[22m[39m
+ [32m✓[39m tests/gateway/artifact-download.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 66[2mms[22m[39m
+ [32m✓[39m tests/social.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m tests/contracts.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/gateway/server.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 120[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m16 passed[39m[22m[90m (16)[39m
+[2m      Tests [22m [1m[32m77 passed[39m[22m[90m (77)[39m
+[2m   Start at [22m 15:34:19
+[2m   Duration [22m 5.26s[2m (tests 73%, import 25%, transform 1%, worker 1%)[22m
+
+[2m    Isolate [22m [33m16 workers spawned[39m[2m · ~167ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~500ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

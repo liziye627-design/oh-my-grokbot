@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "mode": "offline",
+  "dataOrigin": "synthetic-test-fixture",
+  "liveApiCalls": 0,
+  "exitCode": 0,
+  "rawTextPreserved": true,
+  "rawBytesPreserved": false,
+  "newlineNote": "Windows Python text output uses CRLF; semantic text unchanged",
+  "input": "synthetic-response.json",
+  "inputSha256": "4c8930db9e8b5cd93baf7b4d02aaafdb061509f3c4ec87c5f9df78bf5b7ff316",
+  "runDirectory": "artifacts/geo-validation/runs/2026-10-16-034546-内容-bot-如何组织来源与排版-模拟夹具-a6cee72e",
+  "upstreamRevision": "eecf789af79a03a2dadedc5cea0cd40841f07aee",
+  "reportSha256": "822c58d0d173a1adcf61b26aab56f248bef82fc77951cdbb2a9edd37ab766b74",
+  "counts": {
+    "searchCalls": 1,
+    "exposedQueries": 2,
+    "sourceUrls": 2,
+    "citedUrls": 1
+  },
+  "limitations": [
+    "No live market observation",
+    "No measured visibility improvement",
+    "Grok native execution not verified"
+  ]
+}

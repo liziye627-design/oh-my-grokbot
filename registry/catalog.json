@@ -1,0 +1,1605 @@
+{
+  "apiVersion": "ohmy.dev/v0alpha1",
+  "sources": [
+    {
+      "id": "ohmy-local",
+      "url": null,
+      "author": "Oh My Grok Bot project",
+      "license": "Project code UNLICENSED; adapted Skills individually MIT and/or Apache-2.0, see their notices",
+      "redistribution": "local_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "grokbot-docs",
+      "url": "https://docs.x.ai/grok-bot/bots",
+      "author": "Grok Bot documentation",
+      "license": "Reference only; upstream terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "lark-channel-sdk",
+      "url": "https://github.com/larksuite/channel-sdk-node",
+      "author": "larksuite",
+      "license": "MIT (repository; pinned release review still required)",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "x-api-docs",
+      "url": "https://docs.x.com/x-api/posts/search-recent-posts",
+      "author": "x official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "bluesky-api-docs",
+      "url": "https://github.com/bluesky-social/atproto",
+      "author": "bluesky official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "mastodon-api-docs",
+      "url": "https://docs.joinmastodon.org/methods/search/",
+      "author": "mastodon official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "youtube-api-docs",
+      "url": "https://developers.google.com/youtube/v3/docs/search/list",
+      "author": "youtube official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "threads-api-docs",
+      "url": "https://developers.facebook.com/docs/threads/",
+      "author": "threads official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "instagram-api-docs",
+      "url": "https://developers.facebook.com/docs/instagram-platform/",
+      "author": "instagram official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "facebook-api-docs",
+      "url": "https://developers.facebook.com/docs/pages-api/",
+      "author": "facebook official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "linkedin-api-docs",
+      "url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+      "author": "linkedin official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "tiktok-api-docs",
+      "url": "https://developers.tiktok.com/docs/en/content-posting-api-get-started",
+      "author": "tiktok official platform documentation",
+      "license": "Reference only; upstream service terms apply",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-14"
+    },
+    {
+      "id": "agency-agents",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "author": "msitarzewski",
+      "license": "MIT. Role-card structure only; no upstream prompt files are copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "wshobson-agents",
+      "url": "https://github.com/wshobson/agents",
+      "author": "wshobson",
+      "license": "MIT. Composition pattern only; its plugin marketplace is not installed.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "crewai-examples",
+      "url": "https://github.com/crewAIInc/crewAI-examples",
+      "author": "crewAIInc",
+      "license": "No LICENSE file found on 2026-10-15. Treat as all rights reserved; do not copy examples.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "oh-my-openagent",
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "author": "code-yeongyu",
+      "license": "Sustainable Use License 1.0. Non-sublicensable; no files copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "open-deep-research",
+      "url": "https://github.com/langchain-ai/open_deep_research",
+      "author": "langchain-ai",
+      "license": "MIT. Optional external engine; LangGraph service is not vendored.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "gpt-researcher",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "author": "assafelovic",
+      "license": "Apache-2.0. Optional external research service; server is not embedded.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "author": "browser-use",
+      "license": "MIT. Authorized browser automation only; cookies are not stored in packs.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "openhands-sdk",
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "author": "OpenHands",
+      "license": "MIT. External coding workspace only; SDK is not embedded.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "video-use",
+      "url": "https://github.com/browser-use/video-use",
+      "author": "browser-use",
+      "license": "MIT. Optional local media CLI; binary is not bundled.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "remotion",
+      "url": "https://github.com/remotion-dev/remotion",
+      "author": "remotion-dev",
+      "license": "Custom Remotion license, not MIT or Apache-2.0. Company license may be required. Do not copy.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "ai-hedge-fund",
+      "url": "https://github.com/virattt/ai-hedge-fund",
+      "author": "virattt",
+      "license": "MIT research and simulation project. Not a broker. No live orders.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "trading-agents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "author": "TauricResearch",
+      "license": "Apache-2.0 research collaboration. No live orders or brokerage credentials.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "composio",
+      "url": "https://github.com/ComposioHQ/composio",
+      "author": "ComposioHQ",
+      "license": "MIT. Third-party OAuth stays in the operator secret store. SDK is not copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "author": "activepieces",
+      "license": "Core MIT; enterprise directories use a separate license. Server is not vendored.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "comfyui",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "author": "Comfy-Org",
+      "license": "GPL-3.0. Do not copy source into this distribution.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "wewrite",
+      "url": "https://github.com/imraywang/wewrite",
+      "author": "imraywang",
+      "license": "MIT. Writing-stage structure only; no skill text copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "wechat-article-skills",
+      "url": "https://github.com/aiworkskills/wechat-article-skills",
+      "author": "aiworkskills",
+      "license": "Apache-2.0. Human-confirmation publishing flow only; no skill text copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "x-skills",
+      "url": "https://github.com/sergebulaev/x-skills",
+      "author": "sergebulaev",
+      "license": "MIT. Post, thread and review structure only; no skill text or publisher copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "baoyu-skills",
+      "url": "https://github.com/JimLiu/baoyu-skills",
+      "author": "JimLiu",
+      "license": "MIT; pinned source and license in upstreams.lock.json",
+      "redistribution": "allowed",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "md2wechat-skill",
+      "url": "https://github.com/geekjourneyx/md2wechat-skill",
+      "author": "geekjourneyx",
+      "license": "GitHub SPDX was NOASSERTION on 2026-10-15. Layout reference only; do not copy.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "gzh-design-skill",
+      "url": "https://github.com/isjiamu/gzh-design-skill",
+      "author": "isjiamu",
+      "license": "GitHub SPDX was NOASSERTION on 2026-10-15. HTML theme reference only; do not copy.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-15"
+    },
+    {
+      "id": "khazix-skills",
+      "url": "https://github.com/KKKKhazix/khazix-skills",
+      "author": "数字生命卡兹克",
+      "license": "MIT; preserved copyright and permission notice",
+      "redistribution": "allowed",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "zimu-growth-skills",
+      "url": "https://github.com/JeffLi1993/open-growth-skills",
+      "author": "子木 / Zimu",
+      "license": "MIT; pinned source and preserved license",
+      "redistribution": "allowed",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "rea",
+      "url": "https://github.com/morluto/rea",
+      "author": "morluto",
+      "license": "MIT. Optional local evidence helper. MCP server and skill text are not bundled.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "reverse-skill",
+      "url": "https://github.com/zhaoxuya520/reverse-skill",
+      "author": "zhaoxuya520",
+      "license": "Core MIT. Repository also contains GPL-3.0 CTF material and invokes an AGPL-3.0 pentest component externally. Skill text is not copied.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    },
+    {
+      "id": "pentagi",
+      "url": "https://github.com/vxcontrol/pentagi",
+      "author": "vxcontrol",
+      "license": "Source MIT plus EULA. NOTICE includes an AGPL-3.0 cloud SDK with a project exception. Autonomous pentest system is not installed.",
+      "redistribution": "reference_only",
+      "verification": "reviewed",
+      "checkedAt": "2026-10-16"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "source-research",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Research a question across permitted sources and return dated, traceable evidence.",
+      "provides": ["source-research"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/source-research"
+      }
+    },
+    {
+      "id": "market-research",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Write dated filings, news, tape, thesis and risk notes for a named universe. No brokerage and no orders.",
+      "provides": ["market-research"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/market-research"
+      }
+    },
+    {
+      "id": "fact-verification",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Check claims, numbers, dates and source conflicts before delivery.",
+      "provides": ["fact-verification"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/fact-verification"
+      }
+    },
+    {
+      "id": "task-planning",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Turn an objective into owned steps with concrete inputs, outputs and acceptance checks.",
+      "provides": ["task-planning"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/task-planning"
+      }
+    },
+    {
+      "id": "agent-handoff",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Hand off an authorized task with ownership, context and verifiable expected output.",
+      "provides": ["agent-handoff"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "native-internal-message"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/agent-handoff"
+      }
+    },
+    {
+      "id": "artifact-validation",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Validate a deliverable through its actual use surface before claiming completion.",
+      "provides": ["artifact-validation"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "sandbox-execution"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/artifact-validation"
+      }
+    },
+    {
+      "id": "approval-protocol",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Prepare reviewable external actions and bind approval to exact content and destination.",
+      "provides": ["approval-protocol"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/approval-protocol"
+      }
+    },
+    {
+      "id": "failure-recovery",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Diagnose failures, reconcile partial effects and retry a safe bounded step.",
+      "provides": ["failure-recovery"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/failure-recovery"
+      }
+    },
+    {
+      "id": "cost-awareness",
+      "version": "0.2.1",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Bound usage and score one dated window from timed minutes, not from run counts.",
+      "provides": ["cost-awareness"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/cost-awareness"
+      }
+    },
+    {
+      "id": "grokbot-native-team",
+      "version": "0.1.0",
+      "kind": "native",
+      "source": "grokbot-docs",
+      "description": "Native Bots, Skills and Routines setup recipe; requires real-account verification",
+      "provides": ["native-agent-team"],
+      "dependencies": [],
+      "permissions": ["native-account-access"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://docs.x.ai/grok-bot/bots",
+        "instructions": "Create or import Bots in the native application, bind Skills, then run a safe task and verify its output. No generic Bot creation API is assumed."
+      }
+    },
+    {
+      "id": "feishu-channel",
+      "version": "0.7.1",
+      "kind": "sdk",
+      "source": "lark-channel-sdk",
+      "description": "Upstream Channel SDK reference; Gateway integration is not installed in this layer",
+      "provides": ["feishu-messaging"],
+      "dependencies": [],
+      "permissions": ["message-read", "message-send"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "unknown",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/larksuite/channel-sdk-node",
+        "instructions": "Gateway layer must pin, authorize and test this SDK; connecting it alone does not trigger Grok Bot."
+      }
+    },
+    {
+      "id": "capability-selection",
+      "version": "0.2.1",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Select a reviewed capability by task modality, source, license, permissions and native fit.",
+      "provides": ["capability-selection"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/capability-selection"
+      }
+    },
+    {
+      "id": "environment-bootstrap",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Stage a pinned capability pack locally and verify native host setup separately.",
+      "provides": ["environment-bootstrap"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/environment-bootstrap"
+      }
+    },
+    {
+      "id": "secret-handling",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Use scoped credential references without leaking credentials into prompts or evidence.",
+      "provides": ["secret-handling"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/secret-handling"
+      }
+    },
+    {
+      "id": "routine-design",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Design a bounded native routine with explicit timezone, overlap and recovery rules.",
+      "provides": ["routine-design"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/routine-design"
+      }
+    },
+    {
+      "id": "social-research",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Research social conversations using bounded read-only connectors and cited evidence.",
+      "provides": ["social-research"],
+      "dependencies": [],
+      "permissions": ["workspace-read", "public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/social-research"
+      }
+    },
+    {
+      "id": "social-publishing",
+      "version": "0.2.0",
+      "kind": "skill",
+      "source": "ohmy-local",
+      "description": "Prepare platform-specific social drafts and an exact publication approval packet.",
+      "provides": ["social-publishing"],
+      "dependencies": [],
+      "permissions": ["workspace-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/social-publishing"
+      }
+    },
+    {
+      "id": "x-connector",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "x-api-docs",
+      "description": "Read-only x search via bundled ohmy CLI; native host binding and account smoke test pending",
+      "provides": ["x-public-search"],
+      "dependencies": [],
+      "permissions": ["public-source-read", "credential-reference"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://docs.x.com/x-api/posts/search-recent-posts",
+        "instructions": "Use ohmy social search x <query>; provision documented credentials privately. Importing a Skill does not install the CLI on the native computer."
+      },
+      "connector": {
+        "platform": "x",
+        "stage": "read_adapter",
+        "auth": "bearer",
+        "credentialEnv": "OHMY_X_BEARER_TOKEN",
+        "readOperations": ["search"],
+        "writeOperations": [],
+        "documentation": "https://docs.x.com/x-api/posts/search-recent-posts",
+        "limitations": [
+          "Developer access and applicable X API entitlement required",
+          "Recent search only; read-only; no DMs or private analytics"
+        ]
+      }
+    },
+    {
+      "id": "bluesky-connector",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "bluesky-api-docs",
+      "description": "Read-only bluesky search via bundled ohmy CLI; native host binding and account smoke test pending",
+      "provides": ["bluesky-public-search"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/bluesky-social/atproto",
+        "instructions": "Use ohmy social search bluesky <query>; provision documented credentials privately. Importing a Skill does not install the CLI on the native computer."
+      },
+      "connector": {
+        "platform": "bluesky",
+        "stage": "read_adapter",
+        "auth": "public",
+        "readOperations": ["search"],
+        "writeOperations": [],
+        "documentation": "https://github.com/bluesky-social/atproto",
+        "limitations": ["Public AppView search only; no login, writes or PDS session management"]
+      }
+    },
+    {
+      "id": "mastodon-connector",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "mastodon-api-docs",
+      "description": "Read-only mastodon search via bundled ohmy CLI; native host binding and account smoke test pending",
+      "provides": ["mastodon-public-search"],
+      "dependencies": [],
+      "permissions": ["public-source-read", "credential-reference"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://docs.joinmastodon.org/methods/search/",
+        "instructions": "Use ohmy social search mastodon <query>; provision documented credentials privately. Importing a Skill does not install the CLI on the native computer."
+      },
+      "connector": {
+        "platform": "mastodon",
+        "stage": "read_adapter",
+        "auth": "bearer",
+        "credentialEnv": "OHMY_MASTODON_ACCESS_TOKEN",
+        "readOperations": ["search"],
+        "writeOperations": [],
+        "documentation": "https://docs.joinmastodon.org/methods/search/",
+        "limitations": [
+          "This Alpha supports mastodon.social only; token requires read:search",
+          "Results depend on instance indexing; untrusted HTML preserved with format metadata"
+        ]
+      }
+    },
+    {
+      "id": "youtube-connector",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "youtube-api-docs",
+      "description": "Read-only youtube search via bundled ohmy CLI; native host binding and account smoke test pending",
+      "provides": ["youtube-public-search"],
+      "dependencies": [],
+      "permissions": ["public-source-read", "credential-reference"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://developers.google.com/youtube/v3/docs/search/list",
+        "instructions": "Use ohmy social search youtube <query>; provision documented credentials privately. Importing a Skill does not install the CLI on the native computer."
+      },
+      "connector": {
+        "platform": "youtube",
+        "stage": "read_adapter",
+        "auth": "api_key",
+        "credentialEnv": "OHMY_YOUTUBE_API_KEY",
+        "readOperations": ["search"],
+        "writeOperations": [],
+        "documentation": "https://developers.google.com/youtube/v3/docs/search/list",
+        "limitations": [
+          "YouTube Data API v3 enabled project and quota required",
+          "Search metadata only; no captions, upload or private channel analytics"
+        ]
+      }
+    },
+    {
+      "id": "threads-connector",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "threads-api-docs",
+      "description": "threads integration reference; no executable connector",
+      "provides": ["threads-integration-reference"],
+      "dependencies": [],
+      "permissions": [],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "unknown",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://developers.facebook.com/docs/threads/",
+        "instructions": "Implement and authorize a platform-specific adapter after app/scope verification; not installed."
+      },
+      "connector": {
+        "platform": "threads",
+        "stage": "reference_only",
+        "auth": "oauth_app_review",
+        "readOperations": [],
+        "writeOperations": [],
+        "documentation": "https://developers.facebook.com/docs/threads/",
+        "limitations": [
+          "Reference only; app/permission review and current official API verification pending",
+          "Facebook Business SDK is not assumed to provide Threads publishing"
+        ]
+      }
+    },
+    {
+      "id": "instagram-connector",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "instagram-api-docs",
+      "description": "instagram integration reference; no executable connector",
+      "provides": ["instagram-integration-reference"],
+      "dependencies": [],
+      "permissions": [],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "unknown",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://developers.facebook.com/docs/instagram-platform/",
+        "instructions": "Implement and authorize a platform-specific adapter after app/scope verification; not installed."
+      },
+      "connector": {
+        "platform": "instagram",
+        "stage": "reference_only",
+        "auth": "oauth_app_review",
+        "readOperations": [],
+        "writeOperations": [],
+        "documentation": "https://developers.facebook.com/docs/instagram-platform/",
+        "limitations": [
+          "Reference only; account type, app approval and scopes require separate verification"
+        ]
+      }
+    },
+    {
+      "id": "facebook-connector",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "facebook-api-docs",
+      "description": "facebook integration reference; no executable connector",
+      "provides": ["facebook-integration-reference"],
+      "dependencies": [],
+      "permissions": [],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "unknown",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://developers.facebook.com/docs/pages-api/",
+        "instructions": "Implement and authorize a platform-specific adapter after app/scope verification; not installed."
+      },
+      "connector": {
+        "platform": "facebook",
+        "stage": "reference_only",
+        "auth": "oauth_app_review",
+        "readOperations": [],
+        "writeOperations": [],
+        "documentation": "https://developers.facebook.com/docs/pages-api/",
+        "limitations": [
+          "Reference only; Page/account authorization and app review require separate verification"
+        ]
+      }
+    },
+    {
+      "id": "linkedin-connector",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "linkedin-api-docs",
+      "description": "linkedin integration reference; no executable connector",
+      "provides": ["linkedin-integration-reference"],
+      "dependencies": [],
+      "permissions": [],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "unknown",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+        "instructions": "Implement and authorize a platform-specific adapter after app/scope verification; not installed."
+      },
+      "connector": {
+        "platform": "linkedin",
+        "stage": "reference_only",
+        "auth": "oauth_app_review",
+        "readOperations": [],
+        "writeOperations": [],
+        "documentation": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+        "limitations": [
+          "Reference only; member/organization scope and product access required",
+          "Versioned APIs; no general unrestricted public social search assumed"
+        ]
+      }
+    },
+    {
+      "id": "tiktok-connector",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "tiktok-api-docs",
+      "description": "tiktok integration reference; no executable connector",
+      "provides": ["tiktok-integration-reference"],
+      "dependencies": [],
+      "permissions": [],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "unknown",
+        "muse": "unknown"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://developers.tiktok.com/docs/en/content-posting-api-get-started",
+        "instructions": "Implement and authorize a platform-specific adapter after app/scope verification; not installed."
+      },
+      "connector": {
+        "platform": "tiktok",
+        "stage": "reference_only",
+        "auth": "oauth_app_review",
+        "readOperations": [],
+        "writeOperations": [],
+        "documentation": "https://developers.tiktok.com/docs/en/content-posting-api-get-started",
+        "limitations": [
+          "Reference only; app audit, user consent and account-specific scopes required",
+          "No general public search adapter implemented"
+        ]
+      }
+    },
+    {
+      "id": "grokbot-native-x-read",
+      "version": "0.1.0",
+      "kind": "native",
+      "source": "grokbot-docs",
+      "description": "Native public X read capability; confirm actual account tools before using the CLI fallback",
+      "provides": ["x-public-search"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 0,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://docs.x.ai/grok-bot/computer-and-apps",
+        "instructions": "Check native public X search/read availability and run one safe task in the real account; this does not grant posting or DM access."
+      }
+    },
+    {
+      "id": "open-deep-research",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "open-deep-research",
+      "description": "Optional external deep-research engine. Native Bot reviews its structured output.",
+      "provides": ["open-deep-research"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/langchain-ai/open_deep_research",
+        "instructions": "MIT. Do not vendor the LangGraph service. Operator pins a commit and returns structured sources; a missing engine is skipped."
+      }
+    },
+    {
+      "id": "gpt-researcher",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "gpt-researcher",
+      "description": "Optional external research service for cited reports.",
+      "provides": ["gpt-researcher"],
+      "dependencies": [],
+      "permissions": ["public-source-read"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/assafelovic/gpt-researcher",
+        "instructions": "Apache-2.0. Do not embed its server. Return structured sources to the native Bot; absence is skipped, not a finished report."
+      }
+    },
+    {
+      "id": "browser-use",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "browser-use",
+      "description": "Optional authorized browser navigation and extraction.",
+      "provides": ["browser-use"],
+      "dependencies": [],
+      "permissions": ["browser-navigation", "public-web-read"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/browser-use/browser-use",
+        "instructions": "MIT. Use only operator-authorized sites. Do not store cookies or credentials in pack files. A missing browser is skipped."
+      }
+    },
+    {
+      "id": "openhands-sdk",
+      "version": "0.1.0",
+      "kind": "sdk",
+      "source": "openhands-sdk",
+      "description": "Optional external software-agent workspace for authorized code tasks.",
+      "provides": ["openhands-sdk"],
+      "dependencies": [],
+      "permissions": ["external-code-workspace"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/OpenHands/software-agent-sdk",
+        "instructions": "MIT. Do not give this workspace Gateway operator credentials. Record the path and command result. The SDK is not installed by this pack."
+      }
+    },
+    {
+      "id": "rea",
+      "version": "0.1.0",
+      "kind": "mcp",
+      "source": "rea",
+      "description": "Optional local helper for evidence the operator already produced from an authorized artifact.",
+      "provides": ["rea"],
+      "dependencies": [],
+      "permissions": ["local-artifact-read"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/morluto/rea",
+        "instructions": "MIT. Do not install this from the team pack. If the operator already has a local evidence file for an authorized artifact, attach its path. A missing helper is skipped. Do not use it outside the written authorization."
+      }
+    },
+    {
+      "id": "video-use",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "video-use",
+      "description": "Optional local CLI for cuts, captions and media checks.",
+      "provides": ["video-use"],
+      "dependencies": [],
+      "permissions": ["local-media-process"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/browser-use/video-use",
+        "instructions": "MIT. Pin a release before use. A missing binary is skipped and is not a rendered video."
+      }
+    },
+    {
+      "id": "remotion",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "remotion",
+      "description": "Reference for programmatic video. Custom license; not bundled.",
+      "provides": ["remotion"],
+      "dependencies": [],
+      "permissions": ["local-render"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/remotion-dev/remotion",
+        "instructions": "Custom Remotion license. Individuals and small companies may qualify for free use; larger for-profit use can require a company license. Do not copy the repository. Confirm the license before pinning a release."
+      }
+    },
+    {
+      "id": "ai-hedge-fund",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "ai-hedge-fund",
+      "description": "Research and simulation reference for market analysis. No brokerage access.",
+      "provides": ["ai-hedge-fund"],
+      "dependencies": [],
+      "permissions": ["public-market-read"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/virattt/ai-hedge-fund",
+        "instructions": "MIT research project, not a broker. Public-market reading only. Do not place orders or store brokerage credentials."
+      }
+    },
+    {
+      "id": "trading-agents",
+      "version": "0.1.0",
+      "kind": "adapter",
+      "source": "trading-agents",
+      "description": "Multi-agent financial research reference. No live trading.",
+      "provides": ["trading-agents"],
+      "dependencies": [],
+      "permissions": ["public-market-read"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/TauricResearch/TradingAgents",
+        "instructions": "Apache-2.0 research collaboration. Public-market reading only. Do not place orders or connect a brokerage."
+      }
+    },
+    {
+      "id": "composio",
+      "version": "0.1.0",
+      "kind": "mcp",
+      "source": "composio",
+      "description": "Reference connector layer for third-party app authorization.",
+      "provides": ["composio"],
+      "dependencies": [],
+      "permissions": ["third-party-app-auth"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/ComposioHQ/composio",
+        "instructions": "MIT. Keep OAuth tokens in the operator secret store. This reference does not connect accounts or copy the SDK."
+      }
+    },
+    {
+      "id": "activepieces",
+      "version": "0.1.0",
+      "kind": "mcp",
+      "source": "activepieces",
+      "description": "Reference automation connectors. Enterprise paths are separately licensed.",
+      "provides": ["activepieces"],
+      "dependencies": [],
+      "permissions": ["workflow-automation"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/activepieces/activepieces",
+        "instructions": "Core is MIT; enterprise directories use another license. Do not vendor the server. Connector use needs a separate authorization review."
+      }
+    },
+    {
+      "id": "comfyui",
+      "version": "0.1.0",
+      "kind": "cli",
+      "source": "comfyui",
+      "description": "Reference local image or video graph runtime. GPL source is not bundled.",
+      "taskFit": ["image"],
+      "provides": ["comfyui"],
+      "dependencies": [],
+      "permissions": ["local-image-generation"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "reference",
+        "url": "https://github.com/Comfy-Org/ComfyUI",
+        "instructions": "GPL-3.0. Do not copy source into this distribution. A separately installed local instance must record its version and license. A missing install is skipped."
+      }
+    },
+    {
+      "id": "baoyu-url-to-markdown",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "baoyu-skills",
+      "description": "第二层公开网页素材采集，需 Bun/Chrome",
+      "taskFit": ["text"],
+      "provides": ["baoyu-url-to-markdown"],
+      "dependencies": [],
+      "permissions": ["local-execution", "public-web-read"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/baoyu-url-to-markdown"
+      }
+    },
+    {
+      "id": "baoyu-markdown-to-html",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "baoyu-skills",
+      "description": "第二层公众号 HTML 排版与离线预览",
+      "taskFit": ["text"],
+      "provides": ["baoyu-markdown-to-html"],
+      "dependencies": [],
+      "permissions": ["local-execution"],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/baoyu-markdown-to-html"
+      }
+    },
+    {
+      "id": "baoyu-post-to-wechat",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "baoyu-skills",
+      "description": "第二层微信草稿交付，需单独账户授权",
+      "taskFit": ["text"],
+      "provides": ["baoyu-post-to-wechat"],
+      "dependencies": [],
+      "permissions": ["local-execution", "wechat-draft-write"],
+      "risk": 3,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/baoyu-post-to-wechat"
+      }
+    },
+    {
+      "id": "khazix-writer",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "khazix-skills",
+      "description": "第二层长文写作、文风与独立审稿方法",
+      "taskFit": ["text"],
+      "provides": ["khazix-writer"],
+      "dependencies": [],
+      "permissions": [],
+      "risk": 1,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/khazix-writer"
+      }
+    },
+    {
+      "id": "zimu-geo-research",
+      "version": "0.1.0",
+      "kind": "skill",
+      "source": "zimu-growth-skills",
+      "description": "内容 Bot 的 GEO 可观察查询、来源与引用研究，离线解析或显式授权实时 API 采样",
+      "taskFit": ["text"],
+      "provides": ["zimu-geo-research"],
+      "dependencies": [],
+      "permissions": ["local-execution", "public-web-read", "external-model-api"],
+      "risk": 2,
+      "providerSupport": {
+        "grokbot": "manual",
+        "muse": "unsupported"
+      },
+      "verification": "reviewed",
+      "delivery": {
+        "mode": "bundled",
+        "directory": "skills/zimu-geo-research"
+      }
+    }
+  ],
+  "packs": [
+    {
+      "apiVersion": "ohmy.dev/v0alpha1",
+      "kind": "IndustryPack",
+      "metadata": {
+        "name": "oh-my-core",
+        "version": "0.2.0",
+        "maintainer": "Oh My Grok Bot project",
+        "license": "UNLICENSED",
+        "description": "Twelve licensed, upstream-adapted Core Skills and native setup recipe; account verification pending.",
+        "verification": "reviewed"
+      },
+      "spec": {
+        "providers": ["grokbot"],
+        "requirements": [
+          {
+            "capability": "source-research",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "fact-verification",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "task-planning",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "agent-handoff",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "artifact-validation",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "failure-recovery",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "approval-protocol",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "cost-awareness",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "capability-selection",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "environment-bootstrap",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "secret-handling",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "routine-design",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "native-agent-team",
+            "range": "^0.1.0",
+            "optional": false
+          }
+        ],
+        "agents": [
+          {
+            "id": "chief-of-staff",
+            "mission": "Own task breakdown, native handoffs and evidence-based delivery.",
+            "skills": [
+              "source-research",
+              "fact-verification",
+              "task-planning",
+              "agent-handoff",
+              "artifact-validation",
+              "failure-recovery",
+              "approval-protocol",
+              "cost-awareness",
+              "capability-selection",
+              "environment-bootstrap",
+              "secret-handling",
+              "routine-design"
+            ],
+            "expectedOutputs": [
+              "Task plan with owners and acceptance criteria",
+              "Artifact references with verification outcome",
+              "Explicit approval requests and recovery limitations"
+            ]
+          }
+        ],
+        "policies": [
+          "approval-before-external-actions",
+          "no-plaintext-secrets",
+          "verify-before-completion",
+          "reconcile-before-retry"
+        ]
+      }
+    },
+    {
+      "apiVersion": "ohmy.dev/v0alpha1",
+      "kind": "IndustryPack",
+      "metadata": {
+        "name": "oh-my-social",
+        "version": "0.2.0",
+        "maintainer": "Oh My Grok Bot project",
+        "license": "UNLICENSED",
+        "description": "Core plus social research and publication draft workflows; no live publishing.",
+        "verification": "reviewed"
+      },
+      "spec": {
+        "providers": ["grokbot"],
+        "requirements": [
+          {
+            "capability": "source-research",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "fact-verification",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "task-planning",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "agent-handoff",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "artifact-validation",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "failure-recovery",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "approval-protocol",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "cost-awareness",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "capability-selection",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "environment-bootstrap",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "secret-handling",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "routine-design",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "social-research",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "social-publishing",
+            "range": "^0.2.0",
+            "optional": false
+          },
+          {
+            "capability": "x-public-search",
+            "range": "*",
+            "optional": false
+          }
+        ],
+        "agents": [
+          {
+            "id": "social-researcher",
+            "mission": "Produce cited social research and reviewable drafts using authorized read tools.",
+            "skills": [
+              "source-research",
+              "fact-verification",
+              "task-planning",
+              "agent-handoff",
+              "artifact-validation",
+              "failure-recovery",
+              "approval-protocol",
+              "cost-awareness",
+              "capability-selection",
+              "environment-bootstrap",
+              "secret-handling",
+              "routine-design",
+              "social-research",
+              "social-publishing"
+            ],
+            "expectedOutputs": [
+              "Cited social evidence and coverage limits",
+              "Platform-specific drafts and exact approval proposal"
+            ]
+          }
+        ],
+        "policies": [
+          "approval-before-external-actions",
+          "no-plaintext-secrets",
+          "verify-before-completion",
+          "reconcile-before-retry"
+        ]
+      }
+    }
+  ],
+  "upstreamLock": "registry/upstreams.lock.json"
+}

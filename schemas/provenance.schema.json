@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "readOnly": true,
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "sources": {
+      "readOnly": true,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "repository": {
+            "type": "string",
+            "format": "uri"
+          },
+          "commit": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "license": {
+            "type": "string",
+            "enum": [
+              "MIT",
+              "Apache-2.0"
+            ]
+          },
+          "files": {
+            "readOnly": true,
+            "minItems": 2,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "license",
+                    "reference"
+                  ]
+                }
+              },
+              "required": [
+                "path",
+                "sha256",
+                "role"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "repository",
+          "commit",
+          "license",
+          "files"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "adaptations": {
+      "readOnly": true,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "directory": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+          },
+          "upstreams": {
+            "readOnly": true,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          },
+          "files": {
+            "readOnly": true,
+            "minItems": 3,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "skill",
+          "directory",
+          "upstreams",
+          "files"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "sources",
+    "adaptations"
+  ],
+  "additionalProperties": false
+}

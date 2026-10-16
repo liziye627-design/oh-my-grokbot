@@ -1,0 +1,324 @@
+{
+  "schemaVersion": "0.1",
+  "host": "127.0.0.1",
+  "port": 19741,
+  "principals": [
+    {
+      "id": "x-growth-owner",
+      "tenantId": "x-growth",
+      "role": "operator",
+      "tokenEnv": "X_GROWTH_OWNER_TOKEN"
+    },
+    {
+      "id": "x-growth-colleague",
+      "tenantId": "x-growth",
+      "role": "operator",
+      "tokenEnv": "X_GROWTH_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "x-growth-reviewer",
+      "tenantId": "x-growth",
+      "role": "verifier",
+      "tokenEnv": "X_GROWTH_REVIEWER_TOKEN"
+    },
+    {
+      "id": "app-studio-owner",
+      "tenantId": "app-studio",
+      "role": "operator",
+      "tokenEnv": "APP_STUDIO_OWNER_TOKEN"
+    },
+    {
+      "id": "app-studio-colleague",
+      "tenantId": "app-studio",
+      "role": "operator",
+      "tokenEnv": "APP_STUDIO_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "app-studio-reviewer",
+      "tenantId": "app-studio",
+      "role": "verifier",
+      "tokenEnv": "APP_STUDIO_REVIEWER_TOKEN"
+    },
+    {
+      "id": "video-studio-owner",
+      "tenantId": "video-studio",
+      "role": "operator",
+      "tokenEnv": "VIDEO_STUDIO_OWNER_TOKEN"
+    },
+    {
+      "id": "video-studio-colleague",
+      "tenantId": "video-studio",
+      "role": "operator",
+      "tokenEnv": "VIDEO_STUDIO_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "video-studio-reviewer",
+      "tenantId": "video-studio",
+      "role": "verifier",
+      "tokenEnv": "VIDEO_STUDIO_REVIEWER_TOKEN"
+    },
+    {
+      "id": "business-operations-owner",
+      "tenantId": "business-operations",
+      "role": "operator",
+      "tokenEnv": "BUSINESS_OPERATIONS_OWNER_TOKEN"
+    },
+    {
+      "id": "business-operations-colleague",
+      "tenantId": "business-operations",
+      "role": "operator",
+      "tokenEnv": "BUSINESS_OPERATIONS_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "business-operations-reviewer",
+      "tenantId": "business-operations",
+      "role": "verifier",
+      "tokenEnv": "BUSINESS_OPERATIONS_REVIEWER_TOKEN"
+    },
+    {
+      "id": "content-studio-owner",
+      "tenantId": "content-studio",
+      "role": "operator",
+      "tokenEnv": "CONTENT_STUDIO_OWNER_TOKEN"
+    },
+    {
+      "id": "content-studio-colleague",
+      "tenantId": "content-studio",
+      "role": "operator",
+      "tokenEnv": "CONTENT_STUDIO_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "content-studio-reviewer",
+      "tenantId": "content-studio",
+      "role": "verifier",
+      "tokenEnv": "CONTENT_STUDIO_REVIEWER_TOKEN"
+    },
+    {
+      "id": "reverse-lab-owner",
+      "tenantId": "reverse-lab",
+      "role": "operator",
+      "tokenEnv": "REVERSE_LAB_OWNER_TOKEN"
+    },
+    {
+      "id": "reverse-lab-colleague",
+      "tenantId": "reverse-lab",
+      "role": "operator",
+      "tokenEnv": "REVERSE_LAB_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "reverse-lab-reviewer",
+      "tenantId": "reverse-lab",
+      "role": "verifier",
+      "tokenEnv": "REVERSE_LAB_REVIEWER_TOKEN"
+    },
+    {
+      "id": "market-desk-owner",
+      "tenantId": "market-desk",
+      "role": "operator",
+      "tokenEnv": "MARKET_DESK_OWNER_TOKEN"
+    },
+    {
+      "id": "market-desk-colleague",
+      "tenantId": "market-desk",
+      "role": "operator",
+      "tokenEnv": "MARKET_DESK_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "market-desk-reviewer",
+      "tenantId": "market-desk",
+      "role": "verifier",
+      "tokenEnv": "MARKET_DESK_REVIEWER_TOKEN"
+    }
+  ],
+  "workspaces": [
+    {
+      "id": "x-growth",
+      "name": "X 增长工作组",
+      "tenantId": "x-growth",
+      "pack": "oh-my-x-growth",
+      "workflows": ["topic-research", "content-calendar", "export-analytics"],
+      "coordinatorRole": "scout",
+      "bindings": [
+        {
+          "role": "scout",
+          "botName": "x-growth/scout"
+        },
+        {
+          "role": "researcher",
+          "botName": "x-growth/researcher"
+        },
+        {
+          "role": "editor",
+          "botName": "x-growth/editor"
+        },
+        {
+          "role": "reviewer",
+          "botName": "x-growth/reviewer"
+        },
+        {
+          "role": "operations",
+          "botName": "x-growth/operations"
+        }
+      ],
+      "members": {
+        "operators": ["x-growth-owner", "x-growth-colleague"],
+        "verifiers": ["x-growth-reviewer"]
+      }
+    },
+    {
+      "id": "app-studio",
+      "name": "应用开发工作组",
+      "tenantId": "app-studio",
+      "pack": "oh-my-app-studio",
+      "workflows": ["build-feature", "fix-bug", "prepare-release"],
+      "coordinatorRole": "product-analyst",
+      "bindings": [
+        {
+          "role": "product-analyst",
+          "botName": "app-studio/product-analyst"
+        },
+        {
+          "role": "architect",
+          "botName": "app-studio/architect"
+        },
+        {
+          "role": "implementer",
+          "botName": "app-studio/implementer"
+        },
+        {
+          "role": "reviewer",
+          "botName": "app-studio/reviewer"
+        },
+        {
+          "role": "qa",
+          "botName": "app-studio/qa"
+        }
+      ],
+      "members": {
+        "operators": ["app-studio-owner", "app-studio-colleague"],
+        "verifiers": ["app-studio-reviewer"]
+      }
+    },
+    {
+      "id": "video-studio",
+      "name": "视频制作工作组",
+      "tenantId": "video-studio",
+      "pack": "oh-my-video-studio",
+      "workflows": ["produce-video", "repurpose-media"],
+      "coordinatorRole": "producer",
+      "bindings": [
+        {
+          "role": "producer",
+          "botName": "video-studio/producer"
+        },
+        {
+          "role": "researcher",
+          "botName": "video-studio/researcher"
+        },
+        {
+          "role": "scriptwriter",
+          "botName": "video-studio/scriptwriter"
+        },
+        {
+          "role": "editor",
+          "botName": "video-studio/editor"
+        },
+        {
+          "role": "qa",
+          "botName": "video-studio/qa"
+        }
+      ],
+      "members": {
+        "operators": ["video-studio-owner", "video-studio-colleague"],
+        "verifiers": ["video-studio-reviewer"]
+      }
+    },
+    {
+      "id": "business-operations",
+      "name": "业务运营工作组",
+      "tenantId": "business-operations",
+      "pack": "oh-my-business-operations",
+      "workflows": ["meeting-followup", "support-triage", "business-weekly"],
+      "coordinatorRole": "operations-coordinator",
+      "bindings": [
+        {
+          "role": "operations-coordinator",
+          "botName": "business-operations/operations-coordinator"
+        },
+        {
+          "role": "operations-analyst",
+          "botName": "business-operations/operations-analyst"
+        },
+        {
+          "role": "customer-support",
+          "botName": "business-operations/customer-support"
+        },
+        {
+          "role": "operations-reviewer",
+          "botName": "business-operations/operations-reviewer"
+        }
+      ],
+      "members": {
+        "operators": ["business-operations-owner", "business-operations-colleague"],
+        "verifiers": ["business-operations-reviewer"]
+      }
+    },
+    {
+      "id": "content-studio",
+      "name": "内容生产工作组",
+      "tenantId": "content-studio",
+      "pack": "oh-my-content-studio",
+      "workflows": ["produce-piece", "next-topics"],
+      "coordinatorRole": "producer",
+      "bindings": [
+        { "role": "producer", "botName": "content-studio/producer" },
+        { "role": "researcher", "botName": "content-studio/researcher" },
+        { "role": "voice-keeper", "botName": "content-studio/voice-keeper" },
+        { "role": "drafter", "botName": "content-studio/drafter" },
+        { "role": "channel-editor", "botName": "content-studio/channel-editor" },
+        { "role": "reviewer", "botName": "content-studio/reviewer" }
+      ],
+      "members": {
+        "operators": ["content-studio-owner", "content-studio-colleague"],
+        "verifiers": ["content-studio-reviewer"]
+      }
+    },
+    {
+      "id": "reverse-lab",
+      "name": "逆向实验室",
+      "tenantId": "reverse-lab",
+      "pack": "oh-my-reverse-lab",
+      "workflows": ["confirm-scope", "analyze-artifact"],
+      "coordinatorRole": "authorization-clerk",
+      "bindings": [
+        { "role": "authorization-clerk", "botName": "reverse-lab/authorization-clerk" },
+        { "role": "reverse-engineer", "botName": "reverse-lab/reverse-engineer" },
+        { "role": "evidence-reviewer", "botName": "reverse-lab/evidence-reviewer" }
+      ],
+      "members": {
+        "operators": ["reverse-lab-owner", "reverse-lab-colleague"],
+        "verifiers": ["reverse-lab-reviewer"]
+      }
+    },
+    {
+      "id": "market-desk",
+      "name": "市场研究台",
+      "tenantId": "market-desk",
+      "pack": "oh-my-market-desk",
+      "workflows": ["define-universe", "write-thesis"],
+      "coordinatorRole": "universe-clerk",
+      "bindings": [
+        { "role": "universe-clerk", "botName": "market-desk/universe-clerk" },
+        { "role": "filings-reader", "botName": "market-desk/filings-reader" },
+        { "role": "news-reader", "botName": "market-desk/news-reader" },
+        { "role": "tape-reader", "botName": "market-desk/tape-reader" },
+        { "role": "thesis-writer", "botName": "market-desk/thesis-writer" },
+        { "role": "risk-reviewer", "botName": "market-desk/risk-reviewer" }
+      ],
+      "members": {
+        "operators": ["market-desk-owner", "market-desk-colleague"],
+        "verifiers": ["market-desk-reviewer"]
+      }
+    }
+  ]
+}

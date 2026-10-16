@@ -1,0 +1,5 @@
+{
+  "objective": "synthetic-fixture:objective",
+  "constraints": "synthetic-fixture:constraints",
+  "availableTeams": "synthetic-fixture:availableTeams"
+}

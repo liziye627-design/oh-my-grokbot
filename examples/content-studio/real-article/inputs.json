@@ -1,0 +1,7 @@
+{
+  "idea": "examples/content-studio/real-article/brief.md",
+  "pastArticles": "none: user supplied no past articles; see voice-profile.md",
+  "sourceNotes": "examples/content-studio/real-article/sources.json",
+  "voiceNotes": "examples/content-studio/real-article/voice-profile.md",
+  "targetAccount": "unselected: local validation only; no external submission"
+}

@@ -1,0 +1,66 @@
+{
+  "observedAt": "2026-10-14T12:51:22.798Z",
+  "platform": "win32",
+  "node": "22.14.0",
+  "artifact": "built dist/cli.js",
+  "scope": "local Core Installer; external native checks remain pending",
+  "filesVerified": 9,
+  "idempotentInstallation": true,
+  "unrelatedFilePreserved": true,
+  "observations": [
+    {
+      "command": "search",
+      "exitCode": 0,
+      "status": "passed",
+      "code": "SEARCH_COMPLETE"
+    },
+    {
+      "command": "inspect",
+      "exitCode": 0,
+      "status": "passed",
+      "code": "RESOURCE_FOUND"
+    },
+    {
+      "command": "plan",
+      "exitCode": 0,
+      "status": "passed",
+      "code": "PLAN_CREATED"
+    },
+    {
+      "command": "apply",
+      "exitCode": 0,
+      "status": "passed",
+      "code": "DRY_RUN_COMPLETE"
+    },
+    {
+      "command": "apply",
+      "exitCode": 2,
+      "status": "needs_human",
+      "code": "LOCAL_STAGED_NATIVE_PENDING"
+    },
+    {
+      "command": "apply",
+      "exitCode": 2,
+      "status": "needs_human",
+      "code": "LOCAL_STAGED_NATIVE_PENDING"
+    },
+    {
+      "command": "verify",
+      "exitCode": 2,
+      "status": "needs_human",
+      "code": "VERIFICATION_COMPLETE"
+    },
+    {
+      "command": "doctor",
+      "exitCode": 2,
+      "status": "needs_human",
+      "code": "DOCTOR_COMPLETE"
+    },
+    {
+      "command": "rollback",
+      "exitCode": 0,
+      "status": "passed",
+      "code": "ROLLED_BACK"
+    }
+  ]
+}

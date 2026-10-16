@@ -1,0 +1,15 @@
+{
+  "status": "not_run",
+  "environment": null,
+  "checks": [
+    {
+      "requirementId": "filter-running",
+      "command": null,
+      "exitCode": null,
+      "expected": "Only running tasks visible",
+      "actual": null,
+      "evidencePath": null
+    }
+  ],
+  "limitations": ["Template only: replace with actual execution evidence."]
+}

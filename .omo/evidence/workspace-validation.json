@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-15",
+  "tests": 139,
+  "testFiles": 27,
+  "typecheck": "passed",
+  "biome": "passed",
+  "schemas": "passed",
+  "upstreams": "passed",
+  "uploadBundles": 4,
+  "configuredRoles": 19,
+  "workflows": 11,
+  "nativeBotsCreated": false,
+  "nativeGroupsVerified": false,
+  "blocker": "Native desktop control unavailable; no verified public bulk-create API",
+  "smoke": ".omo/evidence/workspace-smoke.json",
+  "bundles": ".omo/evidence/workspace-bundles.json"
+}

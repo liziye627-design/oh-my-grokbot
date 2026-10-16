@@ -1,0 +1,121 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/<user>/Documents/ChatGPT/oh-my-grokbot[39m
+
+(node:23424) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:27004) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:43620) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8340) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [31m❯[39m tests/gateway/approvals.test.ts [2m([22m[2m5 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 241[2mms[22m[39m
+   [32m✓[39m rejects a decision whose hash does not match the exact proposal[32m 49[2mms[22m[39m
+   [32m✓[39m does not approve an expired proposal[32m 36[2mms[22m[39m
+   [32m✓[39m does not allow a runner to approve its own proposal[32m 49[2mms[22m[39m
+   [32m✓[39m rejects changing the target under an existing approval identifier[32m 51[2mms[22m[39m
+[31m   [31m×[31m rejects a static approver whose identity matches the assigned runner[39m[32m 55[2mms[22m[39m
+ [31m❯[39m tests/gateway/outbox.test.ts [2m([22m[2m5 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 241[2mms[22m[39m
+   [32m✓[39m Durable outbox reconciliation [2m(4)[22m
+     [32m✓[39m does not resend a sent reply[32m 49[2mms[22m[39m
+     [32m✓[39m requires human reconciliation after an ambiguous send failure[32m 37[2mms[22m[39m
+     [32m✓[39m claims each item once across concurrent dispatch attempts[32m 47[2mms[22m[39m
+     [32m✓[39m marks interrupted in-flight deliveries uncertain before recovery[32m 54[2mms[22m[39m
+[31m   [31m×[31m makes non-Error delivery rejection immediately reconcilable[39m[32m 53[2mms[22m[39m
+ [31m❯[39m tests/gateway/lifecycle.test.ts [2m([22m[2m7 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 378[2mms[22m[39m
+   [32m✓[39m Task evidence and durable execution boundaries [2m(6)[22m
+     [32m✓[39m keeps completion in verifying until an independent identity accepts it[32m 59[2mms[22m[39m
+     [32m✓[39m rejects drifted artifact bytes at independent acceptance[32m 47[2mms[22m[39m
+     [32m✓[39m scopes runner credentials to one task and expires them[32m 75[2mms[22m[39m
+     [32m✓[39m stores credential hashes rather than bearer tokens[32m 62[2mms[22m[39m
+     [32m✓[39m preserves the same logical task across database reopen[32m 52[2mms[22m[39m
+     [32m✓[39m rejects incorrect upload hashes without creating an artifact[32m 43[2mms[22m[39m
+[31m   [31m×[31m rejects a static reviewer whose identity matches the assigned runner[39m[32m 39[2mms[22m[39m
+ [31m❯[39m tests/gateway/server.test.ts [2m([22m[2m2 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 86[2mms[22m[39m
+[31m   [31m×[31m binds loopback, rejects a competing server and releases its owned lock on close[39m[32m 63[2mms[22m[39m
+[31m   [31m×[31m releases the owned lock even if HTTP shutdown reports an error[39m[32m 22[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 5 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/gateway/approvals.test.ts[2m > [22mrejects a static approver whose identity matches the assigned runner
+[31m[1mAssertionError[22m: expected function to throw an error, but it didn't[39m
+[36m [2m❯[22m tests/gateway/approvals.test.ts:[2m61:106[22m[39m
+    [90m 59|[39m it("rejects a static approver whose identity matches the assigned runn…
+    [90m 60|[39m  const p = proposal("owner");
+    [90m 61|[39m  expect(() => f.gateway.approvals.decide(owner,p.approval.approvalId,"…
+    [90m   |[39m                                                                                                          [31m^[39m
+    [90m 62|[39m });
+    [90m 63|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/gateway/lifecycle.test.ts[2m > [22mrejects a static reviewer whose identity matches the assigned runner
+[31m[1mAssertionError[22m: promise resolved "{ task: { …(12) }, …(2) }" instead of rejecting[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- Error {[39m
+[32m-   "message": "rejected promise",[39m
+[31m+ {[39m
+[31m+   "completionIds": [[39m
+[31m+     "60e45213-081e-4ef4-b488-847ac56b09e0",[39m
+[31m+   ],[39m
+[31m+   "origin": {[39m
+[31m+     "channel": "manual",[39m
+[31m+     "chatId": "local",[39m
+[31m+     "messageId": "collision",[39m
+[31m+   },[39m
+[31m+   "task": {[39m
+[31m+     "approvalPolicy": "external-actions",[39m
+[31m+     "assignedRole": "owner",[39m
+[31m+     "deadline": null,[39m
+[31m+     "inputRefs": [],[39m
+[31m+     "objective": "research",[39m
+[31m+     "pack": "oh-my-core",[39m
+[31m+     "requestedBy": "owner",[39m
+[31m+     "runId": "271235e3-9f09-46dd-aa10-0f4bb76c93aa",[39m
+[31m+     "schemaVersion": "0.1",[39m
+[31m+     "state": "succeeded",[39m
+[31m+     "taskId": "40e4e9a1-9cc4-4492-aef5-9bfab4c7afb1",[39m
+[31m+     "tenantId": "alpha",[39m
+[31m+   },[39m
+[2m  }[22m
+
+[36m [2m❯[22m tests/gateway/lifecycle.test.ts:[2m105:88[22m[39m
+    [90m103|[39m  const r = await running("collision", "owner");
+    [90m104|[39m  f.gateway.lifecycle.complete(r.identity, {taskId:r.record.task.taskId…
+    [90m105|[39m  await expect(f.gateway.lifecycle.review(owner,r.record.task.taskId,"a…
+    [90m   |[39m                                                                                        [31m^[39m
+    [90m106|[39m  expect((await f.gateway.lifecycle.review(reviewer,r.record.task.taskI…
+    [90m107|[39m });
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/gateway/outbox.test.ts[2m > [22mmakes non-Error delivery rejection immediately reconcilable
+[31m[1mUnknown Error[22m: unknown failure[39m
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/gateway/server.test.ts[2m > [22mbinds loopback, rejects a competing server and releases its owned lock on close
+[31m[1mError[22m: Server is not running.[39m
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/gateway/server.test.ts[2m > [22mreleases the owned lock even if HTTP shutdown reports an error
+[31m[1mCoreError[22m: Gateway lock exists; verify its process before recovery[39m
+[36m [2m❯[22m startGateway src/gateway/server.ts:[2m24:13[22m[39m
+    [90m 22|[39m   } catch (error) {
+    [90m 23|[39m     if (error instanceof Error && "code" in error && error.code === "E…
+    [90m 24|[39m       throw new GatewayError(
+    [90m   |[39m             [31m^[39m
+    [90m 25|[39m         "GATEWAY_LOCKED",
+    [90m 26|[39m         "Gateway lock exists; verify its process before recovery",
+[90m [2m❯[22m tests/gateway/server.test.ts:[2m47:20[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m4 failed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[31m5 failed[39m[22m[2m | [22m[1m[32m14 passed[39m[22m[90m (19)[39m
+[2m   Start at [22m 15:31:24
+[2m   Duration [22m 1.73s[2m (import 66%, tests 24%, transform 9%, worker 1%)[22m
+

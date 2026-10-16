@@ -1,0 +1,209 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-market-desk",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "市场研究台：整理公开行情、公告和操作者提供的数据，写出假设、证据、反证和模拟笔记。不连接券商，不生成订单。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "cost-awareness",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "market-research",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "ai-hedge-fund",
+          "range": "^0.1.0",
+          "optional": true
+        },
+        {
+          "capability": "trading-agents",
+          "range": "^0.1.0",
+          "optional": true
+        }
+      ],
+      "agents": [
+        {
+          "id": "universe-clerk",
+          "mission": "记下观察名单、时间窗口和操作者提供的数据。名单或窗口缺失时停止。",
+          "skills": ["market-research", "fact-verification", "task-planning", "agent-handoff"],
+          "expectedOutputs": ["universe.md"]
+        },
+        {
+          "id": "filings-reader",
+          "mission": "为名单中的公开公告和财务数字写下日期、来源和缺口。",
+          "skills": ["market-research", "source-research", "fact-verification", "cost-awareness"],
+          "expectedOutputs": ["filings-note.md"]
+        },
+        {
+          "id": "news-reader",
+          "mission": "为名单中的公开新闻和操作者提供的舆情材料写下日期、来源和缺口。",
+          "skills": ["market-research", "source-research", "fact-verification", "agent-handoff"],
+          "expectedOutputs": ["news-note.md"]
+        },
+        {
+          "id": "tape-reader",
+          "mission": "根据操作者提供的行情表写下价格、区间和缺口，不补造行情。",
+          "skills": ["market-research", "source-research", "artifact-validation", "cost-awareness"],
+          "expectedOutputs": ["tape-note.md"]
+        },
+        {
+          "id": "thesis-writer",
+          "mission": "把支持理由、反对理由和模拟笔记分开写。不把模拟结果写成未来收益。",
+          "skills": ["market-research", "source-research", "artifact-validation", "agent-handoff"],
+          "expectedOutputs": ["thesis.md"]
+        },
+        {
+          "id": "risk-reviewer",
+          "mission": "独立核对数据口径、未验证项，以及笔记里有没有订单或收益承诺。",
+          "skills": ["market-research", "fact-verification", "artifact-validation", "cost-awareness"],
+          "expectedOutputs": ["review.md"]
+        }
+      ],
+      "policies": [
+        "research-and-simulation-only",
+        "no-live-orders",
+        "no-brokerage-credentials",
+        "independent-review"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "define-universe",
+      "name": "确认观察名单",
+      "entryRole": "universe-clerk",
+      "requiredInputs": ["universe", "researchWindow", "suppliedData"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "record-universe",
+          "role": "universe-clerk",
+          "dependsOn": [],
+          "requiredArtifacts": ["universe.md"],
+          "acceptanceCriteria": [
+            "观察名单和时间窗口分开写",
+            "操作者提供的数据与公开资料分开",
+            "名单或窗口缺失时停止"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "write-thesis",
+      "name": "公开市场研究与模拟笔记",
+      "entryRole": "universe-clerk",
+      "requiredInputs": ["universe", "researchWindow", "suppliedData"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "record",
+          "role": "universe-clerk",
+          "dependsOn": [],
+          "requiredArtifacts": ["universe.md"],
+          "acceptanceCriteria": [
+            "名单覆盖本次研究窗口",
+            "窗口缺失时后续步骤不开始"
+          ]
+        },
+        {
+          "id": "filings",
+          "role": "filings-reader",
+          "dependsOn": ["record"],
+          "requiredArtifacts": ["filings-note.md"],
+          "acceptanceCriteria": [
+            "每个财务数字有日期和来源",
+            "缺失的公告记为缺口，不补造",
+            "公告来源缺失时记 skipped"
+          ]
+        },
+        {
+          "id": "news",
+          "role": "news-reader",
+          "dependsOn": ["record"],
+          "requiredArtifacts": ["news-note.md"],
+          "acceptanceCriteria": [
+            "每条新闻或舆情有日期和来源",
+            "操作者提供的材料与公开新闻分开",
+            "来源缺失时记 skipped"
+          ]
+        },
+        {
+          "id": "tape",
+          "role": "tape-reader",
+          "dependsOn": ["record"],
+          "requiredArtifacts": ["tape-note.md"],
+          "acceptanceCriteria": [
+            "价格和区间只来自已提供的行情表",
+            "表内缺口不补造",
+            "行情表缺失时记 skipped"
+          ]
+        },
+        {
+          "id": "write",
+          "role": "thesis-writer",
+          "dependsOn": ["filings", "news", "tape"],
+          "requiredArtifacts": ["thesis.md"],
+          "acceptanceCriteria": [
+            "假设、证据和反证分开",
+            "模拟笔记标明输入数据和未验证项",
+            "没有订单、账户操作或收益承诺"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "risk-reviewer",
+          "dependsOn": ["write"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": [
+            "数据口径被抽查",
+            "模拟结果未被写成收益承诺",
+            "审稿人不是笔记作者"
+          ]
+        }
+      ]
+    }
+  ]
+}

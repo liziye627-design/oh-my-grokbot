@@ -1,0 +1,313 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-video-studio",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "Native video production and supplied-media repurposing team with rights, render and independent media acceptance gates.",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": ["grokbot"],
+      "requirements": [
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "failure-recovery",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "cost-awareness",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "capability-selection",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "environment-bootstrap",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "secret-handling",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "routine-design",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        },
+        {
+          "capability": "video-use",
+          "range": "^0.1.0",
+          "optional": true
+        },
+        {
+          "capability": "remotion",
+          "range": "^0.1.0",
+          "optional": true
+        },
+        {
+          "capability": "comfyui",
+          "range": "^0.1.0",
+          "optional": true
+        }
+      ],
+      "agents": [
+        {
+          "id": "producer",
+          "mission": "Own brief, rights, bounded production and native handoffs.",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "approval-protocol",
+            "cost-awareness",
+            "secret-handling"
+          ],
+          "expectedOutputs": ["brief.md", "rights-ledger.json"]
+        },
+        {
+          "id": "researcher",
+          "mission": "Verify claims and source-media context.",
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["research.md"]
+        },
+        {
+          "id": "scriptwriter",
+          "mission": "Turn verified evidence into timed narration and shots.",
+          "skills": ["fact-verification", "artifact-validation"],
+          "expectedOutputs": ["script.md", "storyboard.csv"]
+        },
+        {
+          "id": "editor",
+          "mission": "Check tools and render authorized assets with reproducible evidence.",
+          "skills": [
+            "environment-bootstrap",
+            "capability-selection",
+            "failure-recovery",
+            "artifact-validation"
+          ],
+          "expectedOutputs": ["render-plan.md", "preflight.json", "render-receipt.json"]
+        },
+        {
+          "id": "qa",
+          "mission": "Independently inspect real media and report acceptance gaps.",
+          "skills": ["artifact-validation", "fact-verification", "approval-protocol"],
+          "expectedOutputs": ["media-qa.md", "ffprobe.json", "delivery.json"]
+        }
+      ],
+      "policies": [
+        "approval-before-external-actions",
+        "no-plaintext-secrets",
+        "verify-before-completion",
+        "reconcile-before-retry",
+        "rights-before-render",
+        "actual-media-before-delivery",
+        "no-implicit-publication"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "produce-video",
+      "name": "Evidence-backed video production",
+      "entryRole": "producer",
+      "requiredInputs": ["brief", "source-materials", "asset-rights", "delivery-spec"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "brief",
+          "role": "producer",
+          "dependsOn": [],
+          "requiredArtifacts": ["brief.md"],
+          "acceptanceCriteria": [
+            "Audience, duration, aspect ratio, budget and supplied source ownership are recorded.",
+            "Missing rights or execution tools are explicit blockers."
+          ]
+        },
+        {
+          "id": "research",
+          "role": "researcher",
+          "dependsOn": ["brief"],
+          "requiredArtifacts": ["research.md"],
+          "acceptanceCriteria": [
+            "Every factual claim maps to an accessible primary source and retrieval date.",
+            "Supplied-media workflow includes source timecodes and transcript uncertainty."
+          ]
+        },
+        {
+          "id": "storyboard",
+          "role": "scriptwriter",
+          "dependsOn": ["research"],
+          "requiredArtifacts": ["script.md", "storyboard.csv"],
+          "acceptanceCriteria": [
+            "Every shot has start/end seconds, narration, visual and caption text.",
+            "Shot durations sum to the target duration; quotations retain context."
+          ]
+        },
+        {
+          "id": "rights",
+          "role": "producer",
+          "dependsOn": ["storyboard"],
+          "requiredArtifacts": ["rights-ledger.json"],
+          "acceptanceCriteria": [
+            "Every visual, music, font and voice has a source and permitted use.",
+            "Unknown or restricted assets block rendering; replace them or obtain permission."
+          ]
+        },
+        {
+          "id": "render-plan",
+          "role": "editor",
+          "dependsOn": ["rights"],
+          "requiredArtifacts": ["render-plan.md", "preflight.json"],
+          "acceptanceCriteria": [
+            "Tool versions, build license, codecs, fonts and actual media access were checked.",
+            "Commands use supplied local assets and bounded output locations; no paid generation is implicit."
+          ]
+        },
+        {
+          "id": "render",
+          "role": "editor",
+          "dependsOn": ["render-plan"],
+          "requiredArtifacts": ["render-receipt.json"],
+          "acceptanceCriteria": [
+            "Receipt records executed command, exit status, output byte count and actual SHA-256.",
+            "Missing binaries or media yields needs_human, never an invented render receipt."
+          ]
+        },
+        {
+          "id": "media-qa",
+          "role": "qa",
+          "dependsOn": ["render"],
+          "requiredArtifacts": ["media-qa.md", "ffprobe.json", "delivery.json"],
+          "acceptanceCriteria": [
+            "Probe verifies width, height, duration, video/audio streams against brief.",
+            "Reviewer opens actual media, checks beginning/middle/end, captions, audio and rights ledger.",
+            "Delivery references tenant-authorized media location and matching hash; text artifacts alone do not prove rendered media."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repurpose-media",
+      "name": "Repurpose supplied authorized media",
+      "entryRole": "producer",
+      "requiredInputs": ["brief", "source-media", "transcript", "asset-rights", "delivery-spec"],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "brief",
+          "role": "producer",
+          "dependsOn": [],
+          "requiredArtifacts": ["brief.md"],
+          "acceptanceCriteria": [
+            "Audience, duration, aspect ratio, budget and supplied source ownership are recorded.",
+            "Missing rights or execution tools are explicit blockers."
+          ]
+        },
+        {
+          "id": "research",
+          "role": "researcher",
+          "dependsOn": ["brief"],
+          "requiredArtifacts": ["research.md"],
+          "acceptanceCriteria": [
+            "Every factual claim maps to an accessible primary source and retrieval date.",
+            "Supplied-media workflow includes source timecodes and transcript uncertainty."
+          ]
+        },
+        {
+          "id": "storyboard",
+          "role": "scriptwriter",
+          "dependsOn": ["research"],
+          "requiredArtifacts": ["script.md", "storyboard.csv"],
+          "acceptanceCriteria": [
+            "Every shot has start/end seconds, narration, visual and caption text.",
+            "Shot durations sum to the target duration; quotations retain context."
+          ]
+        },
+        {
+          "id": "rights",
+          "role": "producer",
+          "dependsOn": ["storyboard"],
+          "requiredArtifacts": ["rights-ledger.json"],
+          "acceptanceCriteria": [
+            "Every visual, music, font and voice has a source and permitted use.",
+            "Unknown or restricted assets block rendering; replace them or obtain permission."
+          ]
+        },
+        {
+          "id": "render-plan",
+          "role": "editor",
+          "dependsOn": ["rights"],
+          "requiredArtifacts": ["render-plan.md", "preflight.json"],
+          "acceptanceCriteria": [
+            "Tool versions, build license, codecs, fonts and actual media access were checked.",
+            "Commands use supplied local assets and bounded output locations; no paid generation is implicit."
+          ]
+        },
+        {
+          "id": "render",
+          "role": "editor",
+          "dependsOn": ["render-plan"],
+          "requiredArtifacts": ["render-receipt.json"],
+          "acceptanceCriteria": [
+            "Receipt records executed command, exit status, output byte count and actual SHA-256.",
+            "Missing binaries or media yields needs_human, never an invented render receipt."
+          ]
+        },
+        {
+          "id": "media-qa",
+          "role": "qa",
+          "dependsOn": ["render"],
+          "requiredArtifacts": ["media-qa.md", "ffprobe.json", "delivery.json"],
+          "acceptanceCriteria": [
+            "Probe verifies width, height, duration, video/audio streams against brief.",
+            "Reviewer opens actual media, checks beginning/middle/end, captions, audio and rights ledger.",
+            "Delivery references tenant-authorized media location and matching hash; text artifacts alone do not prove rendered media."
+          ]
+        }
+      ]
+    }
+  ]
+}

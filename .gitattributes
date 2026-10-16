@@ -1,0 +1,3 @@
+# Provenance hashes cover exact bytes on Windows and Unix.
+/third_party/** -text
+/skills/** -text

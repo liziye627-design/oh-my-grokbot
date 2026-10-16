@@ -1,0 +1,48 @@
+[
+  {
+    "id": "C1",
+    "claim": "本项目将安装连接放在第一层，将内容方法和工作流放在第二层。",
+    "status": "supported",
+    "sources": [
+      "S3",
+      "docs/content-production.md"
+    ]
+  },
+  {
+    "id": "C2",
+    "claim": "宝玉三项工具分别覆盖网页素材、HTML 排版和微信草稿提交；发布路径包含转换。",
+    "status": "supported",
+    "sources": [
+      "S1",
+      "skills/baoyu-post-to-wechat/vendor/scripts/wechat-api.ts"
+    ]
+  },
+  {
+    "id": "C3",
+    "claim": "卡兹克公开的长文方法可提供组织与审稿参考；本适配使用实际作者身份。",
+    "status": "supported",
+    "sources": [
+      "S2",
+      "skills/khazix-writer/SKILL.md"
+    ]
+  },
+  {
+    "id": "C4",
+    "claim": "本地安装、公开网页采集和 HTML 渲染实际执行。",
+    "status": "supported",
+    "sources": [
+      "render-receipt.json",
+      "sources.json",
+      "artifacts/content-validation/install.json",
+      "dependency-check.json"
+    ]
+  },
+  {
+    "id": "C5",
+    "claim": "未进行微信/X 发布或 Grok 原生账号验证。",
+    "status": "supported",
+    "sources": [
+      "delivery-request.json"
+    ]
+  }
+]

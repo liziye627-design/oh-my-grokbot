@@ -1,0 +1,5 @@
+{
+  "question": "内容 Bot 如何组织来源与排版？（模拟夹具）",
+  "businessContext": "Oh My Grok Bot 个人内容生产；只验证流程，不提供市场洞察",
+  "responseFile": "examples/content-studio/geo-research/synthetic-response.json"
+}

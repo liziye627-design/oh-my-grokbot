@@ -1,0 +1,19 @@
+[
+  {
+    "id": "sample-official",
+    "origin": "supplied",
+    "url": "https://github.com/xdevplatform/samples",
+    "observedAt": "2026-10-15",
+    "excerpt": "Official repository provides API endpoint examples across multiple languages.",
+    "limitations": "Repository documentation only; no local account or API request was exercised."
+  },
+  {
+    "id": "sample-internal",
+    "origin": "fixture",
+    "file": "examples/brief.json",
+    "row": "forbiddenClaims",
+    "observedAt": "2026-10-15",
+    "excerpt": "Native trigger verification and growth guarantees are prohibited claims.",
+    "limitations": "Synthetic training brief, not evidence of customer results."
+  }
+]

@@ -1,0 +1,3 @@
+﻿url,domain,title,in_search_sources,cited,search_call_ids,citation_count
+https://example.com/content-workflow,example.com,Synthetic source,True,True,fixture-search-1,1
+https://example.com/formatting,example.com,Synthetic uncited source,True,False,fixture-search-1,0

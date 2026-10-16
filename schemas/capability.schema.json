@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "readOnly": true,
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "native",
+        "cli",
+        "sdk",
+        "skill",
+        "mcp",
+        "adapter"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "taskFit": {
+      "readOnly": true,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "text",
+          "image",
+          "audio",
+          "code"
+        ]
+      }
+    },
+    "provides": {
+      "readOnly": true,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64,
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "dependencies": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "capability": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "range": {
+            "type": "string"
+          },
+          "optional": {
+            "type": "boolean"
+          },
+          "fit": {
+            "type": "string",
+            "enum": [
+              "text",
+              "image",
+              "audio",
+              "code"
+            ]
+          }
+        },
+        "required": [
+          "capability",
+          "range",
+          "optional"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "permissions": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64,
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "risk": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "providerSupport": {
+      "readOnly": true,
+      "type": "object",
+      "properties": {
+        "grokbot": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "manual",
+            "unsupported",
+            "unknown"
+          ]
+        },
+        "muse": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "manual",
+            "unsupported",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "grokbot",
+        "muse"
+      ],
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "string",
+      "enum": [
+        "discovered",
+        "reviewed",
+        "compatible",
+        "verified"
+      ]
+    },
+    "delivery": {
+      "oneOf": [
+        {
+          "readOnly": true,
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "const": "bundled"
+            },
+            "directory": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+            }
+          },
+          "required": [
+            "mode",
+            "directory"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "readOnly": true,
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "const": "reference"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "instructions": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "mode",
+            "url",
+            "instructions"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "connector": {
+      "readOnly": true,
+      "type": "object",
+      "properties": {
+        "platform": {
+          "type": "string",
+          "maxLength": 64,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "read_adapter",
+            "reference_only"
+          ]
+        },
+        "auth": {
+          "type": "string",
+          "enum": [
+            "public",
+            "bearer",
+            "api_key",
+            "oauth_app_review"
+          ]
+        },
+        "credentialEnv": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        },
+        "readOperations": {
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "const": "search"
+          }
+        },
+        "writeOperations": {
+          "readOnly": true,
+          "minItems": 0,
+          "maxItems": 0,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri"
+        },
+        "limitations": {
+          "readOnly": true,
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "platform",
+        "stage",
+        "auth",
+        "readOperations",
+        "writeOperations",
+        "documentation",
+        "limitations"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "kind",
+    "source",
+    "description",
+    "provides",
+    "dependencies",
+    "permissions",
+    "risk",
+    "providerSupport",
+    "verification",
+    "delivery"
+  ],
+  "additionalProperties": false
+}

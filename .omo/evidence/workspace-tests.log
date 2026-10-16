@@ -1,0 +1,92 @@
+$ pnpm build && vitest run --maxWorkers=4
+$ tsc -p tsconfig.build.json
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/<user>/Documents/ChatGPT/oh-my-grokbot[39m
+
+ [32m✓[39m tests/installer.test.ts [2m([22m[2m10 tests[22m[2m)[22m[33m 3073[2mms[22m[39m
+   [32m✓[39m Local installer lifecycle [2m(10)[22m
+     [33m[2m✓[22m[39m stages twelve licensed Skills but keeps native verification pending[33m 361[2mms[22m[39m
+     [33m[2m✓[22m[39m reuses the same installation when applied twice[33m 462[2mms[22m[39m
+     [33m[2m✓[22m[39m removes owned files and preserves unrelated files during rollback[33m 412[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves existing identical files that the installer did not create[33m 394[2mms[22m[39m
+     [33m[2m✓[22m[39m detects drift and refuses to delete edited files[33m 376[2mms[22m[39m
+     [33m[2m✓[22m[39m reports an interrupted installation as failed despite complete local files[33m 362[2mms[22m[39m
+ [32m✓[39m tests/industry/cli.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 3608[2mms[22m[39m
+   [33m[2m✓[22m[39m exports an executable Gateway request when a real industry workflow is planned[33m 2907[2mms[22m[39m
+   [33m[2m✓[22m[39m refuses missing workflow input when no references are supplied[33m 699[2mms[22m[39m
+ [32m✓[39m tests/cli.test.ts [2m([22m[2m4 tests[22m[2m)[22m[33m 4775[2mms[22m[39m
+   [32m✓[39m Built CLI end to end [2m(4)[22m
+     [33m[2m✓[22m[39m round-trips a lockfile through apply, verify and rollback[33m 2872[2mms[22m[39m
+     [33m[2m✓[22m[39m reports unsupported provider selection as a failure[33m 669[2mms[22m[39m
+     [33m[2m✓[22m[39m reports external integration checks as pending rather than passed[33m 399[2mms[22m[39m
+     [33m[2m✓[22m[39m refuses a default installation of development resources[33m 834[2mms[22m[39m
+ [32m✓[39m tests/social-cli.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 2287[2mms[22m[39m
+   [32m✓[39m Built social CLI [2m(3)[22m
+     [33m[2m✓[22m[39m lists four read adapters and five reference-only platform entries[33m 636[2mms[22m[39m
+     [33m[2m✓[22m[39m plans X reads without credentials and reports a real credential gate separately[33m 802[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects unsupported platforms and invalid budgets before dispatch[33m 848[2mms[22m[39m
+ [32m✓[39m tests/provenance.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 2000[2mms[22m[39m
+   [32m✓[39m Pinned licensed upstream distribution [2m(5)[22m
+     [33m[2m✓[22m[39m verifies all original snapshots and fourteen adapted Skill trees[33m 675[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects changed upstream bytes at catalog load before planning[33m 313[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects modified adapted Skill content and unexpected executable files[33m 449[2mms[22m[39m
+(node:72612) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/workspaces/e2e.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 2402[2mms[22m[39m
+   [33m[2m✓[22m[39m shares group work while isolating outsiders when real HTTP and MCP surfaces are used[33m 1650[2mms[22m[39m
+   [33m[2m✓[22m[39m prepares a native group roster when the compiled workspace plan command is invoked[33m 750[2mms[22m[39m
+ [32m✓[39m tests/filesystem-safety.test.ts [2m([22m[2m6 tests[22m[2m)[22m[33m 1325[2mms[22m[39m
+   [32m✓[39m Filesystem and trust boundaries [2m(6)[22m
+     [33m[2m✓[22m[39m refuses a second installer while the workspace is locked[33m 511[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves a conflicting file instead of overwriting it[33m 416[2mms[22m[39m
+     [33m[2m✓[22m[39m never lets the development flag install an unreviewed pack[33m 378[2mms[22m[39m
+ [32m✓[39m tests/gateway/server.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 1084[2mms[22m[39m
+   [33m[2m✓[22m[39m binds loopback, rejects a competing server and releases its owned lock on close[33m 633[2mms[22m[39m
+   [33m[2m✓[22m[39m releases the owned lock even if HTTP shutdown reports an error[33m 450[2mms[22m[39m
+ [32m✓[39m tests/industry/install.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 886[2mms[22m[39m
+   [33m[2m✓[22m[39m installs and rolls back industry resources when an employee pack is selected[33m 884[2mms[22m[39m
+(node:83216) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/workspaces/bundle.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 739[2mms[22m[39m
+   [33m[2m✓[22m[39m embeds exact role sources and parseable native configuration in an uploadable Markdown file[33m 720[2mms[22m[39m
+(node:85192) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:86772) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/gateway/industry.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 343[2mms[22m[39m
+ [32m✓[39m tests/gateway/lifecycle.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 281[2mms[22m[39m
+ [32m✓[39m tests/gateway/workspace.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 630[2mms[22m[39m
+(node:20388) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/resolver.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 236[2mms[22m[39m
+(node:68464) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/gateway/http.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 153[2mms[22m[39m
+ [32m✓[39m tests/gateway/mcp-http.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 231[2mms[22m[39m
+ [32m✓[39m tests/industry/catalog.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 156[2mms[22m[39m
+(node:85992) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4244) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/gateway/outbox.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 132[2mms[22m[39m
+ [32m✓[39m tests/gateway/approvals.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 137[2mms[22m[39m
+ [32m✓[39m tests/transport.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+(node:89916) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ [32m✓[39m tests/social.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/gateway/artifact-download.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 99[2mms[22m[39m
+ [32m✓[39m tests/industry/acceptance.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 12456[2mms[22m[39m
+   [33m[2m✓[22m[39m completes local protocol acceptance for all four employee packs when compiled surfaces run[33m 12454[2mms[22m[39m
+ [32m✓[39m tests/contracts.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/industry/plan.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/industry/validation.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/workspaces/plan.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m27 passed[39m[22m[90m (27)[39m
+[2m      Tests [22m [1m[32m139 passed[39m[22m[90m (139)[39m
+[2m   Start at [22m 18:20:33
+[2m   Duration [22m 13.29s[2m (tests 79%, import 20%, transform 1%)[22m
+
+[2m    Isolate [22m [33m27 workers spawned[39m[2m · ~194ms startup each (spawn + environment, per file)[22m
+[2m            [22m [2mat least ~1.12s faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+

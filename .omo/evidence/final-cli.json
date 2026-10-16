@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-14T12:53:43.612Z",
+  "platform": "win32",
+  "node": "22.14.0",
+  "filesVerified": 9,
+  "permissions": [
+    "native-account-access",
+    "native-internal-message",
+    "public-source-read",
+    "sandbox-execution",
+    "workspace-read"
+  ],
+  "nativeStatus": "needs_human",
+  "observations": [
+    {
+      "command": "plan",
+      "exitCode": 0,
+      "code": "PLAN_CREATED"
+    },
+    {
+      "command": "apply",
+      "exitCode": 2,
+      "code": "LOCAL_STAGED_NATIVE_PENDING"
+    },
+    {
+      "command": "verify",
+      "exitCode": 2,
+      "code": "VERIFICATION_COMPLETE"
+    },
+    {
+      "command": "rollback",
+      "exitCode": 0,
+      "code": "ROLLED_BACK"
+    }
+  ]
+}

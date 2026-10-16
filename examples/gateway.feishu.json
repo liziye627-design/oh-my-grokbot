@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "0.1",
+  "host": "127.0.0.1",
+  "port": 19741,
+  "principals": [
+    {
+      "id": "owner",
+      "tenantId": "local-team",
+      "role": "operator",
+      "tokenEnv": "OHMY_OPERATOR_TOKEN"
+    },
+    {
+      "id": "reviewer",
+      "tenantId": "local-team",
+      "role": "verifier",
+      "tokenEnv": "OHMY_VERIFIER_TOKEN"
+    },
+    {
+      "id": "feishu",
+      "tenantId": "local-team",
+      "role": "channel",
+      "tokenEnv": "OHMY_FEISHU_TOKEN",
+      "chats": ["REPLACE_WITH_CHAT_ID"],
+      "senders": ["REPLACE_WITH_SENDER_OPEN_ID"]
+    }
+  ],
+  "feishu": {
+    "principalId": "feishu",
+    "appIdEnv": "FEISHU_APP_ID",
+    "appSecretEnv": "FEISHU_APP_SECRET"
+  }
+}

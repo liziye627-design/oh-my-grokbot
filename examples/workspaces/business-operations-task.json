@@ -1,0 +1,9 @@
+{
+  "eventId": "business-operations-pilot-001",
+  "objective": "完成一次内部试运行，依据真实输入交付成果并等待独立验收。",
+  "inputs": {
+    "meeting-notes": "REPLACE_WITH_REAL_REFERENCE:meeting-notes",
+    "owner-directory": "REPLACE_WITH_REAL_REFERENCE:owner-directory",
+    "timezone": "REPLACE_WITH_REAL_REFERENCE:timezone"
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "readOnly": true,
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "host": {
+      "default": "127.0.0.1",
+      "type": "string",
+      "const": "127.0.0.1"
+    },
+    "port": {
+      "default": 19741,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "principals": {
+      "readOnly": true,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "tenantId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "operator",
+              "channel",
+              "verifier"
+            ]
+          },
+          "tokenEnv": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]+$"
+          },
+          "chats": {
+            "default": [],
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "senders": {
+            "default": [],
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "id",
+          "tenantId",
+          "role",
+          "tokenEnv"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "workspaces": {
+      "default": [],
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "tenantId": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "pack": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "workflows": {
+            "readOnly": true,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          },
+          "coordinatorRole": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "bindings": {
+            "readOnly": true,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "readOnly": true,
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "maxLength": 64,
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "botName": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "templateUrl": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "role",
+                "botName"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "members": {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "operators": {
+                "readOnly": true,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 64,
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                }
+              },
+              "verifiers": {
+                "readOnly": true,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 64,
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                }
+              }
+            },
+            "required": [
+              "operators",
+              "verifiers"
+            ],
+            "additionalProperties": false
+          },
+          "feishu": {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "principalId": {
+                "type": "string",
+                "maxLength": 64,
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "chatId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "senders": {
+                "readOnly": true,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "readOnly": true,
+                  "type": "object",
+                  "properties": {
+                    "senderId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "principalId": {
+                      "type": "string",
+                      "maxLength": 64,
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                    }
+                  },
+                  "required": [
+                    "senderId",
+                    "principalId"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "principalId",
+              "chatId",
+              "senders"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "tenantId",
+          "pack",
+          "workflows",
+          "coordinatorRole",
+          "bindings",
+          "members"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "feishu": {
+      "readOnly": true,
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string"
+        },
+        "appIdEnv": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        },
+        "appSecretEnv": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        }
+      },
+      "required": [
+        "principalId",
+        "appIdEnv",
+        "appSecretEnv"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "principals"
+  ],
+  "additionalProperties": false
+}

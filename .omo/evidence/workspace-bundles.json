@@ -1,0 +1,38 @@
+[
+  {
+    "id": "x-growth",
+    "file": "examples/workspaces/generated/x-growth.md",
+    "bytes": 16587,
+    "bots": 5,
+    "workflows": 3,
+    "sha256": "901ff732e246edf3f81b05f9f623e792d547575e55d27a2fad88e674e735e8be",
+    "activation": "unverified"
+  },
+  {
+    "id": "app-studio",
+    "file": "examples/workspaces/generated/app-studio.md",
+    "bytes": 21224,
+    "bots": 5,
+    "workflows": 3,
+    "sha256": "f0a7078269270434c4ea8e8f351ee25d0a98c8dca66012548ae4baaf56a86403",
+    "activation": "unverified"
+  },
+  {
+    "id": "video-studio",
+    "file": "examples/workspaces/generated/video-studio.md",
+    "bytes": 19071,
+    "bots": 5,
+    "workflows": 2,
+    "sha256": "e83803ac82c4a76912263394e90bef437f4c2e7c8e13068ab6912e06ab92fc65",
+    "activation": "unverified"
+  },
+  {
+    "id": "business-operations",
+    "file": "examples/workspaces/generated/business-operations.md",
+    "bytes": 16011,
+    "bots": 4,
+    "workflows": 3,
+    "sha256": "a44d106fc444468331bac01d765e358b0a3975b08cdb81bcc285481cb8d5b8ea",
+    "activation": "unverified"
+  }
+]

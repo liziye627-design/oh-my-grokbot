@@ -1,0 +1,20 @@
+{
+  "fixture": true,
+  "status": "needs_human",
+  "operation": "social-publish",
+  "destination": "operator-must-select-real-account",
+  "payload": {
+    "draftId": "draft-1",
+    "text": "准备接入 X API？可以先阅读官方多语言端点样例，再用自己的授权账户验证所需接口。官方仓库：https://github.com/xdevplatform/samples",
+    "media": [],
+    "scheduledAt": "2026-10-19T10:00:00+08:00",
+    "timezone": "Asia/Shanghai"
+  },
+  "missing": [
+    "real target account",
+    "operator approval",
+    "runtime expiry",
+    "native executor and observed receipt"
+  ],
+  "note": "Review fixture, not a Gateway API request. At runtime select destination, set expiresAt and approvalId, and let Gateway calculate payloadHash. No approval or publication has occurred."
+}

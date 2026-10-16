@@ -1,0 +1,616 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "readOnly": true,
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "pack": {
+      "readOnly": true,
+      "type": "object",
+      "properties": {
+        "apiVersion": {
+          "type": "string",
+          "const": "ohmy.dev/v0alpha1"
+        },
+        "kind": {
+          "type": "string",
+          "const": "IndustryPack"
+        },
+        "metadata": {
+          "readOnly": true,
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "version": {
+              "type": "string"
+            },
+            "maintainer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "license": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "verification": {
+              "type": "string",
+              "enum": [
+                "discovered",
+                "reviewed",
+                "compatible",
+                "verified"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "version",
+            "maintainer",
+            "license",
+            "description",
+            "verification"
+          ],
+          "additionalProperties": false
+        },
+        "spec": {
+          "readOnly": true,
+          "type": "object",
+          "properties": {
+            "providers": {
+              "readOnly": true,
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "grokbot",
+                  "muse"
+                ]
+              }
+            },
+            "requirements": {
+              "readOnly": true,
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "readOnly": true,
+                "type": "object",
+                "properties": {
+                  "capability": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  },
+                  "range": {
+                    "type": "string"
+                  },
+                  "optional": {
+                    "type": "boolean"
+                  },
+                  "fit": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "image",
+                      "audio",
+                      "code"
+                    ]
+                  }
+                },
+                "required": [
+                  "capability",
+                  "range",
+                  "optional"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "agents": {
+              "readOnly": true,
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "readOnly": true,
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "maxLength": 64,
+                    "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  },
+                  "mission": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "skills": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "maxLength": 64,
+                      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                    }
+                  },
+                  "expectedOutputs": {
+                    "readOnly": true,
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "mission",
+                  "skills",
+                  "expectedOutputs"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "policies": {
+              "readOnly": true,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 64,
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              }
+            }
+          },
+          "required": [
+            "providers",
+            "requirements",
+            "agents",
+            "policies"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "apiVersion",
+        "kind",
+        "metadata",
+        "spec"
+      ],
+      "additionalProperties": false
+    },
+    "provider": {
+      "type": "string",
+      "enum": [
+        "grokbot",
+        "muse"
+      ]
+    },
+    "registryDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "capabilities": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "version": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "native",
+              "cli",
+              "sdk",
+              "skill",
+              "mcp",
+              "adapter"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "taskFit": {
+            "readOnly": true,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "text",
+                "image",
+                "audio",
+                "code"
+              ]
+            }
+          },
+          "provides": {
+            "readOnly": true,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          },
+          "dependencies": {
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "readOnly": true,
+              "type": "object",
+              "properties": {
+                "capability": {
+                  "type": "string",
+                  "maxLength": 64,
+                  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                },
+                "range": {
+                  "type": "string"
+                },
+                "optional": {
+                  "type": "boolean"
+                },
+                "fit": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "image",
+                    "audio",
+                    "code"
+                  ]
+                }
+              },
+              "required": [
+                "capability",
+                "range",
+                "optional"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "permissions": {
+            "readOnly": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 64,
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          },
+          "risk": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "providerSupport": {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "grokbot": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "manual",
+                  "unsupported",
+                  "unknown"
+                ]
+              },
+              "muse": {
+                "type": "string",
+                "enum": [
+                  "supported",
+                  "manual",
+                  "unsupported",
+                  "unknown"
+                ]
+              }
+            },
+            "required": [
+              "grokbot",
+              "muse"
+            ],
+            "additionalProperties": false
+          },
+          "verification": {
+            "type": "string",
+            "enum": [
+              "discovered",
+              "reviewed",
+              "compatible",
+              "verified"
+            ]
+          },
+          "delivery": {
+            "oneOf": [
+              {
+                "readOnly": true,
+                "type": "object",
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "const": "bundled"
+                  },
+                  "directory": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+                  }
+                },
+                "required": [
+                  "mode",
+                  "directory"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "readOnly": true,
+                "type": "object",
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "const": "reference"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "instructions": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "mode",
+                  "url",
+                  "instructions"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "connector": {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "platform": {
+                "type": "string",
+                "maxLength": 64,
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "read_adapter",
+                  "reference_only"
+                ]
+              },
+              "auth": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "bearer",
+                  "api_key",
+                  "oauth_app_review"
+                ]
+              },
+              "credentialEnv": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9_]+$"
+              },
+              "readOperations": {
+                "readOnly": true,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "const": "search"
+                }
+              },
+              "writeOperations": {
+                "readOnly": true,
+                "minItems": 0,
+                "maxItems": 0,
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "documentation": {
+                "type": "string",
+                "format": "uri"
+              },
+              "limitations": {
+                "readOnly": true,
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "platform",
+              "stage",
+              "auth",
+              "readOperations",
+              "writeOperations",
+              "documentation",
+              "limitations"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "kind",
+          "source",
+          "description",
+          "provides",
+          "dependencies",
+          "permissions",
+          "risk",
+          "providerSupport",
+          "verification",
+          "delivery"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "files": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "mode": {
+                "type": "string",
+                "const": "bundled"
+              },
+              "source": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "mode",
+              "source",
+              "target",
+              "sha256"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "mode": {
+                "type": "string",
+                "const": "generated"
+              },
+              "content": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]+(?:\\/[a-zA-Z0-9_.-]+)*$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "mode",
+              "content",
+              "target",
+              "sha256"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "checks": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "readOnly": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "passed",
+              "failed",
+              "skipped",
+              "needs_human"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "code",
+          "message"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "permissions": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64,
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "skipped": {
+      "readOnly": true,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64,
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "pack",
+    "provider",
+    "registryDigest",
+    "capabilities",
+    "files",
+    "checks",
+    "permissions",
+    "skipped"
+  ],
+  "additionalProperties": false
+}

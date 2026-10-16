@@ -1,0 +1,21 @@
+{
+  "fixture": true,
+  "brand": "Oh My Core Demo",
+  "audience": "Chinese-speaking AI application developers",
+  "language": "zh-CN",
+  "tone": "具体、克制、引用来源",
+  "forbiddenClaims": ["automatic live Grok trigger verified", "guaranteed follower growth"],
+  "researchWindow": "2026-10-01/2026-10-15",
+  "calendarWindow": "2026-10-19/2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "targetAccount": "operator-must-select-real-account",
+  "sourceBundleOrAuthorizedReadAccess": "examples/sources.json",
+  "verifiedClaims": "fixtures/claims.json",
+  "metricsExport": "examples/metrics.csv",
+  "metricDefinitions": {
+    "engagements": "likes + replies + reposts",
+    "engagementRate": "engagements / impressions",
+    "clickRate": "clicks / impressions"
+  },
+  "comparisonWindow": "not provided; baseline comparison unavailable"
+}

@@ -1,0 +1,63 @@
+{
+  "name": "oh-my-grokbot",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "description": "Native agent capability distribution and integration core",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "bin": {
+    "ohmy": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "registry",
+    "skills",
+    "schemas",
+    "docs",
+    "README.md",
+    "third_party",
+    "src",
+    "tsconfig.json",
+    "tsconfig.build.json",
+    "biome.json",
+    "pnpm-lock.yaml",
+    "examples",
+    "industries"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "check": "biome check .",
+    "format": "biome check --write .",
+    "test": "pnpm build && vitest run --maxWorkers=4",
+    "schemas": "pnpm build && node dist/export-schemas.js",
+    "ohmy": "node dist/cli.js",
+    "verify:upstreams": "pnpm build && node dist/verify-upstreams.js",
+    "gateway": "node --experimental-sqlite dist/cli.js gateway serve",
+    "gateway:smoke": "pnpm build && node --experimental-sqlite examples/gateway-smoke.mjs",
+    "industry:smoke": "pnpm build && node --experimental-sqlite examples/industry-smoke.mjs",
+    "workspace:smoke": "pnpm build && node --experimental-sqlite examples/workspace-smoke.mjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "2.1.5",
+    "@larksuite/channel": "0.7.1",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "commander": "14.0.3",
+    "hono": "4.13.13",
+    "ky": "2.2.0",
+    "semver": "7.8.5",
+    "yaml": "2.9.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "22.20.5",
+    "@types/semver": "7.8.0",
+    "typescript": "5.9.3",
+    "vitest": "5.0.4"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-15T07:35:19.444Z",
+  "gateway": {
+    "tests": 77,
+    "files": 16,
+    "fullSuite": "passed after review fixes",
+    "typecheck": "passed",
+    "schemas": "passed",
+    "upstreamIntegrity": {
+      "sources": 6,
+      "adaptations": 14,
+      "status": "passed"
+    },
+    "productionAuditVulnerabilities": 0,
+    "manualSmoke": ".omo/evidence/gateway-smoke.json",
+    "nativeGrokTrigger": "unverified",
+    "liveFeishu": "unverified",
+    "gatewayTests": 26
+  },
+  "skills": {
+    "projectDistribution": 14,
+    "personalAdditions": 18,
+    "newlyInstalled": ["baoyu-url-to-markdown", "baoyu-markdown-to-html", "baoyu-post-to-wechat"],
+    "installationRecord": ".omo/evidence/wechat-skill-installation.json",
+    "authenticated": false,
+    "published": false
+  },
+  "testRunner": {
+    "initial": "default parallelism exceeded test timeouts",
+    "boundedWorkers": 4,
+    "timeoutChanges": false,
+    "subsequentFullRuns": "73/73 twice before fixes, 77/77 after fixes"
+  },
+  "sourceSizes": {
+    "gatewayAndTests": "all below 200 nonblank/noncomment lines",
+    "cli": 237,
+    "nextCliGrowth": "split command registration before adding further root CLI logic"
+  },
+  "reviewFixes": {
+    "regressionRed": ".omo/evidence/gateway-regressions-red.log",
+    "fixed": [
+      "matching reviewer/runner identity rejected",
+      "all remote sender rejections marked needs_human",
+      "idempotent shutdown attempts all owned cleanup",
+      "download hashes the same bytes returned"
+    ],
+    "remainingBoundary": "trusted operator may hold multiple credentials; no OS-level isolation"
+  }
+}

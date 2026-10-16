@@ -1,0 +1,82 @@
+[
+  {
+    "workflowId": "build-feature",
+    "inputs": {
+      "objective": "为现有任务列表添加按状态过滤；不改变持久化格式。",
+      "repositoryPath": "USER_PROVIDED_LOCAL_CHECKOUT",
+      "allowedChanges": ["task list view", "related filter tests"],
+      "acceptanceExamples": [
+        {
+          "input": ["queued", "running", "succeeded"],
+          "action": "filter running",
+          "expected": ["running"]
+        },
+        {
+          "input": [],
+          "action": "filter running",
+          "expected": []
+        },
+        {
+          "input": ["queued"],
+          "action": "clear filter",
+          "expected": ["queued"]
+        }
+      ]
+    },
+    "expectedArtifacts": [
+      "spec.md",
+      "design.md",
+      "changes.patch",
+      "implementation.md",
+      "test-results.json",
+      "qa.md",
+      "review.md",
+      "delivery.md"
+    ]
+  },
+  {
+    "workflowId": "fix-bug",
+    "inputs": {
+      "repositoryPath": "USER_PROVIDED_LOCAL_CHECKOUT",
+      "reproductionSteps": [
+        "Insert tasks A and B with identical display names",
+        "Complete task A using its stable ID",
+        "Inspect task B"
+      ],
+      "expectedBehavior": "Only A completes; B remains queued.",
+      "allowedChanges": ["task completion lookup", "regression tests"]
+    },
+    "expectedArtifacts": [
+      "reproduction.md",
+      "root-cause.md",
+      "changes.patch",
+      "implementation.md",
+      "test-results.json",
+      "qa.md",
+      "review.md",
+      "delivery.md"
+    ]
+  },
+  {
+    "workflowId": "prepare-release",
+    "inputs": {
+      "repositoryPath": "USER_PROVIDED_LOCAL_CHECKOUT",
+      "releaseVersion": "0.1.0-rc.1",
+      "targetEnvironment": "local-staging",
+      "releaseScope": "Previously reviewed task filtering change",
+      "rollbackConstraints": "No schema migration; preserve previous artifact and existing user data."
+    },
+    "expectedArtifacts": [
+      "release-scope.md",
+      "release-plan.md",
+      "rollback-plan.md",
+      "release-manifest.json",
+      "release-notes.md",
+      "test-results.json",
+      "qa.md",
+      "review.md",
+      "approval-request.json",
+      "delivery.md"
+    ]
+  }
+]

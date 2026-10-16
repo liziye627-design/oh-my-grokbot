@@ -1,0 +1,11 @@
+[
+  {
+    "type": "url_citation",
+    "url": "https://example.com/content-workflow",
+    "title": "Synthetic source",
+    "start_index": 0,
+    "end_index": 17,
+    "output_index": 1,
+    "content_index": 0
+  }
+]

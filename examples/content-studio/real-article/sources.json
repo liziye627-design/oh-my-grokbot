@@ -1,0 +1,24 @@
+[
+  {
+    "id": "S1",
+    "url": "https://github.com/JimLiu/baoyu-skills",
+    "observedAt": "2026-10-16T03:14:51.003Z",
+    "capture": "artifacts/content-validation/baoyu-source.md",
+    "sha256": "bc658770bcf5d305b56c7e116451ca865a6d5df25aa63fc947503c56824179e9",
+    "limitations": "Mutable README captured on date; code is separately pinned."
+  },
+  {
+    "id": "S2",
+    "url": "https://github.com/KKKKhazix/khazix-skills/tree/322346ded8129436b3f64707789a73e732ae24d9/khazix-writer",
+    "observedAt": "2026-10-16",
+    "snapshot": "third_party/upstreams/khazix-skills/khazix-writer/SKILL.md",
+    "sha256": "081bfbf5bc0f0c9a2c5a6410eaaa9de18a0cc50f932a1195f45df04e30018602",
+    "limitations": "Writing method only; examples are not verified factual evidence."
+  },
+  {
+    "id": "S3",
+    "path": "examples/content-studio/real-article/content-studio-0.2.0.json",
+    "sha256": "9fbf327c23581f4ba5078df6a55b3ee596603becf9781858689a3a9ed0ebb119",
+    "limitations": "Configuration is not evidence of Grok native execution."
+  }
+]

@@ -1,0 +1,217 @@
+{
+  "pack": {
+    "apiVersion": "ohmy.dev/v0alpha1",
+    "kind": "IndustryPack",
+    "metadata": {
+      "name": "oh-my-solo-company",
+      "version": "0.1.0",
+      "maintainer": "Oh My Grok Bot project",
+      "license": "UNLICENSED",
+      "description": "一人公司流程：发现机会、形成报价草稿、安排交付，并做经营复盘。付款和外发保持待批准。",
+      "verification": "reviewed"
+    },
+    "spec": {
+      "providers": [
+        "grokbot"
+      ],
+      "requirements": [
+        {
+          "capability": "task-planning",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "agent-handoff",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "capability-selection",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "approval-protocol",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "source-research",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "fact-verification",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "cost-awareness",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "artifact-validation",
+          "range": "^0.2.0",
+          "optional": false
+        },
+        {
+          "capability": "native-agent-team",
+          "range": "^0.1.0",
+          "optional": false
+        }
+      ],
+      "agents": [
+        {
+          "id": "chief-of-staff",
+          "mission": "按可用产能筛选本轮只处理的一件事，并指定后续岗位。",
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "capability-selection",
+            "approval-protocol"
+          ],
+          "expectedOutputs": [
+            "engagement-plan.md"
+          ]
+        },
+        {
+          "id": "opportunity-researcher",
+          "mission": "核查机会的公开事实、客户问题和证据缺口。",
+          "skills": [
+            "source-research",
+            "fact-verification"
+          ],
+          "expectedOutputs": [
+            "opportunity.md"
+          ]
+        },
+        {
+          "id": "sales-lead",
+          "mission": "在给定报价约束内起草报价和交付范围。",
+          "skills": [
+            "task-planning",
+            "approval-protocol",
+            "cost-awareness"
+          ],
+          "expectedOutputs": [
+            "quote.md"
+          ]
+        },
+        {
+          "id": "delivery-engineer",
+          "mission": "把已批准范围转成交付清单、验证方法和剩余限制。",
+          "skills": [
+            "task-planning",
+            "artifact-validation",
+            "agent-handoff"
+          ],
+          "expectedOutputs": [
+            "delivery.md"
+          ]
+        },
+        {
+          "id": "finance-reviewer",
+          "mission": "独立复盘工时、成本和范围差异，不执行付款。",
+          "skills": [
+            "fact-verification",
+            "cost-awareness",
+            "artifact-validation"
+          ],
+          "expectedOutputs": [
+            "operating-review.md"
+          ]
+        }
+      ],
+      "policies": [
+        "explicit-commercial-approval",
+        "no-payment-execution",
+        "no-live-orders",
+        "independent-review"
+      ]
+    }
+  },
+  "workflows": [
+    {
+      "id": "operate-engagement",
+      "name": "机会到经营复盘",
+      "entryRole": "chief-of-staff",
+      "requiredInputs": [
+        "objective",
+        "capacity",
+        "offerConstraints"
+      ],
+      "approvalRequired": true,
+      "steps": [
+        {
+          "id": "frame",
+          "role": "chief-of-staff",
+          "dependsOn": [],
+          "requiredArtifacts": [
+            "engagement-plan.md"
+          ],
+          "acceptanceCriteria": [
+            "本轮范围和产能明确",
+            "未确认机会不进入报价"
+          ]
+        },
+        {
+          "id": "discover",
+          "role": "opportunity-researcher",
+          "dependsOn": [
+            "frame"
+          ],
+          "requiredArtifacts": [
+            "opportunity.md"
+          ],
+          "acceptanceCriteria": [
+            "事实和待确认分开",
+            "预算推断被标出"
+          ]
+        },
+        {
+          "id": "quote",
+          "role": "sales-lead",
+          "dependsOn": [
+            "discover"
+          ],
+          "requiredArtifacts": [
+            "quote.md"
+          ],
+          "acceptanceCriteria": [
+            "报价停在草稿",
+            "约束外承诺被拒绝"
+          ]
+        },
+        {
+          "id": "deliver",
+          "role": "delivery-engineer",
+          "dependsOn": [
+            "quote"
+          ],
+          "requiredArtifacts": [
+            "delivery.md"
+          ],
+          "acceptanceCriteria": [
+            "清单对应已起草范围",
+            "未批准不开始对外交付"
+          ]
+        },
+        {
+          "id": "review",
+          "role": "finance-reviewer",
+          "dependsOn": [
+            "deliver"
+          ],
+          "requiredArtifacts": [
+            "operating-review.md"
+          ],
+          "acceptanceCriteria": [
+            "成本能回到记录",
+            "没有付款动作"
+          ]
+        }
+      ]
+    }
+  ]
+}

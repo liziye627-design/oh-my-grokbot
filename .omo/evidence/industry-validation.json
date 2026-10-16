@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-15T07:51:50.334Z",
+  "scope": "four industry native employee packs",
+  "packs": 4,
+  "roles": 19,
+  "workflows": 11,
+  "tests": {
+    "passed": 104,
+    "files": 23,
+    "log": ".omo/evidence/industry-tests.log"
+  },
+  "checks": {
+    "typecheck": "passed",
+    "biome": "passed",
+    "schemas": "passed",
+    "upstreamIntegrity": "passed: six sources, fourteen adaptations"
+  },
+  "smoke": ".omo/evidence/industry-smoke.json",
+  "review": {
+    "fixed": [
+      "Gateway startup uses semantically validated industry catalog",
+      "Industry objective max4000 with explicit encoded-envelope max16000 failure mapped to HTTP400"
+    ],
+    "boundaries": [
+      "manual_native dispatch",
+      "native step handoff and business verification require real account run",
+      "no external write executor"
+    ]
+  },
+  "architecture": {
+    "responsibilities": "catalog, graph validation, plan, CLI and HTTP separated",
+    "boundaries": "Zod inputs; credentials and tenant identity remain existing Gateway authority",
+    "newRuntime": false,
+    "size": "all touched source <=250 pure LOC",
+    "warningBand": [
+      "src/cli.ts:239; next growth should extract registrations",
+      "examples/industry-smoke.mjs:249; next growth should split scenario helpers"
+    ]
+  },
+  "liveNative": false,
+  "liveFeishu": false,
+  "businessWorkPerformed": false
+}

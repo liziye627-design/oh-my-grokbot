@@ -1,0 +1,11 @@
+{
+  "fixtureOnly": true,
+  "status": "needs_human",
+  "stage": "render-plan",
+  "blockers": ["SOURCE_MEDIA_NOT_SUPPLIED", "ASSET_RIGHTS_UNVERIFIED", "RENDER_HOST_NOT_CHECKED"],
+  "mediaLocation": null,
+  "sha256": null,
+  "bytes": null,
+  "actualMediaValidated": false,
+  "publicationPerformed": false
+}

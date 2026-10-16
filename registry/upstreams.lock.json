@@ -1,0 +1,1493 @@
+{
+  "schemaVersion": "0.1",
+  "sources": [
+    {
+      "id": "superpowers",
+      "repository": "https://github.com/obra/superpowers",
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/superpowers/LICENSE",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/superpowers/skills/writing-plans/SKILL.md",
+          "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/superpowers/skills/verification-before-completion/SKILL.md",
+          "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/superpowers/skills/systematic-debugging/SKILL.md",
+          "sha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/superpowers/skills/dispatching-parallel-agents/SKILL.md",
+          "sha256": "1968923066f3b707eb01d1992cdf4c42284c3855f70253b9cd5000ff45fca13c",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "anthropic-work",
+      "repository": "https://github.com/anthropics/knowledge-work-plugins",
+      "commit": "02ffa99ff00ce4d3046ccebabb8357cb39f3ab06",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "third_party/upstreams/anthropic-work/LICENSE",
+          "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/anthropic-work/enterprise-search/skills/search-strategy/SKILL.md",
+          "sha256": "71d5ba2d219a72d696e079885cba2fb5455ba5da6b1404491f8b945bdd8694c6",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/anthropic-work/enterprise-search/skills/knowledge-synthesis/SKILL.md",
+          "sha256": "8dc66c66ef0004010bbf2d569251163e90a6675b982e0cb99ef26b4dd1c5a0f6",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/anthropic-work/data/skills/validate-data/SKILL.md",
+          "sha256": "1e424822043480375b80aef9416227b1c8083af749ca536568716265f79ca54b",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "vercel-skills",
+      "repository": "https://github.com/vercel-labs/skills",
+      "commit": "13e4063a1cf913f5606d57d42ab83a86f5001e04",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/vercel-skills/LICENSE",
+          "sha256": "661142e53c313d2bb5e1b055f5c0a39001450ff1b5e27b89dc4bc7de9a6352ca",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/vercel-skills/skills/find-skills/SKILL.md",
+          "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "github-workflows",
+      "repository": "https://github.com/github/gh-aw",
+      "commit": "462ed682857c4ab64d40f2c85e3738fa27834839",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/github-workflows/LICENSE",
+          "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/github-workflows/docs/src/content/docs/reference/cost-management.md",
+          "sha256": "69563b9ecb08cab542a8fb9e8d94bab854263e7844054542e442210c77b53fc5",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/github-workflows/docs/src/content/docs/reference/schedule-syntax.md",
+          "sha256": "3b44f0abcf933693f040a21f174499c65772b753861acde4004b1ace42990aa3",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/github-workflows/docs/src/content/docs/reference/safe-outputs.md",
+          "sha256": "ea5813aef86b7c943da543b08ed2d81d280098e037a4ee9b62f7e49a034941d6",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "openai-installer",
+      "repository": "https://github.com/openai/skills",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "third_party/upstreams/openai-installer/skills/.system/skill-installer/LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/openai-installer/skills/.system/skill-installer/SKILL.md",
+          "sha256": "83b31cffb2552a923f4152f0338bea548274accc5489d151a95bced8e7bcfb74",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "marketing-skills",
+      "repository": "https://github.com/coreyhaines31/marketingskills",
+      "commit": "c7d7dfb6b460fc376b4b2204b78a9c9fd5ca6467",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/marketing-skills/LICENSE",
+          "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/marketing-skills/skills/social/SKILL.md",
+          "sha256": "a21625ef6d4dea0e83b1a8f1a471d8548a56e989e2944672f0cb4361a7fa296e",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "baoyu-skills",
+      "repository": "https://github.com/JimLiu/baoyu-skills",
+      "commit": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/baoyu-skills/LICENSE",
+          "sha256": "601839401f6ce68b7a8aec0f7ba247ab8ef0848113378220bec4b2615cc84ee7",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-markdown-to-html/scripts/bun.lock",
+          "sha256": "663e82b6d0728cb3f5b4f585c3c3fa0d651df95a75661b71efe0803651d2a14b",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-markdown-to-html/scripts/main.ts",
+          "sha256": "fc21350d369415012db91fe66f2a2b28578cc3450eadcebf7123ce8a0a6e0bac",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-markdown-to-html/scripts/package.json",
+          "sha256": "2265564c1e99c81c3487f8f346fcf7dbef7e663c218cc0377843d1f3841a01bf",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-markdown-to-html/SKILL.md",
+          "sha256": "f4a5bb1697f9387557897a9c58b6406765728089a8d84cfbb6c40a93c3d136f7",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/references/api-setup.md",
+          "sha256": "7003b0ca4619191f01f50c02e5ed1c0064dae1a644ffa8d3e5ec99ce8b2884fd",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/references/article-posting.md",
+          "sha256": "664ac45c986318e83653b5b02ef99c891ab06998f68d205e86cf6d7693dbf992",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/references/config/first-time-setup.md",
+          "sha256": "2dc9a4b9b294d6683ca2079fedbc5426955d94a05d4ff97b2a079182df97f986",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/references/image-text-posting.md",
+          "sha256": "790000e305128340e64f6b4c17c1a146a2fee6c3e130400242cd61628388f751",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/references/multi-account.md",
+          "sha256": "bf15bc34787ca89e2e7b593f82f58b2f53a9e5f2340e6f2450443d9d18a9e351",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/bun.lock",
+          "sha256": "c4f5e12265ffd3f1051b4928fb93d581e0323552be4e9b8cf133e03c7718743f",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/cdp.ts",
+          "sha256": "41a8050224f7dc458f1e7bad6758ec39d1d9b09aeabe0767032a34e4d29880d5",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/check-permissions.ts",
+          "sha256": "740feecc61a8d5032aa997e1315916236efb6188e6bbe40ebb6bc7dbece3fbc5",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/copy-to-clipboard.ts",
+          "sha256": "78ea870589127501c6b1c42291dc70f76c8d97e850d564ae4a47e3041cf901f2",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/md-to-wechat.ts",
+          "sha256": "3fca3dbb02a7fe097668369481c8ed2ad2e634129a5defacb90eea18f7915fa4",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/package.json",
+          "sha256": "7f418d7db7d49d4a57247887d8734a1ba8153698ea2bf3eed11b765ceab071c5",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/paste-from-clipboard.ts",
+          "sha256": "c01606eb970dbe874af3d99a8ed228bda70936cfad1342d0a5a659921a5e2a06",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-agent-browser.ts",
+          "sha256": "56853a7cac787789e326dacf0d45bb4915b7358ea25fb5c048ae59c4c07697df",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-api.ts",
+          "sha256": "fd1723001e62a16f55b81b8a95bde557553a2b3f6a95788f103d068284fda46a",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-article.ts",
+          "sha256": "7720b52ddd4b8ac8f4a9860c3c2ee4bde8e053f65c06bb21f17300adc703b48e",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-browser.ts",
+          "sha256": "920e9367709629e5d4e1badfae27de6668ca83d6e02e0fc77914a723921cfa8c",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-extend-config.ts",
+          "sha256": "a0afe5fe6557f54a2be4db5c5da9e12f3d35a67f3e12599c93a21c57824258e0",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-http.ts",
+          "sha256": "fcb1c1069a84e819e66adba24916bbb088f8bdd3c2b0aafebb9f237672b7b86d",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-image-loader.ts",
+          "sha256": "aed7a2699378b85e1eece4317f5e06e7b890e0843e8ff3d4ed26f8e18c8b613b",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-image-processor.ts",
+          "sha256": "7a93a031d080c95845810df571f7810c6c5758e39f461ea2f2ae8be635e688ff",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-remote-publish.ts",
+          "sha256": "73175b9e7db8df31923a83a857415fa114560ab566d1268657d38863520c8711",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/scripts/wechat-socks-http.ts",
+          "sha256": "59ce0b5538db2e5edd6cc8e68feffc77142330fc1ca7232f63d9756d646770ea",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-post-to-wechat/SKILL.md",
+          "sha256": "e15f1b5a51b8443ef1c8191c036301fd9b3e028069b82b625f327b0344cbc9d8",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/references/adapters.md",
+          "sha256": "98ae3d1444cd681fbcd472f2839ae071ae008b8f90a781c6295f94e166e7f606",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/references/config/first-time-setup.md",
+          "sha256": "571620de72538e8b4f247a63e6db27ce5a27495d1283015ec16c1076d91811cc",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/references/quality-gate.md",
+          "sha256": "a14c1055be7b0c18ac6229cf4ab8d20cfbfdf0a8a8543d484fc39a83ea3972aa",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/baoyu-fetch",
+          "sha256": "fdc95a6483e0df17fd012bcd3756b2da158128bd0b1d5363093ea4ae446bc8db",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/bun.lock",
+          "sha256": "be9cb1aa00778c5a255e66deb5bb3c5b088f2134ccfe41d87b485a70386d1ef2",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/generic/index.ts",
+          "sha256": "2dc64acdceb2d406c864ab28ccbcb52348c39a5c7ceba9928814d6af93ceb11e",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/hn/index.ts",
+          "sha256": "354bbae8600eeffb1d814eddb5f6452a5676a98a311b48dc19f6f85575f5213e",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/index.ts",
+          "sha256": "328c022b8ad10df88b7fae9aab8fda55cbecc7dec3bacd5a061591dc4d4ce20a",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/types.ts",
+          "sha256": "f8ff9d5762c0d2c2beb6bb66d299020d20cf7135bdfd420cf168f66b9fac20ba",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/article.ts",
+          "sha256": "fee60a0b6ea1e361a20316632d24b846586d649e494b7ff28a2ab1a12ef4d38c",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/index.ts",
+          "sha256": "2c3eb04c68c1f393a60a6755f7d4ad568f76af657556293b9063fe569a055564",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/login.ts",
+          "sha256": "2256b982fc94599655b2ebb29674fb3843c66692d457201d81e1d97b81355de7",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/match.ts",
+          "sha256": "644a44aecba218030e177202b404dcea5ea3c33aad4143a2d69ceb79875151f1",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/payloads.ts",
+          "sha256": "7fc49b04d45b3806338fe4ac20d444516a8a6b797dc661cd04bd49536ddc6bfd",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/session.ts",
+          "sha256": "e98f0d690b77464c57486f517d9aa5c8ce6a7827adfed3aa9be9aa93757866bb",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/shared.ts",
+          "sha256": "6c1bc42db39dc240c8baf4db126b4aab6279c66df941ee93df4ff29cede44a1d",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/single.ts",
+          "sha256": "6aad7745fb3c223c71564e87912958e5ae2f2f285d2fcc9ffc1d6de168f8f032",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/thread-loader.ts",
+          "sha256": "3205301481abec9662ce0e38ac8c9dafb7550b937cc12174a4786ab6be30869e",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/thread.ts",
+          "sha256": "69f9465ee13c8020d21dbac8c57c24b85ae7bba1cd5bc4cfa6eea73def87822d",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/x/types.ts",
+          "sha256": "961679524761c8efe956435f5b18b522c779dd17ea20e8ba33ca6d73a6c04ba2",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/youtube/index.ts",
+          "sha256": "518cb4f8e1a3ac831dad87d49c8ce7e02d7484f5a45085b8094da6a3f412cd13",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/youtube/transcript.ts",
+          "sha256": "45562c9d50a25a08405833c28c4a508505f00a11b4d9250600d0b1676777a28a",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/adapters/youtube/utils.ts",
+          "sha256": "d7b4a517d435f4d29bb89eba19eba94f1025cb64323d9bd0e3c5efe15ca18e42",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/cdp-client.ts",
+          "sha256": "c218de5b4adc3456da77ea299e3151b7060bbc5a02d82b2242f79be8f5aa4a3f",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/chrome-launcher.ts",
+          "sha256": "0f22e56880326b2269e6571d5cf8c804d0994490e385c6096c38c4c65c418b9c",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/cookie-sidecar.ts",
+          "sha256": "55c526ac7da928d1c5d046d912da8523c4f2b67af8b0ba0a4c5c8c238b215fe4",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/interaction-gates.ts",
+          "sha256": "144085eb72cefb5659d99a029a87e58bef66c29ce3ba340a276f1706beeb09f4",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/network-journal.ts",
+          "sha256": "53f1c54791efb5e13c4058152829f982effbd4ba482dbf0fab6e9d30ff61083b",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/page-snapshot.ts",
+          "sha256": "1beb05d38833edf16302cbb69f9d663a86d83a186b1be2c5c4f3202d876040ed",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/profile.ts",
+          "sha256": "8cf24934b69920c63dc04d27b605b9ed094b73e1a67fb441a6538d9f37168801",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/browser/session.ts",
+          "sha256": "ebbd6fb17a729c6e7fd1c2f838ef3a4ad54c0aa7125c170e75c6e29821d4fb33",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/cli.ts",
+          "sha256": "81edd99a2ae1b9e6e788e1e7aaa32ce4f3eab998e65b5776a9323bd69a1dde0b",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/commands/convert.ts",
+          "sha256": "afd9d33ee77901db14d2433e36cf983036687b2e463f7f77c9d25092c9280b9a",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/extract/document.ts",
+          "sha256": "233c967fe120f442b812d599d1a7797ae385befe7338feab3190015742ecf8ce",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/extract/html-cleaner.ts",
+          "sha256": "71f913355779e6fa14b99f6d2f2c6072dbe25b05b4e76dc39873c42174fc607f",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/extract/html-extractor.ts",
+          "sha256": "286134c8f61ba30789381a3e04f4932f605f56e4955912e08b8dd0c700338212",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/extract/html-to-markdown.ts",
+          "sha256": "526d8f6ce6bad199664f5bbe842d87adaa6536cf52c6d9cb03a03ca7b71bb7b5",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/extract/markdown-renderer.ts",
+          "sha256": "02c33c1944ce0982568b800dbd095a8ef5a28f46186d4641a8f6cb501888afe6",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/media/default-downloader.ts",
+          "sha256": "ee70d3f984e59278147ee41348eafd48b6bed30d35f11767eb88e4c55b4a9c6b",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/media/markdown-media.ts",
+          "sha256": "6e971ef0ed7d35d6e7110189a44ae9de28b8b363649c83217269305e7e712049",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/media/media-utils.ts",
+          "sha256": "af74adbd74fd37cb94087907f4322fa5fcca1caef3393639ee7efe319c7ec8c0",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/media/types.ts",
+          "sha256": "33882efd42bce883fb490ad2eb88008d6ac041c6451c473710e63c81ca1fec3e",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/types/defuddle-node.d.ts",
+          "sha256": "3fae6b5ea46c9559fb84c89436deb1226622133d95e02bfe52abf7f3c1102696",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/types/shims.d.ts",
+          "sha256": "7909eae2697243192fc695d9f2ba1eda577ec05497793fab1e7b1b66b641d56c",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/utils/logger.ts",
+          "sha256": "94582b40b00c6c077047b32b7582795a0bdad00d03a755d9afc836db90cbddc3",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/lib/utils/url.ts",
+          "sha256": "ca622961dd14c09eb39f96dd780ae01828c7650283ab65c8ac850ca6935ad5de",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/scripts/package.json",
+          "sha256": "b891b19b2872fe6cef6139a4b6ca87a32e22fc97ecb0b9d5741e08fed3e516c2",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/baoyu-skills/skills/baoyu-url-to-markdown/SKILL.md",
+          "sha256": "40913749b0e95165b02771bdf17bb8ed9fa0a72787d3e09571341ab7148359d0",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "khazix-skills",
+      "repository": "https://github.com/KKKKhazix/khazix-skills",
+      "commit": "322346ded8129436b3f64707789a73e732ae24d9",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/khazix-skills/khazix-writer/references/content_methodology.md",
+          "sha256": "e9d12c563c04a8795cb1513b222c275df0ecfbc885149d02da2bc817a10bdcd2",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/khazix-skills/khazix-writer/references/style_examples.md",
+          "sha256": "6ebf6f03072099c5f705d620fcbd2deeac15a2d4340617b72fa861d7f00cce7f",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/khazix-skills/khazix-writer/SKILL.md",
+          "sha256": "081bfbf5bc0f0c9a2c5a6410eaaa9de18a0cc50f932a1195f45df04e30018602",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/khazix-skills/LICENSE",
+          "sha256": "b7f53d07ea4ae2eef26a4f8b28cb7d4df95586e2aa713df408f1ffde9f5a0fea",
+          "role": "license"
+        }
+      ]
+    },
+    {
+      "id": "zimu-growth-skills",
+      "repository": "https://github.com/JeffLi1993/open-growth-skills",
+      "commit": "eecf789af79a03a2dadedc5cea0cd40841f07aee",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/.env.example",
+          "sha256": "6597f370015ae40c28e099e427a5cf8843aa93e898f847e69c1d653d4f8a5c05",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/agents/openai.yaml",
+          "sha256": "ef3c2a5b1319da4538b882129e649bd4a9f133e09e59e6c6e40c76c4be431104",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/geo_research/cli.py",
+          "sha256": "5f692bbb8765d981aba7db3e4cc5e25deccfd19f6584a7b8c10c35dd1b3f1108",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/geo_research/html_report.py",
+          "sha256": "d57133f6181486ab97ec9ffa5f8ccae1a563dd024aa31e08fa33becef86d0ded",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/geo_research/report.py",
+          "sha256": "862556e8ad55e7127f5036dcf1b1d7270baae1f7f505bc07c0bd4a59f221e709",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/geo_research/templates/fanout-report-template.html",
+          "sha256": "628d861601f3304ec19ab9df124840a8ad75720abb9664fd0d45ad6125228b61",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/geo_research/__init__.py",
+          "sha256": "20cde7a3170e6d138b1c7cfe7d86f8abdebaaf4d5396149b23371d892bfe656b",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/geo_research/__main__.py",
+          "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/pyproject.toml",
+          "sha256": "a7585c2f7eedba9bf4d9cf2ce3040eaa79eaf02ee1b8cb229f1e94495b2843a6",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/references/output-contract.md",
+          "sha256": "d30bf60bf003039659c3029fd2a8fdbd87bf770f60b92a71b677eebda8a2c04d",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/scripts/run_research.py",
+          "sha256": "de5c22e3ab3523bcb05c03f08f9804a167abd2638b42767fcfeffd3d224fb40f",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/SKILL.md",
+          "sha256": "3084c7a31c1ef99473b53d919f1669f611a1e57d25be9a7e11d04a60713cde11",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/tests/test_html_report.py",
+          "sha256": "226d222b90a678e773dbdb80cd108ea4052684e4df59f817d8a24a6ac88c71bc",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/chatgpt-fanout-queries/tests/test_research.py",
+          "sha256": "687ee125acb880c15d461a7cd5219a66c55e0d9335755de37dee849a8f626bdd",
+          "role": "reference"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/LICENSE",
+          "sha256": "581410aa488b4612018ff7f77af01f04c225ea1a1215e4606aab42f8f05d0998",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/zimu-growth-skills/README.md",
+          "sha256": "7465e1501870e75f3a653a7b3ee6678b499635a959f214f5a7793c50f069126a",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "ai-hedge-fund",
+      "repository": "https://github.com/virattt/ai-hedge-fund",
+      "commit": "78b779c1389e2d1452dc29606d2c4126d859b964",
+      "license": "MIT",
+      "files": [
+        {
+          "path": "third_party/upstreams/ai-hedge-fund/LICENSE",
+          "sha256": "333d44bf52248cb54db5e8b2b767f1f02fe4df80483de01b8906b3e37e9eb830",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/ai-hedge-fund/protocol.py",
+          "sha256": "826f40e362138e1071095ae43763e4a588bdce4f169cf6d0b477e8ebb27719e8",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "trading-agents",
+      "repository": "https://github.com/TauricResearch/TradingAgents",
+      "commit": "1394a3f72aa4393e1a98f51b382434c4b4c2d972",
+      "license": "Apache-2.0",
+      "files": [
+        {
+          "path": "third_party/upstreams/trading-agents/LICENSE",
+          "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+          "role": "license"
+        },
+        {
+          "path": "third_party/upstreams/trading-agents/analyst_execution.py",
+          "sha256": "8f8be29fd5a92aa7fd621712f3bc0e72092d0a73a7abeb856a039dfa15c1df72",
+          "role": "reference"
+        }
+      ]
+    }
+  ],
+  "adaptations": [
+    {
+      "skill": "source-research",
+      "directory": "skills/source-research",
+      "upstreams": [
+        "anthropic-work"
+      ],
+      "files": [
+        {
+          "path": "skills/source-research/licenses/anthropic-work.txt",
+          "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26"
+        },
+        {
+          "path": "skills/source-research/NOTICE.md",
+          "sha256": "d7e50e8e7cc956cce6d1a52d542ddba30f462b7a874aa574516de70e4048f43c"
+        },
+        {
+          "path": "skills/source-research/SKILL.md",
+          "sha256": "f6e8d3a7d57115715aa2ae77288c9f730f84b9968681007ca7fa49c15f2032cb"
+        }
+      ]
+    },
+    {
+      "skill": "fact-verification",
+      "directory": "skills/fact-verification",
+      "upstreams": [
+        "anthropic-work"
+      ],
+      "files": [
+        {
+          "path": "skills/fact-verification/licenses/anthropic-work.txt",
+          "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26"
+        },
+        {
+          "path": "skills/fact-verification/NOTICE.md",
+          "sha256": "d7e50e8e7cc956cce6d1a52d542ddba30f462b7a874aa574516de70e4048f43c"
+        },
+        {
+          "path": "skills/fact-verification/SKILL.md",
+          "sha256": "980ced9f75ecef754448131458fffded816edd1d3c27a9c3aa0193a18d429333"
+        }
+      ]
+    },
+    {
+      "skill": "task-planning",
+      "directory": "skills/task-planning",
+      "upstreams": [
+        "superpowers"
+      ],
+      "files": [
+        {
+          "path": "skills/task-planning/licenses/superpowers.txt",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        },
+        {
+          "path": "skills/task-planning/NOTICE.md",
+          "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+        },
+        {
+          "path": "skills/task-planning/SKILL.md",
+          "sha256": "4c3f60e213937f74df8b7133e15514b02534607445ecffdc67d5a4d5df01f56f"
+        }
+      ]
+    },
+    {
+      "skill": "agent-handoff",
+      "directory": "skills/agent-handoff",
+      "upstreams": [
+        "superpowers"
+      ],
+      "files": [
+        {
+          "path": "skills/agent-handoff/licenses/superpowers.txt",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        },
+        {
+          "path": "skills/agent-handoff/NOTICE.md",
+          "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+        },
+        {
+          "path": "skills/agent-handoff/SKILL.md",
+          "sha256": "da7cf980c784ea8ee24c9a555d3cc788db2edd98b9e4af607e9242278ca32423"
+        }
+      ]
+    },
+    {
+      "skill": "artifact-validation",
+      "directory": "skills/artifact-validation",
+      "upstreams": [
+        "superpowers"
+      ],
+      "files": [
+        {
+          "path": "skills/artifact-validation/licenses/superpowers.txt",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        },
+        {
+          "path": "skills/artifact-validation/NOTICE.md",
+          "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+        },
+        {
+          "path": "skills/artifact-validation/SKILL.md",
+          "sha256": "5f721b078e823ca5d8122299d9bbabc127bfe24ac4621893976959c99c420407"
+        }
+      ]
+    },
+    {
+      "skill": "failure-recovery",
+      "directory": "skills/failure-recovery",
+      "upstreams": [
+        "superpowers"
+      ],
+      "files": [
+        {
+          "path": "skills/failure-recovery/licenses/superpowers.txt",
+          "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400"
+        },
+        {
+          "path": "skills/failure-recovery/NOTICE.md",
+          "sha256": "a8527f420cb34cd31bb0d8c73a405acd6b2631ff22a5f21d724deef933902b2a"
+        },
+        {
+          "path": "skills/failure-recovery/SKILL.md",
+          "sha256": "b327c63a33d4f5c1188cbd12cf2f395b00dc732deaf204c3808ea86692ab04d9"
+        }
+      ]
+    },
+    {
+      "skill": "approval-protocol",
+      "directory": "skills/approval-protocol",
+      "upstreams": [
+        "github-workflows"
+      ],
+      "files": [
+        {
+          "path": "skills/approval-protocol/licenses/github-workflows.txt",
+          "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+        },
+        {
+          "path": "skills/approval-protocol/NOTICE.md",
+          "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+        },
+        {
+          "path": "skills/approval-protocol/SKILL.md",
+          "sha256": "40cda13d3a122f4ce42b00cf863649f75dc2961dcaef03765469eecb91706187"
+        }
+      ]
+    },
+    {
+      "skill": "cost-awareness",
+      "directory": "skills/cost-awareness",
+      "upstreams": [
+        "github-workflows"
+      ],
+      "files": [
+        {
+          "path": "skills/cost-awareness/licenses/github-workflows.txt",
+          "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+        },
+        {
+          "path": "skills/cost-awareness/NOTICE.md",
+          "sha256": "71ae7aa7e0ec2985dcdb92441c0ca830a3d5f49757f3d9d48460ce18355366d1"
+        },
+        {
+          "path": "skills/cost-awareness/SKILL.md",
+          "sha256": "bc47d0318ab8ea2c473e70ba8a2cb579d380757d6209d7cbd675023ff299cc5e"
+        }
+      ]
+    },
+    {
+      "skill": "capability-selection",
+      "directory": "skills/capability-selection",
+      "upstreams": [
+        "vercel-skills"
+      ],
+      "files": [
+        {
+          "path": "skills/capability-selection/licenses/vercel-skills.txt",
+          "sha256": "661142e53c313d2bb5e1b055f5c0a39001450ff1b5e27b89dc4bc7de9a6352ca"
+        },
+        {
+          "path": "skills/capability-selection/NOTICE.md",
+          "sha256": "74f24208b7322b7d426ee42cec2ea80555a278c198986b6f956c2c88e238b46f"
+        },
+        {
+          "path": "skills/capability-selection/SKILL.md",
+          "sha256": "ae18279a93c428b65eea00002325b99c2a711948f1949dbeea462eefdbd304a9"
+        }
+      ]
+    },
+    {
+      "skill": "environment-bootstrap",
+      "directory": "skills/environment-bootstrap",
+      "upstreams": [
+        "openai-installer"
+      ],
+      "files": [
+        {
+          "path": "skills/environment-bootstrap/licenses/openai-installer.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "skills/environment-bootstrap/NOTICE.md",
+          "sha256": "f68dbcc9bdeb3eafcffb5aaf8935e70180df6a22e6ab0be1ee0bcff8fb0238e3"
+        },
+        {
+          "path": "skills/environment-bootstrap/SKILL.md",
+          "sha256": "1c1cc35e24a6bdf0cbbb3c5797d63a36e7d2ff91e06f7a6f27c54f897ac4b074"
+        }
+      ]
+    },
+    {
+      "skill": "secret-handling",
+      "directory": "skills/secret-handling",
+      "upstreams": [
+        "github-workflows"
+      ],
+      "files": [
+        {
+          "path": "skills/secret-handling/licenses/github-workflows.txt",
+          "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+        },
+        {
+          "path": "skills/secret-handling/NOTICE.md",
+          "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+        },
+        {
+          "path": "skills/secret-handling/SKILL.md",
+          "sha256": "bbbd2ac868ff58ac62c5c3bfdeee74ed3f33a822dfc1fd534beb609b01a56089"
+        }
+      ]
+    },
+    {
+      "skill": "routine-design",
+      "directory": "skills/routine-design",
+      "upstreams": [
+        "github-workflows"
+      ],
+      "files": [
+        {
+          "path": "skills/routine-design/licenses/github-workflows.txt",
+          "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+        },
+        {
+          "path": "skills/routine-design/NOTICE.md",
+          "sha256": "cc95abb58e36b97220f47e4688209270e918c8610cd9fdd3cb391d32569475d9"
+        },
+        {
+          "path": "skills/routine-design/SKILL.md",
+          "sha256": "e874f465ba55a2972819728cd5e270cf9e8ff2b2d1bc8b8cc6c4f3dc1db26e0a"
+        }
+      ]
+    },
+    {
+      "skill": "social-research",
+      "directory": "skills/social-research",
+      "upstreams": [
+        "marketing-skills",
+        "anthropic-work"
+      ],
+      "files": [
+        {
+          "path": "skills/social-research/licenses/anthropic-work.txt",
+          "sha256": "a6946284993aeec75c7d75906064b66210c46051e562077efb30eb6dcfe72e26"
+        },
+        {
+          "path": "skills/social-research/licenses/marketing-skills.txt",
+          "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+        },
+        {
+          "path": "skills/social-research/NOTICE.md",
+          "sha256": "debc3793fb0c9819dacad1688550943ce9180dd76fb396f64cd957eb7f15b609"
+        },
+        {
+          "path": "skills/social-research/SKILL.md",
+          "sha256": "357c3b468f2a3cffc0183d94e1c5abc3a12c96080b584e8c9b32ca1123bcfb90"
+        }
+      ]
+    },
+    {
+      "skill": "social-publishing",
+      "directory": "skills/social-publishing",
+      "upstreams": [
+        "marketing-skills",
+        "github-workflows"
+      ],
+      "files": [
+        {
+          "path": "skills/social-publishing/licenses/github-workflows.txt",
+          "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7"
+        },
+        {
+          "path": "skills/social-publishing/licenses/marketing-skills.txt",
+          "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591"
+        },
+        {
+          "path": "skills/social-publishing/NOTICE.md",
+          "sha256": "2f02ef26323dc4b99f00c6334612832cc66c7bd34daa214cc3e51797613b7b64"
+        },
+        {
+          "path": "skills/social-publishing/SKILL.md",
+          "sha256": "d83c00bfea523dae68e6f79a5ec4d7c57c629f98045378ad5a0dbbb6a387c0ed"
+        }
+      ]
+    },
+    {
+      "skill": "baoyu-url-to-markdown",
+      "directory": "skills/baoyu-url-to-markdown",
+      "upstreams": [
+        "baoyu-skills"
+      ],
+      "files": [
+        {
+          "path": "skills/baoyu-url-to-markdown/licenses/baoyu-skills.txt",
+          "sha256": "601839401f6ce68b7a8aec0f7ba247ab8ef0848113378220bec4b2615cc84ee7"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/NOTICE.md",
+          "sha256": "bb284429a0cfbe6ae98c4a1ea0edb58646e2aeab0a2a48e05c08dc0d8b3171d6"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/SKILL.md",
+          "sha256": "50151813f1d2a067e0d3907a024b8296b6a33da271d34aca48cbd1373171f9c5"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/references/adapters.md",
+          "sha256": "98ae3d1444cd681fbcd472f2839ae071ae008b8f90a781c6295f94e166e7f606"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/references/config/first-time-setup.md",
+          "sha256": "571620de72538e8b4f247a63e6db27ce5a27495d1283015ec16c1076d91811cc"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/references/quality-gate.md",
+          "sha256": "a14c1055be7b0c18ac6229cf4ab8d20cfbfdf0a8a8543d484fc39a83ea3972aa"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/references/upstream-skill.md",
+          "sha256": "40913749b0e95165b02771bdf17bb8ed9fa0a72787d3e09571341ab7148359d0"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/baoyu-fetch",
+          "sha256": "fdc95a6483e0df17fd012bcd3756b2da158128bd0b1d5363093ea4ae446bc8db"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/bun.lock",
+          "sha256": "be9cb1aa00778c5a255e66deb5bb3c5b088f2134ccfe41d87b485a70386d1ef2"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/generic/index.ts",
+          "sha256": "2dc64acdceb2d406c864ab28ccbcb52348c39a5c7ceba9928814d6af93ceb11e"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/hn/index.ts",
+          "sha256": "354bbae8600eeffb1d814eddb5f6452a5676a98a311b48dc19f6f85575f5213e"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/index.ts",
+          "sha256": "328c022b8ad10df88b7fae9aab8fda55cbecc7dec3bacd5a061591dc4d4ce20a"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/types.ts",
+          "sha256": "f8ff9d5762c0d2c2beb6bb66d299020d20cf7135bdfd420cf168f66b9fac20ba"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/article.ts",
+          "sha256": "fee60a0b6ea1e361a20316632d24b846586d649e494b7ff28a2ab1a12ef4d38c"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/index.ts",
+          "sha256": "2c3eb04c68c1f393a60a6755f7d4ad568f76af657556293b9063fe569a055564"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/login.ts",
+          "sha256": "2256b982fc94599655b2ebb29674fb3843c66692d457201d81e1d97b81355de7"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/match.ts",
+          "sha256": "644a44aecba218030e177202b404dcea5ea3c33aad4143a2d69ceb79875151f1"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/payloads.ts",
+          "sha256": "7fc49b04d45b3806338fe4ac20d444516a8a6b797dc661cd04bd49536ddc6bfd"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/session.ts",
+          "sha256": "e98f0d690b77464c57486f517d9aa5c8ce6a7827adfed3aa9be9aa93757866bb"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/shared.ts",
+          "sha256": "6c1bc42db39dc240c8baf4db126b4aab6279c66df941ee93df4ff29cede44a1d"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/single.ts",
+          "sha256": "6aad7745fb3c223c71564e87912958e5ae2f2f285d2fcc9ffc1d6de168f8f032"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/thread-loader.ts",
+          "sha256": "3205301481abec9662ce0e38ac8c9dafb7550b937cc12174a4786ab6be30869e"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/thread.ts",
+          "sha256": "69f9465ee13c8020d21dbac8c57c24b85ae7bba1cd5bc4cfa6eea73def87822d"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/x/types.ts",
+          "sha256": "961679524761c8efe956435f5b18b522c779dd17ea20e8ba33ca6d73a6c04ba2"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/youtube/index.ts",
+          "sha256": "518cb4f8e1a3ac831dad87d49c8ce7e02d7484f5a45085b8094da6a3f412cd13"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/youtube/transcript.ts",
+          "sha256": "45562c9d50a25a08405833c28c4a508505f00a11b4d9250600d0b1676777a28a"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/adapters/youtube/utils.ts",
+          "sha256": "d7b4a517d435f4d29bb89eba19eba94f1025cb64323d9bd0e3c5efe15ca18e42"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/cdp-client.ts",
+          "sha256": "c218de5b4adc3456da77ea299e3151b7060bbc5a02d82b2242f79be8f5aa4a3f"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/chrome-launcher.ts",
+          "sha256": "0f22e56880326b2269e6571d5cf8c804d0994490e385c6096c38c4c65c418b9c"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/cookie-sidecar.ts",
+          "sha256": "55c526ac7da928d1c5d046d912da8523c4f2b67af8b0ba0a4c5c8c238b215fe4"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/interaction-gates.ts",
+          "sha256": "144085eb72cefb5659d99a029a87e58bef66c29ce3ba340a276f1706beeb09f4"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/network-journal.ts",
+          "sha256": "53f1c54791efb5e13c4058152829f982effbd4ba482dbf0fab6e9d30ff61083b"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/page-snapshot.ts",
+          "sha256": "1beb05d38833edf16302cbb69f9d663a86d83a186b1be2c5c4f3202d876040ed"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/profile.ts",
+          "sha256": "8cf24934b69920c63dc04d27b605b9ed094b73e1a67fb441a6538d9f37168801"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/browser/session.ts",
+          "sha256": "ebbd6fb17a729c6e7fd1c2f838ef3a4ad54c0aa7125c170e75c6e29821d4fb33"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/cli.ts",
+          "sha256": "81edd99a2ae1b9e6e788e1e7aaa32ce4f3eab998e65b5776a9323bd69a1dde0b"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/commands/convert.ts",
+          "sha256": "afd9d33ee77901db14d2433e36cf983036687b2e463f7f77c9d25092c9280b9a"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/extract/document.ts",
+          "sha256": "233c967fe120f442b812d599d1a7797ae385befe7338feab3190015742ecf8ce"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/extract/html-cleaner.ts",
+          "sha256": "71f913355779e6fa14b99f6d2f2c6072dbe25b05b4e76dc39873c42174fc607f"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/extract/html-extractor.ts",
+          "sha256": "286134c8f61ba30789381a3e04f4932f605f56e4955912e08b8dd0c700338212"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/extract/html-to-markdown.ts",
+          "sha256": "526d8f6ce6bad199664f5bbe842d87adaa6536cf52c6d9cb03a03ca7b71bb7b5"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/extract/markdown-renderer.ts",
+          "sha256": "02c33c1944ce0982568b800dbd095a8ef5a28f46186d4641a8f6cb501888afe6"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/media/default-downloader.ts",
+          "sha256": "ee70d3f984e59278147ee41348eafd48b6bed30d35f11767eb88e4c55b4a9c6b"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/media/markdown-media.ts",
+          "sha256": "6e971ef0ed7d35d6e7110189a44ae9de28b8b363649c83217269305e7e712049"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/media/media-utils.ts",
+          "sha256": "af74adbd74fd37cb94087907f4322fa5fcca1caef3393639ee7efe319c7ec8c0"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/media/types.ts",
+          "sha256": "33882efd42bce883fb490ad2eb88008d6ac041c6451c473710e63c81ca1fec3e"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/types/defuddle-node.d.ts",
+          "sha256": "3fae6b5ea46c9559fb84c89436deb1226622133d95e02bfe52abf7f3c1102696"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/types/shims.d.ts",
+          "sha256": "7909eae2697243192fc695d9f2ba1eda577ec05497793fab1e7b1b66b641d56c"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/utils/logger.ts",
+          "sha256": "94582b40b00c6c077047b32b7582795a0bdad00d03a755d9afc836db90cbddc3"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/lib/utils/url.ts",
+          "sha256": "ca622961dd14c09eb39f96dd780ae01828c7650283ab65c8ac850ca6935ad5de"
+        },
+        {
+          "path": "skills/baoyu-url-to-markdown/vendor/scripts/package.json",
+          "sha256": "b891b19b2872fe6cef6139a4b6ca87a32e22fc97ecb0b9d5741e08fed3e516c2"
+        }
+      ]
+    },
+    {
+      "skill": "baoyu-markdown-to-html",
+      "directory": "skills/baoyu-markdown-to-html",
+      "upstreams": [
+        "baoyu-skills"
+      ],
+      "files": [
+        {
+          "path": "skills/baoyu-markdown-to-html/licenses/baoyu-skills.txt",
+          "sha256": "601839401f6ce68b7a8aec0f7ba247ab8ef0848113378220bec4b2615cc84ee7"
+        },
+        {
+          "path": "skills/baoyu-markdown-to-html/NOTICE.md",
+          "sha256": "f8857ebec797079dd4be29009ccb7df9ec844c209d823d33924db1d5327bfd5a"
+        },
+        {
+          "path": "skills/baoyu-markdown-to-html/SKILL.md",
+          "sha256": "28c3818c5da459b66bb7390164dab511daa1cc5f7b8d88a2b824edfc0becf1f1"
+        },
+        {
+          "path": "skills/baoyu-markdown-to-html/vendor/references/upstream-skill.md",
+          "sha256": "f4a5bb1697f9387557897a9c58b6406765728089a8d84cfbb6c40a93c3d136f7"
+        },
+        {
+          "path": "skills/baoyu-markdown-to-html/vendor/scripts/bun.lock",
+          "sha256": "663e82b6d0728cb3f5b4f585c3c3fa0d651df95a75661b71efe0803651d2a14b"
+        },
+        {
+          "path": "skills/baoyu-markdown-to-html/vendor/scripts/main.ts",
+          "sha256": "fc21350d369415012db91fe66f2a2b28578cc3450eadcebf7123ce8a0a6e0bac"
+        },
+        {
+          "path": "skills/baoyu-markdown-to-html/vendor/scripts/package.json",
+          "sha256": "2265564c1e99c81c3487f8f346fcf7dbef7e663c218cc0377843d1f3841a01bf"
+        }
+      ]
+    },
+    {
+      "skill": "baoyu-post-to-wechat",
+      "directory": "skills/baoyu-post-to-wechat",
+      "upstreams": [
+        "baoyu-skills"
+      ],
+      "files": [
+        {
+          "path": "skills/baoyu-post-to-wechat/licenses/baoyu-skills.txt",
+          "sha256": "601839401f6ce68b7a8aec0f7ba247ab8ef0848113378220bec4b2615cc84ee7"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/NOTICE.md",
+          "sha256": "8a40433e0edf52377b86dd0fdf8b0673ae2d3f5c392c8c6c0910689783874dbd"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/scripts/draft.mjs",
+          "sha256": "817a89b15d96bfff853eb016ea90ed734a5f0e2f2466b7142238378b301d28d0"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/SKILL.md",
+          "sha256": "8ee85aef4dc1dc0780054d93bc87a8473c2cbc90204c5804e4f9e4ebd05c8e6d"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/references/api-setup.md",
+          "sha256": "7003b0ca4619191f01f50c02e5ed1c0064dae1a644ffa8d3e5ec99ce8b2884fd"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/references/article-posting.md",
+          "sha256": "664ac45c986318e83653b5b02ef99c891ab06998f68d205e86cf6d7693dbf992"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/references/config/first-time-setup.md",
+          "sha256": "2dc9a4b9b294d6683ca2079fedbc5426955d94a05d4ff97b2a079182df97f986"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/references/image-text-posting.md",
+          "sha256": "790000e305128340e64f6b4c17c1a146a2fee6c3e130400242cd61628388f751"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/references/multi-account.md",
+          "sha256": "bf15bc34787ca89e2e7b593f82f58b2f53a9e5f2340e6f2450443d9d18a9e351"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/references/upstream-skill.md",
+          "sha256": "e15f1b5a51b8443ef1c8191c036301fd9b3e028069b82b625f327b0344cbc9d8"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/bun.lock",
+          "sha256": "c4f5e12265ffd3f1051b4928fb93d581e0323552be4e9b8cf133e03c7718743f"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/cdp.ts",
+          "sha256": "41a8050224f7dc458f1e7bad6758ec39d1d9b09aeabe0767032a34e4d29880d5"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/check-permissions.ts",
+          "sha256": "740feecc61a8d5032aa997e1315916236efb6188e6bbe40ebb6bc7dbece3fbc5"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/copy-to-clipboard.ts",
+          "sha256": "78ea870589127501c6b1c42291dc70f76c8d97e850d564ae4a47e3041cf901f2"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/md-to-wechat.ts",
+          "sha256": "3fca3dbb02a7fe097668369481c8ed2ad2e634129a5defacb90eea18f7915fa4"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/package.json",
+          "sha256": "7f418d7db7d49d4a57247887d8734a1ba8153698ea2bf3eed11b765ceab071c5"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/paste-from-clipboard.ts",
+          "sha256": "c01606eb970dbe874af3d99a8ed228bda70936cfad1342d0a5a659921a5e2a06"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-agent-browser.ts",
+          "sha256": "56853a7cac787789e326dacf0d45bb4915b7358ea25fb5c048ae59c4c07697df"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-api.ts",
+          "sha256": "fd1723001e62a16f55b81b8a95bde557553a2b3f6a95788f103d068284fda46a"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-article.ts",
+          "sha256": "7720b52ddd4b8ac8f4a9860c3c2ee4bde8e053f65c06bb21f17300adc703b48e"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-browser.ts",
+          "sha256": "920e9367709629e5d4e1badfae27de6668ca83d6e02e0fc77914a723921cfa8c"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-extend-config.ts",
+          "sha256": "a0afe5fe6557f54a2be4db5c5da9e12f3d35a67f3e12599c93a21c57824258e0"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-http.ts",
+          "sha256": "fcb1c1069a84e819e66adba24916bbb088f8bdd3c2b0aafebb9f237672b7b86d"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-image-loader.ts",
+          "sha256": "aed7a2699378b85e1eece4317f5e06e7b890e0843e8ff3d4ed26f8e18c8b613b"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-image-processor.ts",
+          "sha256": "7a93a031d080c95845810df571f7810c6c5758e39f461ea2f2ae8be635e688ff"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-remote-publish.ts",
+          "sha256": "73175b9e7db8df31923a83a857415fa114560ab566d1268657d38863520c8711"
+        },
+        {
+          "path": "skills/baoyu-post-to-wechat/vendor/scripts/wechat-socks-http.ts",
+          "sha256": "59ce0b5538db2e5edd6cc8e68feffc77142330fc1ca7232f63d9756d646770ea"
+        }
+      ]
+    },
+    {
+      "skill": "khazix-writer",
+      "directory": "skills/khazix-writer",
+      "upstreams": [
+        "khazix-skills"
+      ],
+      "files": [
+        {
+          "path": "skills/khazix-writer/licenses/khazix-skills.txt",
+          "sha256": "b7f53d07ea4ae2eef26a4f8b28cb7d4df95586e2aa713df408f1ffde9f5a0fea"
+        },
+        {
+          "path": "skills/khazix-writer/NOTICE.md",
+          "sha256": "104b8cf1955e7f95b935c4b7938918cdca7fe582c3dd4ebddf17770402326158"
+        },
+        {
+          "path": "skills/khazix-writer/references/content_methodology.md",
+          "sha256": "e9d12c563c04a8795cb1513b222c275df0ecfbc885149d02da2bc817a10bdcd2"
+        },
+        {
+          "path": "skills/khazix-writer/references/style_examples.md",
+          "sha256": "6ebf6f03072099c5f705d620fcbd2deeac15a2d4340617b72fa861d7f00cce7f"
+        },
+        {
+          "path": "skills/khazix-writer/SKILL.md",
+          "sha256": "bd717810bbc355a80ff3ad5e64da05cf63dbb8a29d6ef5159a0ba8bbbfd6b3b3"
+        }
+      ]
+    },
+    {
+      "skill": "zimu-geo-research",
+      "directory": "skills/zimu-geo-research",
+      "upstreams": [
+        "zimu-growth-skills"
+      ],
+      "files": [
+        {
+          "path": "skills/zimu-geo-research/licenses/zimu-growth-skills.txt",
+          "sha256": "581410aa488b4612018ff7f77af01f04c225ea1a1215e4606aab42f8f05d0998"
+        },
+        {
+          "path": "skills/zimu-geo-research/NOTICE.md",
+          "sha256": "d4b65b04706b031653a9930c57d1f54947890930ee3178600ba233d5a0656925"
+        },
+        {
+          "path": "skills/zimu-geo-research/SKILL.md",
+          "sha256": "e0318d8be2707b73c753a2859fd277bce8bd755926975b95d7c8b009d994490a"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/.env.example",
+          "sha256": "6597f370015ae40c28e099e427a5cf8843aa93e898f847e69c1d653d4f8a5c05"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/agents/openai.yaml",
+          "sha256": "ef3c2a5b1319da4538b882129e649bd4a9f133e09e59e6c6e40c76c4be431104"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/geo_research/cli.py",
+          "sha256": "5f692bbb8765d981aba7db3e4cc5e25deccfd19f6584a7b8c10c35dd1b3f1108"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/geo_research/html_report.py",
+          "sha256": "d57133f6181486ab97ec9ffa5f8ccae1a563dd024aa31e08fa33becef86d0ded"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/geo_research/report.py",
+          "sha256": "862556e8ad55e7127f5036dcf1b1d7270baae1f7f505bc07c0bd4a59f221e709"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/geo_research/templates/fanout-report-template.html",
+          "sha256": "628d861601f3304ec19ab9df124840a8ad75720abb9664fd0d45ad6125228b61"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/geo_research/__init__.py",
+          "sha256": "20cde7a3170e6d138b1c7cfe7d86f8abdebaaf4d5396149b23371d892bfe656b"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/geo_research/__main__.py",
+          "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/pyproject.toml",
+          "sha256": "a7585c2f7eedba9bf4d9cf2ce3040eaa79eaf02ee1b8cb229f1e94495b2843a6"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/references/output-contract.md",
+          "sha256": "d30bf60bf003039659c3029fd2a8fdbd87bf770f60b92a71b677eebda8a2c04d"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/scripts/run_research.py",
+          "sha256": "de5c22e3ab3523bcb05c03f08f9804a167abd2638b42767fcfeffd3d224fb40f"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/SKILL.md",
+          "sha256": "3084c7a31c1ef99473b53d919f1669f611a1e57d25be9a7e11d04a60713cde11"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/tests/test_html_report.py",
+          "sha256": "226d222b90a678e773dbdb80cd108ea4052684e4df59f817d8a24a6ac88c71bc"
+        },
+        {
+          "path": "skills/zimu-geo-research/vendor/tests/test_research.py",
+          "sha256": "687ee125acb880c15d461a7cd5219a66c55e0d9335755de37dee849a8f626bdd"
+        }
+      ]
+    },
+    {
+      "skill": "market-research",
+      "directory": "skills/market-research",
+      "upstreams": [
+        "ai-hedge-fund",
+        "trading-agents"
+      ],
+      "files": [
+        {
+          "path": "skills/market-research/licenses/ai-hedge-fund.txt",
+          "sha256": "333d44bf52248cb54db5e8b2b767f1f02fe4df80483de01b8906b3e37e9eb830"
+        },
+        {
+          "path": "skills/market-research/licenses/trading-agents.txt",
+          "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+        },
+        {
+          "path": "skills/market-research/NOTICE.md",
+          "sha256": "7f90e6e63a7b7136255b7eb10665fce33b1926053b1f21bbdffafffc2bd6d972"
+        },
+        {
+          "path": "skills/market-research/SKILL.md",
+          "sha256": "f6feb8502020fb9dd5c7345a0f8c2783f3e2352725e5a71ad2ef94db071d1c11"
+        }
+      ]
+    }
+  ]
+}

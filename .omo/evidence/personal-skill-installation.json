@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-15T00:41:08.595Z",
+  "projectSkillCount": 14,
+  "newPersonalSkills": 15,
+  "records": [
+    {
+      "skill": "source-research",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\source-research",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "fact-verification",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\fact-verification",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "task-planning",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\task-planning",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "agent-handoff",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\agent-handoff",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "artifact-validation",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\artifact-validation",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "failure-recovery",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\failure-recovery",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "approval-protocol",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\approval-protocol",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "cost-awareness",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\cost-awareness",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "capability-selection",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\capability-selection",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "environment-bootstrap",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\environment-bootstrap",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "secret-handling",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\secret-handling",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "routine-design",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\routine-design",
+      "state": "installed",
+      "files": 3
+    },
+    {
+      "skill": "social-research",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\social-research",
+      "state": "installed",
+      "files": 4
+    },
+    {
+      "skill": "social-publishing",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\social-publishing",
+      "state": "installed",
+      "files": 4
+    },
+    {
+      "skill": "anatomy",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\anatomy",
+      "state": "installed",
+      "repository": "https://github.com/wheresryan22/anatomy",
+      "revision": "bc943e40c59998be5da61f9d39c6a983b1116099",
+      "license": "MIT",
+      "verifiedFiles": 147
+    }
+  ],
+  "activation": "Available on next turn; no account authentication or publication performed",
+  "validation": {
+    "projectSkillMetadata": "passed for all 15",
+    "projectSkillChecksums": "passed for all 14 adapted trees",
+    "anatomyGitBlobChecksums": "147 of 147 matched pinned revision",
+    "nodeSyntax": ["kit/iso-kit.mjs", "scripts/capture.mjs"],
+    "nodeVersion": "22.14.0",
+    "chrome": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "legacyQuickValidator": "Rejects optional compatibility field; official Agent Skills specification allows it. Original upstream metadata preserved; project schema validation passed.",
+    "specification": "https://agentskills.io/specification",
+    "drawingOrPublishingExecuted": false
+  }
+}

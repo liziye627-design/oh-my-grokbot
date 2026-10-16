@@ -1,0 +1,28 @@
+{
+  "query": "内容 Bot 如何组织来源与排版？（模拟夹具）",
+  "response_id": "synthetic-offline-fixture-not-a-live-response",
+  "model": "synthetic-fixture",
+  "created_at": null,
+  "status": "completed",
+  "web_search_call_count": 1,
+  "search_call_count": 1,
+  "action_counts": {
+    "search": 1
+  },
+  "exposed_query_count": 2,
+  "unique_query_count": 2,
+  "search_calls_without_queries": 0,
+  "source_url_count": 2,
+  "cited_url_count": 1,
+  "citation_count": 1,
+  "source_domains": [
+    "example.com"
+  ],
+  "cited_domains": [
+    "example.com"
+  ],
+  "usage": null,
+  "error": null,
+  "incomplete_details": null,
+  "warnings": []
+}

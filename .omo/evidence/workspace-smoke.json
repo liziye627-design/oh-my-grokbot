@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "realHTTP": true,
+  "officialMCP": true,
+  "sharedOperators": 2,
+  "isolatedWorkspaces": 2,
+  "filteredListing": true,
+  "sharedTaskClaim": true,
+  "durableWorkspaceBindings": true,
+  "outsiderDenied": true,
+  "mappedChannelOrigin": true,
+  "unmappedSenderDenied": true,
+  "runnerSelfReviewDenied": true,
+  "independentReview": true,
+  "localSinkReceipts": 1,
+  "localFixtureOnly": true,
+  "nativeGroupVerified": false,
+  "liveFeishu": false,
+  "businessWorkPerformed": false
+}

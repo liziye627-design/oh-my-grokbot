@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "0.1",
+  "host": "127.0.0.1",
+  "port": 19741,
+  "principals": [
+    {
+      "id": "x-growth-owner",
+      "tenantId": "x-growth",
+      "role": "operator",
+      "tokenEnv": "X_GROWTH_OWNER_TOKEN"
+    },
+    {
+      "id": "x-growth-colleague",
+      "tenantId": "x-growth",
+      "role": "operator",
+      "tokenEnv": "X_GROWTH_COLLEAGUE_TOKEN"
+    },
+    {
+      "id": "x-growth-reviewer",
+      "tenantId": "x-growth",
+      "role": "verifier",
+      "tokenEnv": "X_GROWTH_REVIEWER_TOKEN"
+    },
+    {
+      "id": "x-growth-feishu",
+      "tenantId": "x-growth",
+      "role": "channel",
+      "tokenEnv": "X_GROWTH_CHANNEL_TOKEN",
+      "chats": ["REPLACE_FEISHU_CHAT_ID"],
+      "senders": ["REPLACE_FEISHU_USER_ID"]
+    }
+  ],
+  "workspaces": [
+    {
+      "id": "x-growth",
+      "name": "X 增长工作组",
+      "tenantId": "x-growth",
+      "pack": "oh-my-x-growth",
+      "workflows": ["topic-research", "content-calendar", "export-analytics"],
+      "coordinatorRole": "scout",
+      "bindings": [
+        {
+          "role": "scout",
+          "botName": "x-growth/scout"
+        },
+        {
+          "role": "researcher",
+          "botName": "x-growth/researcher"
+        },
+        {
+          "role": "editor",
+          "botName": "x-growth/editor"
+        },
+        {
+          "role": "reviewer",
+          "botName": "x-growth/reviewer"
+        },
+        {
+          "role": "operations",
+          "botName": "x-growth/operations"
+        }
+      ],
+      "members": {
+        "operators": ["x-growth-owner", "x-growth-colleague"],
+        "verifiers": ["x-growth-reviewer"]
+      },
+      "feishu": {
+        "principalId": "x-growth-feishu",
+        "chatId": "REPLACE_FEISHU_CHAT_ID",
+        "senders": [
+          {
+            "senderId": "REPLACE_FEISHU_USER_ID",
+            "principalId": "x-growth-owner"
+          }
+        ]
+      }
+    }
+  ],
+  "feishu": {
+    "principalId": "x-growth-feishu",
+    "appIdEnv": "FEISHU_APP_ID",
+    "appSecretEnv": "FEISHU_APP_SECRET"
+  }
+}

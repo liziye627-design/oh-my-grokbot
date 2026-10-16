@@ -1,0 +1,18 @@
+[
+  {
+    "id": "claim-1",
+    "claim": "X 官方样例仓库提供多个语言的 API 端点示例。",
+    "sourceIds": ["sample-official"],
+    "status": "supported",
+    "checkedAt": "2026-10-15",
+    "limitations": "Documentation review only; API availability depends on account access."
+  },
+  {
+    "id": "claim-2",
+    "claim": "本项目已自动发布并获得十倍增长。",
+    "sourceIds": [],
+    "status": "unsupported",
+    "checkedAt": "2026-10-15",
+    "limitations": "No live receipt, baseline or measurement evidence exists; exclude from all drafts."
+  }
+]

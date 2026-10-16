@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-15T07:34:29.714Z",
+  "surface": "compiled Gateway + real loopback HTTP + official MCP SDK",
+  "checks": [
+    "authenticated channel event deduplicated",
+    "official MCP initialization and six tools",
+    "exact proposal approved without executing any external action",
+    "artifact retrieved, hash checked, self-review denied, independent review accepted, token revoked",
+    "state and pending outbox survive restart; disconnected Feishu explicitly reported"
+  ],
+  "liveFeishu": false,
+  "nativeGrokTrigger": "unverified",
+  "status": "passed",
+  "command": "pnpm gateway:smoke"
+}

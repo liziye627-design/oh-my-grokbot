@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-15T00:42:52.842Z",
+  "scope": "GitHub source research only; no new editorial Skill, article writing, login, deployment or publication",
+  "candidates": [
+    {
+      "repo": "JimLiu/baoyu-skills",
+      "url": "https://github.com/JimLiu/baoyu-skills",
+      "description": null,
+      "branch": "main",
+      "license": "MIT",
+      "archived": false,
+      "pushedAt": "2026-09-10T15:13:43Z",
+      "commit": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "checkedAt": "2026-10-15",
+      "installed": false,
+      "status": "source_candidate_not_runtime_verified"
+    },
+    {
+      "repo": "wechat-article/wechat-article-exporter",
+      "url": "https://github.com/wechat-article/wechat-article-exporter",
+      "description": "一款在线的 微信公众号文章批量下载 工具，支持导出阅读量与评论数据，无需搭建任何环境，可通过 在线网站 使用，支持 docker 私有化部署和 Cloudflare 部署。  支持下载各种文件格式，其中 HTML 格式可100%还原文章排版与样式。",
+      "branch": "master",
+      "license": "MIT",
+      "archived": false,
+      "pushedAt": "2026-09-30T11:51:15Z",
+      "commit": "152f23832c7f3664b86148e84bd3f75e513e4dd2",
+      "checkedAt": "2026-10-15",
+      "installed": false,
+      "status": "reference_only_maintenance_stopped",
+      "caveat": "Pinned README states maintenance stopped 2026-07-30 because upstream core interface closed; not treated as working bulk ingestion."
+    },
+    {
+      "repo": "rachelos/we-mp-rss",
+      "url": "https://github.com/rachelos/we-mp-rss",
+      "description": "✨符合阅读习惯的微信公众号助手、微信公众号转MarkDown、微信公众号转PDF、定时更新订阅公众号文章、生成微信公众号RSS订阅源、导出微信公众号订阅源、支持微信公众号Webhook/微信公众号API/AI Agent接入微信公众号微信公众号、订阅微信公众号、微信公众号助手 、微信公众号阅读、微信公众号接口、微信公众号爬虫、微信公众号监测、标签订阅微信公众号、微信公众号源、微信公众号读书、微信公众号文章、微信公众号框架、微信公众号管理、微信公众号源、微信公众号平台、微信公众号代码、微信公众号系统、微信公众号源码",
+      "branch": "main",
+      "license": "MIT (LICENSE text verified; GitHub metadata NOASSERTION)",
+      "archived": false,
+      "pushedAt": "2026-10-10T01:45:31Z",
+      "commit": "9b40351fd1913e7f74cf88f65740cd67a28baf81",
+      "checkedAt": "2026-10-15",
+      "installed": false,
+      "status": "source_candidate_not_runtime_verified",
+      "caveat": "Self-hosted service with login/authorization and upstream availability dependencies; not a standalone Skill."
+    },
+    {
+      "repo": "doocs/md",
+      "url": "https://github.com/doocs/md",
+      "description": "✍ WeChat Markdown Editor | 一款高度简洁的微信 Markdown 编辑器：支持 Markdown 语法、自定义主题样式、内容管理、多图床、AI 助手等特性",
+      "branch": "main",
+      "license": "WTFPL",
+      "archived": false,
+      "pushedAt": "2026-10-14T16:12:51Z",
+      "commit": "1bdad48d20048bddc8d32afb1b75a6475169f163",
+      "checkedAt": "2026-10-15",
+      "installed": false,
+      "status": "source_candidate_not_runtime_verified"
+    }
+  ]
+}

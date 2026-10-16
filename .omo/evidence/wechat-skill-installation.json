@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-15T01:16:50.297Z",
+  "records": [
+    {
+      "name": "baoyu-url-to-markdown",
+      "destination": "C:/Users/<user>/.codex/skills/baoyu-url-to-markdown",
+      "upstream": "JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "license": "MIT",
+      "modification": "Codex frontmatter normalization only; original preserved at references/upstream-skill.md",
+      "sha256": "cf22540b02b8b95c6e5577cc39f4dbadf60801c0f3e1dad687c894a3074e8682"
+    },
+    {
+      "name": "baoyu-markdown-to-html",
+      "destination": "C:/Users/<user>/.codex/skills/baoyu-markdown-to-html",
+      "upstream": "JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "license": "MIT",
+      "modification": "Codex frontmatter normalization only; original preserved at references/upstream-skill.md",
+      "sha256": "155539ba240c5ce7361cc126e91be052e8041ad1a8ee2ed34af606d9baacf805"
+    },
+    {
+      "name": "baoyu-post-to-wechat",
+      "destination": "C:/Users/<user>/.codex/skills/baoyu-post-to-wechat",
+      "upstream": "JimLiu/baoyu-skills",
+      "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+      "license": "MIT",
+      "modification": "Codex frontmatter normalization only; original preserved at references/upstream-skill.md",
+      "sha256": "72cad33f058be564371ad78b277dbe1b98c6fd615a41569cb85a9c54a608ae7d"
+    }
+  ],
+  "authenticated": false,
+  "published": false
+}
