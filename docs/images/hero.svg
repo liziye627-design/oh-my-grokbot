@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Oh My Grok Bot">
+<title>Oh My Grok Bot</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b6779"/></marker></defs>
+<style>text{font-family:-apple-system,'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Noto Serif CJK SC',sans-serif;fill:#16202e}.m{fill:#5b6779}.b{font-weight:700}</style>
+<rect width="1200" height="300" rx="16" fill="#f6f8fc"/>
+<rect width="1200" height="300" rx="16" fill="#0f172a"/>
+<circle cx="1060" cy="70" r="150" fill="#1e3a8a" opacity=".55"/><circle cx="1150" cy="250" r="110" fill="#2563eb" opacity=".35"/>
+<text x="64" y="112" font-size="54" class="b" style="fill:#fff">Oh My Grok Bot</text>
+<text x="64" y="162" font-size="26" style="fill:#dbe7ff">把 Grok Bot 组织成分工明确、产物可验收的 Bot 团队</text>
+<text x="64" y="196" font-size="16" style="fill:#93a4c3">Team packs · reviewed skills · auditable installer · local task gateway</text><rect x="64" y="226" width="121" height="34" rx="17" fill="#1e293b" stroke="#334155"/><text x="124.5" y="248" text-anchor="middle" font-size="15" style="fill:#e2e8f0">16 套团队包</text><rect x="197" y="226" width="108" height="34" rx="17" fill="#1e293b" stroke="#334155"/><text x="251.0" y="248" text-anchor="middle" font-size="15" style="fill:#e2e8f0">75 个岗位</text><rect x="317" y="226" width="121" height="34" rx="17" fill="#1e293b" stroke="#334155"/><text x="377.5" y="248" text-anchor="middle" font-size="15" style="fill:#e2e8f0">40 条工作流</text><rect x="450" y="226" width="238" height="34" rx="17" fill="#1e293b" stroke="#334155"/><text x="569.0" y="248" text-anchor="middle" font-size="15" style="fill:#e2e8f0">12 个 Core Skills</text><rect x="700" y="226" width="173" height="34" rx="17" fill="#1e293b" stroke="#334155"/><text x="786.5" y="248" text-anchor="middle" font-size="15" style="fill:#e2e8f0">38 个已复核外部技能</text>
+</svg>
