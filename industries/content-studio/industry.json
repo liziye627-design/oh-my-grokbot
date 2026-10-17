@@ -6,7 +6,7 @@
       "name": "oh-my-content-studio",
       "version": "0.3.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "个人内容生产链路：一次把想法做成有来源的公众号正文、标题、X 线程和短帖，审稿后停在发布前。",
       "verification": "reviewed"
     },

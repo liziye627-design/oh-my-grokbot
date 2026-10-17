@@ -6,7 +6,7 @@
       "name": "oh-my-research-lab",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "研究实验室：制定研究计划，收集来源，比较行业与竞品，并独立核对事实和证据缺口。",
       "verification": "reviewed"
     },

@@ -6,7 +6,7 @@
       "name": "oh-my-wechat",
       "version": "0.2.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "个人公众号写作：从历史文章提取文风，确认大纲后写正文、备选标题和独立审稿。包含本地 HTML 排版和草稿交接；账户写入需独立授权与验证。",
       "verification": "reviewed"
     },

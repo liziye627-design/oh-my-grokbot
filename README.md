@@ -6,7 +6,7 @@
 
 **把 Grok Bot 组织成分工明确、产物可验收的 Bot 团队。**
 
-> **English summary.** Oh My Grok Bot is a distribution and integration layer for native Grok Bot. It ships 16 team packs (75 roles, 40 workflows) with role prompts and acceptance criteria, 12 core skills plus a reviewed catalog of 38 third-party skills, an auditable local installer (`plan → apply → verify → rollback`), and a local task gateway (SQLite ledger, Result MCP, approvals, independent verification). Resources are `reviewed` development builds; native-account activation still needs to be verified in Grok Bot. The project license is not decided yet (`UNLICENSED`).
+> **English summary.** Oh My Grok Bot is a distribution and integration layer for native Grok Bot. It ships 16 team packs (75 roles, 40 workflows) with role prompts and acceptance criteria, 12 core skills plus a reviewed catalog of 38 third-party skills, an auditable local installer (`plan → apply → verify → rollback`), and a local task gateway (SQLite ledger, Result MCP, approvals, independent verification). Resources are `reviewed` development builds; native-account activation still needs to be verified in Grok Bot. The project is licensed under [MIT](LICENSE); bundled third-party skills keep their own upstream licenses.
 
 <sub>插画里举旗的小圆点叫 **dot**，是本项目的原创吉祥物；标注「示意」的图是流程示意，不是界面截图。</sub>
 
@@ -255,7 +255,7 @@ pnpm audit --prod --registry=https://registry.npmjs.org
 
 ## 许可
 
-项目许可证尚待维护者决定，当前 package 标记为 `private` 和 `UNLICENSED`；本地开发不等于许可公开分发。
+本项目以 [MIT 许可证](LICENSE) 发布。MIT 只覆盖本项目自有代码与文档；下列第三方内容按其各自许可使用。
 
 - 所选上游许可允许的文件已下载并保留声明；适配的 Core Skills 许可见各目录 `NOTICE.md`。
 - `team-skills/` 中每个第三方技能保留各自上游的 `LICENSE`（及 `NOTICE`）和 Source 说明，按其各自许可使用。

@@ -6,7 +6,7 @@
       "name": "oh-my-video-studio",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "Native video production and supplied-media repurposing team with rights, render and independent media acceptance gates.",
       "verification": "reviewed"
     },

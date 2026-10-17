@@ -6,7 +6,7 @@
       "name": "oh-my-solo-company",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "一人公司流程：发现机会、形成报价草稿、安排交付，并做经营复盘。付款和外发保持待批准。",
       "verification": "reviewed"
     },

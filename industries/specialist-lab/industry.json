@@ -6,7 +6,7 @@
       "name": "oh-my-specialist-lab",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "专业研究室：视觉评估、游戏设计、公开市场研究和模型评测，不提供诊断、法律决定或真实交易。",
       "verification": "reviewed"
     },
