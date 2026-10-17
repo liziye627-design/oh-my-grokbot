@@ -6,7 +6,7 @@
       "name": "oh-my-engineering-lab",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "工程实验室：从设备或模型需求形成实现计划、外部编码工作区记录和可复核测试报告。",
       "verification": "reviewed"
     },

@@ -6,7 +6,7 @@
       "name": "oh-my-sales-team",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "销售准备团队：寻找公开线索、核查公司、形成方案草稿，并在用户批准前停止外联。",
       "verification": "reviewed"
     },

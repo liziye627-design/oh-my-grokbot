@@ -6,7 +6,7 @@
       "name": "oh-my-market-desk",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "市场研究台：整理公开行情、公告和操作者提供的数据，写出假设、证据、反证和模拟笔记。不连接券商，不生成订单。",
       "verification": "reviewed"
     },

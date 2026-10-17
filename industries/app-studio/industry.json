@@ -6,7 +6,7 @@
       "name": "oh-my-app-studio",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "原生数字开发团队：需求、架构、实现、独立测试、审阅与发布准备。",
       "verification": "reviewed"
     },

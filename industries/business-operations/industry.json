@@ -6,7 +6,7 @@
       "name": "oh-my-business-operations",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "Business operations native employee recipes for supplied records and reviewed internal drafts.",
       "verification": "reviewed"
     },

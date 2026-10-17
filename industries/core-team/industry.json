@@ -6,7 +6,7 @@
       "name": "oh-my-core-team",
       "version": "0.1.2",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "核心参谋团队：拆解任务、独立验收，并把已完成工作沉淀为可复查的知识记录。",
       "verification": "reviewed"
     },

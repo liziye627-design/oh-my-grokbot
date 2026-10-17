@@ -6,7 +6,7 @@
       "name": "oh-my-design-studio",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "设计工作室：为每个组件写需求并点名动效。艺术指导能出图；视频和三维模型在运行时返回文件后记入同一张回执。",
       "verification": "reviewed"
     },

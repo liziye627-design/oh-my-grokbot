@@ -5,7 +5,7 @@
       "id": "ohmy-local",
       "url": null,
       "author": "Oh My Grok Bot project",
-      "license": "Project code UNLICENSED; adapted Skills individually MIT and/or Apache-2.0, see their notices",
+      "license": "Project code MIT; adapted Skills individually MIT and/or Apache-2.0, see their notices",
       "redistribution": "local_only",
       "verification": "reviewed",
       "checkedAt": "2026-10-14"
@@ -1474,7 +1474,7 @@
         "name": "oh-my-core",
         "version": "0.2.0",
         "maintainer": "Oh My Grok Bot project",
-        "license": "UNLICENSED",
+        "license": "MIT",
         "description": "Twelve licensed, upstream-adapted Core Skills and native setup recipe; account verification pending.",
         "verification": "reviewed"
       },
@@ -1587,7 +1587,7 @@
         "name": "oh-my-social",
         "version": "0.2.0",
         "maintainer": "Oh My Grok Bot project",
-        "license": "UNLICENSED",
+        "license": "MIT",
         "description": "Core plus social research and publication draft workflows; no live publishing.",
         "verification": "reviewed"
       },

@@ -6,7 +6,7 @@
       "name": "oh-my-office-team",
       "version": "0.1.0",
       "maintainer": "Oh My Grok Bot project",
-      "license": "UNLICENSED",
+      "license": "MIT",
       "description": "办公支持团队：整理会议、文档、数据口径和日程草案，写入外部日历或消息前需要批准。",
       "verification": "reviewed"
     },
