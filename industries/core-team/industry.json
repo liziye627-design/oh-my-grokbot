@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "task-planning",
@@ -77,50 +75,28 @@
             "approval-protocol",
             "cost-awareness"
           ],
-          "expectedOutputs": [
-            "assignment.md",
-            "weekly-review.md"
-          ]
+          "expectedOutputs": ["assignment.md", "weekly-review.md"]
         },
         {
           "id": "task-planner",
           "mission": "把已确认目标写成有负责岗位、输入、产物和验收条件的步骤。",
-          "skills": [
-            "task-planning",
-            "agent-handoff"
-          ],
-          "expectedOutputs": [
-            "work-plan.md"
-          ]
+          "skills": ["task-planning", "agent-handoff"],
+          "expectedOutputs": ["work-plan.md"]
         },
         {
           "id": "evidence-reviewer",
           "mission": "独立核对上游产物是否满足验收条件，并分开记录通过、退回和证据缺口。",
-          "skills": [
-            "fact-verification",
-            "artifact-validation"
-          ],
-          "expectedOutputs": [
-            "review.md"
-          ]
+          "skills": ["fact-verification", "artifact-validation"],
+          "expectedOutputs": ["review.md"]
         },
         {
           "id": "knowledge-keeper",
           "mission": "在任务分配与验收之后，把已验收材料写入共享知识库，全文留在记录里，短摘要交回幕僚长。",
-          "skills": [
-            "source-research",
-            "routine-design"
-          ],
-          "expectedOutputs": [
-            "knowledge-note.md"
-          ]
+          "skills": ["source-research", "routine-design"],
+          "expectedOutputs": ["knowledge-note.md"]
         }
       ],
-      "policies": [
-        "evidence-required",
-        "independent-review",
-        "no-auto-dispatch"
-      ]
+      "policies": ["evidence-required", "independent-review", "no-auto-dispatch"]
     }
   },
   "workflows": [
@@ -128,20 +104,14 @@
       "id": "assign-work",
       "name": "任务分配与验收",
       "entryRole": "chief-of-staff",
-      "requiredInputs": [
-        "objective",
-        "constraints",
-        "availableTeams"
-      ],
+      "requiredInputs": ["objective", "constraints", "availableTeams"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "frame",
           "role": "chief-of-staff",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "assignment.md"
-          ],
+          "requiredArtifacts": ["assignment.md"],
           "acceptanceCriteria": [
             "目标、非目标和负责人明确",
             "未授权团队不被分配",
@@ -151,30 +121,16 @@
         {
           "id": "plan",
           "role": "task-planner",
-          "dependsOn": [
-            "frame"
-          ],
-          "requiredArtifacts": [
-            "work-plan.md"
-          ],
-          "acceptanceCriteria": [
-            "每步有输入、产物和验收条件",
-            "依赖关系无循环"
-          ]
+          "dependsOn": ["frame"],
+          "requiredArtifacts": ["work-plan.md"],
+          "acceptanceCriteria": ["每步有输入、产物和验收条件", "依赖关系无循环"]
         },
         {
           "id": "accept",
           "role": "evidence-reviewer",
-          "dependsOn": [
-            "plan"
-          ],
-          "requiredArtifacts": [
-            "review.md"
-          ],
-          "acceptanceCriteria": [
-            "审查者独立于计划和分配作者",
-            "缺项被退回而不是补写"
-          ]
+          "dependsOn": ["plan"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": ["审查者独立于计划和分配作者", "缺项被退回而不是补写"]
         }
       ]
     },
@@ -182,19 +138,14 @@
       "id": "retain-knowledge",
       "name": "验收后知识沉淀",
       "entryRole": "knowledge-keeper",
-      "requiredInputs": [
-        "completedWork",
-        "sourceRefs"
-      ],
+      "requiredInputs": ["completedWork", "sourceRefs"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "capture",
           "role": "knowledge-keeper",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "knowledge-note.md"
-          ],
+          "requiredArtifacts": ["knowledge-note.md"],
           "acceptanceCriteria": [
             "每条结论能回到来源和验收记录",
             "未知项保持未知",
@@ -204,16 +155,9 @@
         {
           "id": "accept",
           "role": "evidence-reviewer",
-          "dependsOn": [
-            "capture"
-          ],
-          "requiredArtifacts": [
-            "review.md"
-          ],
-          "acceptanceCriteria": [
-            "抽查来源可打开",
-            "过期边界被写明"
-          ]
+          "dependsOn": ["capture"],
+          "requiredArtifacts": ["review.md"],
+          "acceptanceCriteria": ["抽查来源可打开", "过期边界被写明"]
         }
       ]
     },
@@ -237,9 +181,7 @@
           "id": "review",
           "role": "chief-of-staff",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "weekly-review.md"
-          ],
+          "requiredArtifacts": ["weekly-review.md"],
           "acceptanceCriteria": [
             "写明省下返工最多的岗位、返工最多的产物、下周是否调整名单",
             "净分钟等于基线减仍花费再减审阅；零或负数，或任一条全程危机，本周记为未通过",
@@ -252,12 +194,8 @@
         {
           "id": "accept",
           "role": "evidence-reviewer",
-          "dependsOn": [
-            "review"
-          ],
-          "requiredArtifacts": [
-            "review.md"
-          ],
+          "dependsOn": ["review"],
+          "requiredArtifacts": ["review.md"],
           "acceptanceCriteria": [
             "节省和返工的说法能回到本周记录",
             "净分钟没有用运行次数或百分比代替",

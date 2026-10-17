@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "source-research",
@@ -75,68 +73,35 @@
         {
           "id": "lead-hunter",
           "mission": "按理想客户条件整理公开线索，并写明每条线索的出处和不确定项。",
-          "skills": [
-            "source-research",
-            "task-planning"
-          ],
-          "expectedOutputs": [
-            "lead-list.md"
-          ]
+          "skills": ["source-research", "task-planning"],
+          "expectedOutputs": ["lead-list.md"]
         },
         {
           "id": "company-researcher",
           "mission": "核对线索对应的公司事实、产品线索和可验证的业务背景。",
-          "skills": [
-            "source-research",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "company-brief.md"
-          ]
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["company-brief.md"]
         },
         {
           "id": "sales-engineer",
           "mission": "对照方案边界判断线索是否匹配，并指出需要人工确认的风险。",
-          "skills": [
-            "fact-verification",
-            "artifact-validation",
-            "capability-selection"
-          ],
-          "expectedOutputs": [
-            "qualification.md"
-          ]
+          "skills": ["fact-verification", "artifact-validation", "capability-selection"],
+          "expectedOutputs": ["qualification.md"]
         },
         {
           "id": "proposal-writer",
           "mission": "依据已通过的资格判断起草方案，所有承诺都可回溯到确认过的约束。",
-          "skills": [
-            "task-planning",
-            "agent-handoff",
-            "approval-protocol"
-          ],
-          "expectedOutputs": [
-            "proposal.md"
-          ]
+          "skills": ["task-planning", "agent-handoff", "approval-protocol"],
+          "expectedOutputs": ["proposal.md"]
         },
         {
           "id": "crm-manager",
           "mission": "把线索状态、下一步负责人和待批准动作整理成可核对的交接，不写入外部系统。",
-          "skills": [
-            "agent-handoff",
-            "approval-protocol",
-            "routine-design"
-          ],
-          "expectedOutputs": [
-            "crm-record.md",
-            "handoff.md"
-          ]
+          "skills": ["agent-handoff", "approval-protocol", "routine-design"],
+          "expectedOutputs": ["crm-record.md", "handoff.md"]
         }
       ],
-      "policies": [
-        "no-unsolicited-messaging",
-        "explicit-outreach-approval",
-        "no-payment-execution"
-      ]
+      "policies": ["no-unsolicited-messaging", "explicit-outreach-approval", "no-payment-execution"]
     }
   },
   "workflows": [
@@ -144,66 +109,36 @@
       "id": "qualify-lead",
       "name": "线索发现与资格判断",
       "entryRole": "lead-hunter",
-      "requiredInputs": [
-        "idealCustomer",
-        "territory",
-        "researchWindow"
-      ],
+      "requiredInputs": ["idealCustomer", "territory", "researchWindow"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "discover",
           "role": "lead-hunter",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "lead-list.md"
-          ],
-          "acceptanceCriteria": [
-            "每条线索有来源",
-            "没有外联动作"
-          ]
+          "requiredArtifacts": ["lead-list.md"],
+          "acceptanceCriteria": ["每条线索有来源", "没有外联动作"]
         },
         {
           "id": "profile",
           "role": "company-researcher",
-          "dependsOn": [
-            "discover"
-          ],
-          "requiredArtifacts": [
-            "company-brief.md"
-          ],
-          "acceptanceCriteria": [
-            "事实和推断分开",
-            "空白字段保持空白"
-          ]
+          "dependsOn": ["discover"],
+          "requiredArtifacts": ["company-brief.md"],
+          "acceptanceCriteria": ["事实和推断分开", "空白字段保持空白"]
         },
         {
           "id": "score",
           "role": "sales-engineer",
-          "dependsOn": [
-            "profile"
-          ],
-          "requiredArtifacts": [
-            "qualification.md"
-          ],
-          "acceptanceCriteria": [
-            "结论引用简报证据",
-            "信息不足标为暂缓"
-          ]
+          "dependsOn": ["profile"],
+          "requiredArtifacts": ["qualification.md"],
+          "acceptanceCriteria": ["结论引用简报证据", "信息不足标为暂缓"]
         },
         {
           "id": "record",
           "role": "crm-manager",
-          "dependsOn": [
-            "score"
-          ],
-          "requiredArtifacts": [
-            "crm-record.md"
-          ],
-          "acceptanceCriteria": [
-            "状态不是已联系",
-            "下一步负责人明确"
-          ]
+          "dependsOn": ["score"],
+          "requiredArtifacts": ["crm-record.md"],
+          "acceptanceCriteria": ["状态不是已联系", "下一步负责人明确"]
         }
       ]
     },
@@ -211,52 +146,29 @@
       "id": "write-proposal",
       "name": "方案草稿与批准交接",
       "entryRole": "proposal-writer",
-      "requiredInputs": [
-        "qualification",
-        "offerConstraints",
-        "recipient"
-      ],
+      "requiredInputs": ["qualification", "offerConstraints", "recipient"],
       "approvalRequired": true,
       "steps": [
         {
           "id": "draft",
           "role": "proposal-writer",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "proposal.md"
-          ],
-          "acceptanceCriteria": [
-            "承诺都在给定约束内",
-            "草稿未发送"
-          ]
+          "requiredArtifacts": ["proposal.md"],
+          "acceptanceCriteria": ["承诺都在给定约束内", "草稿未发送"]
         },
         {
           "id": "check",
           "role": "sales-engineer",
-          "dependsOn": [
-            "draft"
-          ],
-          "requiredArtifacts": [
-            "qualification.md"
-          ],
-          "acceptanceCriteria": [
-            "方案与资格判断一致",
-            "新承诺被标出"
-          ]
+          "dependsOn": ["draft"],
+          "requiredArtifacts": ["qualification.md"],
+          "acceptanceCriteria": ["方案与资格判断一致", "新承诺被标出"]
         },
         {
           "id": "handoff",
           "role": "crm-manager",
-          "dependsOn": [
-            "check"
-          ],
-          "requiredArtifacts": [
-            "handoff.md"
-          ],
-          "acceptanceCriteria": [
-            "批准绑定收件人和正文",
-            "没有批准就不外发"
-          ]
+          "dependsOn": ["check"],
+          "requiredArtifacts": ["handoff.md"],
+          "acceptanceCriteria": ["批准绑定收件人和正文", "没有批准就不外发"]
         }
       ]
     }

@@ -626,7 +626,10 @@
       "workflows": ["vision-check", "game-concept", "market-study"],
       "coordinatorRole": "computer-vision-engineer",
       "bindings": [
-        { "role": "computer-vision-engineer", "botName": "specialist-lab/computer-vision-engineer" },
+        {
+          "role": "computer-vision-engineer",
+          "botName": "specialist-lab/computer-vision-engineer"
+        },
         { "role": "game-designer", "botName": "specialist-lab/game-designer" },
         { "role": "financial-researcher", "botName": "specialist-lab/financial-researcher" },
         { "role": "model-evaluator", "botName": "specialist-lab/model-evaluator" }

@@ -98,7 +98,12 @@
         {
           "id": "risk-reviewer",
           "mission": "独立核对数据口径、未验证项，以及笔记里有没有订单或收益承诺。",
-          "skills": ["market-research", "fact-verification", "artifact-validation", "cost-awareness"],
+          "skills": [
+            "market-research",
+            "fact-verification",
+            "artifact-validation",
+            "cost-awareness"
+          ],
           "expectedOutputs": ["review.md"]
         }
       ],
@@ -143,10 +148,7 @@
           "role": "universe-clerk",
           "dependsOn": [],
           "requiredArtifacts": ["universe.md"],
-          "acceptanceCriteria": [
-            "名单覆盖本次研究窗口",
-            "窗口缺失时后续步骤不开始"
-          ]
+          "acceptanceCriteria": ["名单覆盖本次研究窗口", "窗口缺失时后续步骤不开始"]
         },
         {
           "id": "filings",
@@ -197,11 +199,7 @@
           "role": "risk-reviewer",
           "dependsOn": ["write"],
           "requiredArtifacts": ["review.md"],
-          "acceptanceCriteria": [
-            "数据口径被抽查",
-            "模拟结果未被写成收益承诺",
-            "审稿人不是笔记作者"
-          ]
+          "acceptanceCriteria": ["数据口径被抽查", "模拟结果未被写成收益承诺", "审稿人不是笔记作者"]
         }
       ]
     }

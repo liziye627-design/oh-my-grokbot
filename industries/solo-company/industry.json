@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "task-planning",
@@ -65,62 +63,32 @@
         {
           "id": "chief-of-staff",
           "mission": "按可用产能筛选本轮只处理的一件事，并指定后续岗位。",
-          "skills": [
-            "task-planning",
-            "agent-handoff",
-            "capability-selection",
-            "approval-protocol"
-          ],
-          "expectedOutputs": [
-            "engagement-plan.md"
-          ]
+          "skills": ["task-planning", "agent-handoff", "capability-selection", "approval-protocol"],
+          "expectedOutputs": ["engagement-plan.md"]
         },
         {
           "id": "opportunity-researcher",
           "mission": "核查机会的公开事实、客户问题和证据缺口。",
-          "skills": [
-            "source-research",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "opportunity.md"
-          ]
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["opportunity.md"]
         },
         {
           "id": "sales-lead",
           "mission": "在给定报价约束内起草报价和交付范围。",
-          "skills": [
-            "task-planning",
-            "approval-protocol",
-            "cost-awareness"
-          ],
-          "expectedOutputs": [
-            "quote.md"
-          ]
+          "skills": ["task-planning", "approval-protocol", "cost-awareness"],
+          "expectedOutputs": ["quote.md"]
         },
         {
           "id": "delivery-engineer",
           "mission": "把已批准范围转成交付清单、验证方法和剩余限制。",
-          "skills": [
-            "task-planning",
-            "artifact-validation",
-            "agent-handoff"
-          ],
-          "expectedOutputs": [
-            "delivery.md"
-          ]
+          "skills": ["task-planning", "artifact-validation", "agent-handoff"],
+          "expectedOutputs": ["delivery.md"]
         },
         {
           "id": "finance-reviewer",
           "mission": "独立复盘工时、成本和范围差异，不执行付款。",
-          "skills": [
-            "fact-verification",
-            "cost-awareness",
-            "artifact-validation"
-          ],
-          "expectedOutputs": [
-            "operating-review.md"
-          ]
+          "skills": ["fact-verification", "cost-awareness", "artifact-validation"],
+          "expectedOutputs": ["operating-review.md"]
         }
       ],
       "policies": [
@@ -136,80 +104,43 @@
       "id": "operate-engagement",
       "name": "机会到经营复盘",
       "entryRole": "chief-of-staff",
-      "requiredInputs": [
-        "objective",
-        "capacity",
-        "offerConstraints"
-      ],
+      "requiredInputs": ["objective", "capacity", "offerConstraints"],
       "approvalRequired": true,
       "steps": [
         {
           "id": "frame",
           "role": "chief-of-staff",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "engagement-plan.md"
-          ],
-          "acceptanceCriteria": [
-            "本轮范围和产能明确",
-            "未确认机会不进入报价"
-          ]
+          "requiredArtifacts": ["engagement-plan.md"],
+          "acceptanceCriteria": ["本轮范围和产能明确", "未确认机会不进入报价"]
         },
         {
           "id": "discover",
           "role": "opportunity-researcher",
-          "dependsOn": [
-            "frame"
-          ],
-          "requiredArtifacts": [
-            "opportunity.md"
-          ],
-          "acceptanceCriteria": [
-            "事实和待确认分开",
-            "预算推断被标出"
-          ]
+          "dependsOn": ["frame"],
+          "requiredArtifacts": ["opportunity.md"],
+          "acceptanceCriteria": ["事实和待确认分开", "预算推断被标出"]
         },
         {
           "id": "quote",
           "role": "sales-lead",
-          "dependsOn": [
-            "discover"
-          ],
-          "requiredArtifacts": [
-            "quote.md"
-          ],
-          "acceptanceCriteria": [
-            "报价停在草稿",
-            "约束外承诺被拒绝"
-          ]
+          "dependsOn": ["discover"],
+          "requiredArtifacts": ["quote.md"],
+          "acceptanceCriteria": ["报价停在草稿", "约束外承诺被拒绝"]
         },
         {
           "id": "deliver",
           "role": "delivery-engineer",
-          "dependsOn": [
-            "quote"
-          ],
-          "requiredArtifacts": [
-            "delivery.md"
-          ],
-          "acceptanceCriteria": [
-            "清单对应已起草范围",
-            "未批准不开始对外交付"
-          ]
+          "dependsOn": ["quote"],
+          "requiredArtifacts": ["delivery.md"],
+          "acceptanceCriteria": ["清单对应已起草范围", "未批准不开始对外交付"]
         },
         {
           "id": "review",
           "role": "finance-reviewer",
-          "dependsOn": [
-            "deliver"
-          ],
-          "requiredArtifacts": [
-            "operating-review.md"
-          ],
-          "acceptanceCriteria": [
-            "成本能回到记录",
-            "没有付款动作"
-          ]
+          "dependsOn": ["deliver"],
+          "requiredArtifacts": ["operating-review.md"],
+          "acceptanceCriteria": ["成本能回到记录", "没有付款动作"]
         }
       ]
     }
