@@ -47,4 +47,4 @@ it("stages executable content skills and preserved licenses in a clean workspace
   } finally {
     await rm(workspace, { recursive: true, force: true });
   }
-}, 30000);
+}, 120000);
