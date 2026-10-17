@@ -5,10 +5,7 @@
     "status": "completed",
     "action": {
       "type": "search",
-      "queries": [
-        "content bot source traceability",
-        "Markdown WeChat HTML workflow"
-      ],
+      "queries": ["content bot source traceability", "Markdown WeChat HTML workflow"],
       "sources": [
         {
           "type": "url",

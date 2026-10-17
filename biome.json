@@ -11,7 +11,9 @@
       "!!pnpm-lock.yaml",
       "!!third_party",
       "!!.omo/research",
-      "!!skills/*/vendor"
+      "!!skills/*/vendor",
+      "!!team-skills",
+      "!!examples/**/*.html"
     ]
   },
   "formatter": {

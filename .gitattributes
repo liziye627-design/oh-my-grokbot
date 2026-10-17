@@ -1,3 +1,5 @@
 # Provenance hashes cover exact bytes on Windows and Unix.
+# Everything else: normalize to LF so Biome passes on Windows checkouts.
+* text=auto eol=lf
 /third_party/** -text
 /skills/** -text
