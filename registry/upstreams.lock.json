@@ -707,9 +707,7 @@
     {
       "skill": "source-research",
       "directory": "skills/source-research",
-      "upstreams": [
-        "anthropic-work"
-      ],
+      "upstreams": ["anthropic-work"],
       "files": [
         {
           "path": "skills/source-research/licenses/anthropic-work.txt",
@@ -728,9 +726,7 @@
     {
       "skill": "fact-verification",
       "directory": "skills/fact-verification",
-      "upstreams": [
-        "anthropic-work"
-      ],
+      "upstreams": ["anthropic-work"],
       "files": [
         {
           "path": "skills/fact-verification/licenses/anthropic-work.txt",
@@ -749,9 +745,7 @@
     {
       "skill": "task-planning",
       "directory": "skills/task-planning",
-      "upstreams": [
-        "superpowers"
-      ],
+      "upstreams": ["superpowers"],
       "files": [
         {
           "path": "skills/task-planning/licenses/superpowers.txt",
@@ -770,9 +764,7 @@
     {
       "skill": "agent-handoff",
       "directory": "skills/agent-handoff",
-      "upstreams": [
-        "superpowers"
-      ],
+      "upstreams": ["superpowers"],
       "files": [
         {
           "path": "skills/agent-handoff/licenses/superpowers.txt",
@@ -791,9 +783,7 @@
     {
       "skill": "artifact-validation",
       "directory": "skills/artifact-validation",
-      "upstreams": [
-        "superpowers"
-      ],
+      "upstreams": ["superpowers"],
       "files": [
         {
           "path": "skills/artifact-validation/licenses/superpowers.txt",
@@ -812,9 +802,7 @@
     {
       "skill": "failure-recovery",
       "directory": "skills/failure-recovery",
-      "upstreams": [
-        "superpowers"
-      ],
+      "upstreams": ["superpowers"],
       "files": [
         {
           "path": "skills/failure-recovery/licenses/superpowers.txt",
@@ -833,9 +821,7 @@
     {
       "skill": "approval-protocol",
       "directory": "skills/approval-protocol",
-      "upstreams": [
-        "github-workflows"
-      ],
+      "upstreams": ["github-workflows"],
       "files": [
         {
           "path": "skills/approval-protocol/licenses/github-workflows.txt",
@@ -854,9 +840,7 @@
     {
       "skill": "cost-awareness",
       "directory": "skills/cost-awareness",
-      "upstreams": [
-        "github-workflows"
-      ],
+      "upstreams": ["github-workflows"],
       "files": [
         {
           "path": "skills/cost-awareness/licenses/github-workflows.txt",
@@ -875,9 +859,7 @@
     {
       "skill": "capability-selection",
       "directory": "skills/capability-selection",
-      "upstreams": [
-        "vercel-skills"
-      ],
+      "upstreams": ["vercel-skills"],
       "files": [
         {
           "path": "skills/capability-selection/licenses/vercel-skills.txt",
@@ -896,9 +878,7 @@
     {
       "skill": "environment-bootstrap",
       "directory": "skills/environment-bootstrap",
-      "upstreams": [
-        "openai-installer"
-      ],
+      "upstreams": ["openai-installer"],
       "files": [
         {
           "path": "skills/environment-bootstrap/licenses/openai-installer.txt",
@@ -917,9 +897,7 @@
     {
       "skill": "secret-handling",
       "directory": "skills/secret-handling",
-      "upstreams": [
-        "github-workflows"
-      ],
+      "upstreams": ["github-workflows"],
       "files": [
         {
           "path": "skills/secret-handling/licenses/github-workflows.txt",
@@ -938,9 +916,7 @@
     {
       "skill": "routine-design",
       "directory": "skills/routine-design",
-      "upstreams": [
-        "github-workflows"
-      ],
+      "upstreams": ["github-workflows"],
       "files": [
         {
           "path": "skills/routine-design/licenses/github-workflows.txt",
@@ -959,10 +935,7 @@
     {
       "skill": "social-research",
       "directory": "skills/social-research",
-      "upstreams": [
-        "marketing-skills",
-        "anthropic-work"
-      ],
+      "upstreams": ["marketing-skills", "anthropic-work"],
       "files": [
         {
           "path": "skills/social-research/licenses/anthropic-work.txt",
@@ -985,10 +958,7 @@
     {
       "skill": "social-publishing",
       "directory": "skills/social-publishing",
-      "upstreams": [
-        "marketing-skills",
-        "github-workflows"
-      ],
+      "upstreams": ["marketing-skills", "github-workflows"],
       "files": [
         {
           "path": "skills/social-publishing/licenses/github-workflows.txt",
@@ -1011,9 +981,7 @@
     {
       "skill": "baoyu-url-to-markdown",
       "directory": "skills/baoyu-url-to-markdown",
-      "upstreams": [
-        "baoyu-skills"
-      ],
+      "upstreams": ["baoyu-skills"],
       "files": [
         {
           "path": "skills/baoyu-url-to-markdown/licenses/baoyu-skills.txt",
@@ -1224,9 +1192,7 @@
     {
       "skill": "baoyu-markdown-to-html",
       "directory": "skills/baoyu-markdown-to-html",
-      "upstreams": [
-        "baoyu-skills"
-      ],
+      "upstreams": ["baoyu-skills"],
       "files": [
         {
           "path": "skills/baoyu-markdown-to-html/licenses/baoyu-skills.txt",
@@ -1261,9 +1227,7 @@
     {
       "skill": "baoyu-post-to-wechat",
       "directory": "skills/baoyu-post-to-wechat",
-      "upstreams": [
-        "baoyu-skills"
-      ],
+      "upstreams": ["baoyu-skills"],
       "files": [
         {
           "path": "skills/baoyu-post-to-wechat/licenses/baoyu-skills.txt",
@@ -1378,9 +1342,7 @@
     {
       "skill": "khazix-writer",
       "directory": "skills/khazix-writer",
-      "upstreams": [
-        "khazix-skills"
-      ],
+      "upstreams": ["khazix-skills"],
       "files": [
         {
           "path": "skills/khazix-writer/licenses/khazix-skills.txt",
@@ -1407,9 +1369,7 @@
     {
       "skill": "zimu-geo-research",
       "directory": "skills/zimu-geo-research",
-      "upstreams": [
-        "zimu-growth-skills"
-      ],
+      "upstreams": ["zimu-growth-skills"],
       "files": [
         {
           "path": "skills/zimu-geo-research/licenses/zimu-growth-skills.txt",
@@ -1484,10 +1444,7 @@
     {
       "skill": "market-research",
       "directory": "skills/market-research",
-      "upstreams": [
-        "ai-hedge-fund",
-        "trading-agents"
-      ],
+      "upstreams": ["ai-hedge-fund", "trading-agents"],
       "files": [
         {
           "path": "skills/market-research/licenses/ai-hedge-fund.txt",

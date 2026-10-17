@@ -110,10 +110,7 @@
           "role": "authorization-clerk",
           "dependsOn": [],
           "requiredArtifacts": ["scope.md"],
-          "acceptanceCriteria": [
-            "范围覆盖本次样本引用",
-            "授权缺失时后续步骤不开始"
-          ]
+          "acceptanceCriteria": ["范围覆盖本次样本引用", "授权缺失时后续步骤不开始"]
         },
         {
           "id": "examine",

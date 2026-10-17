@@ -5,91 +5,91 @@
   "records": [
     {
       "skill": "source-research",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\source-research",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\source-research",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "fact-verification",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\fact-verification",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\fact-verification",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "task-planning",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\task-planning",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\task-planning",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "agent-handoff",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\agent-handoff",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\agent-handoff",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "artifact-validation",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\artifact-validation",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\artifact-validation",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "failure-recovery",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\failure-recovery",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\failure-recovery",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "approval-protocol",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\approval-protocol",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\approval-protocol",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "cost-awareness",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\cost-awareness",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\cost-awareness",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "capability-selection",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\capability-selection",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\capability-selection",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "environment-bootstrap",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\environment-bootstrap",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\environment-bootstrap",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "secret-handling",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\secret-handling",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\secret-handling",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "routine-design",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\routine-design",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\routine-design",
       "state": "installed",
       "files": 3
     },
     {
       "skill": "social-research",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\social-research",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\social-research",
       "state": "installed",
       "files": 4
     },
     {
       "skill": "social-publishing",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\social-publishing",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\social-publishing",
       "state": "installed",
       "files": 4
     },
     {
       "skill": "anatomy",
-      "destination": "C:\\Users\\llwxy\\.codex\\skills\\anatomy",
+      "destination": "C:\\Users\\<user>\\.codex\\skills\\anatomy",
       "state": "installed",
       "repository": "https://github.com/wheresryan22/anatomy",
       "revision": "bc943e40c59998be5da61f9d39c6a983b1116099",

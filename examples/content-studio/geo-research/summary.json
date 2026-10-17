@@ -15,12 +15,8 @@
   "source_url_count": 2,
   "cited_url_count": 1,
   "citation_count": 1,
-  "source_domains": [
-    "example.com"
-  ],
-  "cited_domains": [
-    "example.com"
-  ],
+  "source_domains": ["example.com"],
+  "cited_domains": ["example.com"],
   "usage": null,
   "error": null,
   "incomplete_details": null,

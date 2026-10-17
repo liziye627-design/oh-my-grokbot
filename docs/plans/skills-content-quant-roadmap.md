@@ -7,7 +7,7 @@
 用户要求：接入宝玉内容 Skills，复用本机 Codex Skills，研究金融量化、股票以及帮助个人创收的开源案例；先在本地做好规划。
 
 - 项目现有内容链路：`industries/content-studio`、`industries/wechat`、`industries/x-growth`。
-- 本机 `C:/Users/llwxy/.codex/skills` 的顶层可见目录共发现 36 个 SKILL.md；本次不包括隐藏 `.system`、插件缓存和 `.agents/skills`。
+- 本机 `C:/Users/<user>/.codex/skills` 的顶层可见目录共发现 36 个 SKILL.md；本次不包括隐藏 `.system`、插件缓存和 `.agents/skills`。
 - 14 个通用 Skill 的入口 SKILL.md 与本仓库字节一致，复用现有条目。这个比较不等于完整目录已逐文件验证。
 - 3 个宝玉 Skill 本地存在，尚未作为本项目可执行 Capability 接入。
 - 其余 19 个是三维/视觉资产相关候选，本轮列入清单，后续单独核对来源、授权和依赖，不并入内容写作的默认安装。

@@ -3,7 +3,7 @@
   "records": [
     {
       "name": "baoyu-url-to-markdown",
-      "destination": "C:/Users/llwxy/.codex/skills/baoyu-url-to-markdown",
+      "destination": "C:/Users/<user>/.codex/skills/baoyu-url-to-markdown",
       "upstream": "JimLiu/baoyu-skills",
       "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
       "license": "MIT",
@@ -12,7 +12,7 @@
     },
     {
       "name": "baoyu-markdown-to-html",
-      "destination": "C:/Users/llwxy/.codex/skills/baoyu-markdown-to-html",
+      "destination": "C:/Users/<user>/.codex/skills/baoyu-markdown-to-html",
       "upstream": "JimLiu/baoyu-skills",
       "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
       "license": "MIT",
@@ -21,7 +21,7 @@
     },
     {
       "name": "baoyu-post-to-wechat",
-      "destination": "C:/Users/llwxy/.codex/skills/baoyu-post-to-wechat",
+      "destination": "C:/Users/<user>/.codex/skills/baoyu-post-to-wechat",
       "upstream": "JimLiu/baoyu-skills",
       "revision": "1567581c26ec29f4216c6e6835415bf30343b0e3",
       "license": "MIT",

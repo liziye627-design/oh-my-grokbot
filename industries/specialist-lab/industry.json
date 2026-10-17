@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "artifact-validation",
@@ -75,49 +73,26 @@
         {
           "id": "computer-vision-engineer",
           "mission": "按给定数据和指标定义记录视觉模型的测量结果与失败样本。",
-          "skills": [
-            "artifact-validation",
-            "fact-verification",
-            "environment-bootstrap"
-          ],
-          "expectedOutputs": [
-            "vision-report.md"
-          ]
+          "skills": ["artifact-validation", "fact-verification", "environment-bootstrap"],
+          "expectedOutputs": ["vision-report.md"]
         },
         {
           "id": "game-designer",
           "mission": "把主题写成可玩目标、规则、失败条件和内容边界。",
-          "skills": [
-            "task-planning",
-            "agent-handoff"
-          ],
-          "expectedOutputs": [
-            "game-spec.md"
-          ]
+          "skills": ["task-planning", "agent-handoff"],
+          "expectedOutputs": ["game-spec.md"]
         },
         {
           "id": "financial-researcher",
           "mission": "整理公开市场资料和用户提供的数据，写出假设、证据和反证。",
-          "skills": [
-            "source-research",
-            "fact-verification",
-            "cost-awareness"
-          ],
-          "expectedOutputs": [
-            "market-note.md"
-          ]
+          "skills": ["source-research", "fact-verification", "cost-awareness"],
+          "expectedOutputs": ["market-note.md"]
         },
         {
           "id": "model-evaluator",
           "mission": "独立检查专业岗位的数据、指标、对照和未验证项。",
-          "skills": [
-            "artifact-validation",
-            "fact-verification",
-            "failure-recovery"
-          ],
-          "expectedOutputs": [
-            "evaluation.md"
-          ]
+          "skills": ["artifact-validation", "fact-verification", "failure-recovery"],
+          "expectedOutputs": ["evaluation.md"]
         }
       ],
       "policies": [
@@ -134,38 +109,22 @@
       "id": "market-study",
       "name": "公开市场研究笔记",
       "entryRole": "financial-researcher",
-      "requiredInputs": [
-        "universe",
-        "researchWindow",
-        "suppliedData"
-      ],
+      "requiredInputs": ["universe", "researchWindow", "suppliedData"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "study",
           "role": "financial-researcher",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "market-note.md"
-          ],
-          "acceptanceCriteria": [
-            "假设、证据和反证分开",
-            "没有订单或账户操作"
-          ]
+          "requiredArtifacts": ["market-note.md"],
+          "acceptanceCriteria": ["假设、证据和反证分开", "没有订单或账户操作"]
         },
         {
           "id": "review",
           "role": "model-evaluator",
-          "dependsOn": [
-            "study"
-          ],
-          "requiredArtifacts": [
-            "evaluation.md"
-          ],
-          "acceptanceCriteria": [
-            "数据口径被抽查",
-            "模拟结果未被写成收益承诺"
-          ]
+          "dependsOn": ["study"],
+          "requiredArtifacts": ["evaluation.md"],
+          "acceptanceCriteria": ["数据口径被抽查", "模拟结果未被写成收益承诺"]
         }
       ]
     },
@@ -173,38 +132,22 @@
       "id": "vision-check",
       "name": "视觉测量与独立评测",
       "entryRole": "computer-vision-engineer",
-      "requiredInputs": [
-        "datasetRef",
-        "metricDefinitions",
-        "modelRef"
-      ],
+      "requiredInputs": ["datasetRef", "metricDefinitions", "modelRef"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "measure",
           "role": "computer-vision-engineer",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "vision-report.md"
-          ],
-          "acceptanceCriteria": [
-            "数据版本和指标定义明确",
-            "未运行保持 not_run"
-          ]
+          "requiredArtifacts": ["vision-report.md"],
+          "acceptanceCriteria": ["数据版本和指标定义明确", "未运行保持 not_run"]
         },
         {
           "id": "review",
           "role": "model-evaluator",
-          "dependsOn": [
-            "measure"
-          ],
-          "requiredArtifacts": [
-            "evaluation.md"
-          ],
-          "acceptanceCriteria": [
-            "失败样本可见",
-            "演示材料不被当成测试"
-          ]
+          "dependsOn": ["measure"],
+          "requiredArtifacts": ["evaluation.md"],
+          "acceptanceCriteria": ["失败样本可见", "演示材料不被当成测试"]
         }
       ]
     },
@@ -212,38 +155,22 @@
       "id": "game-concept",
       "name": "可检查的游戏规则说明",
       "entryRole": "game-designer",
-      "requiredInputs": [
-        "premise",
-        "audience",
-        "constraints"
-      ],
+      "requiredInputs": ["premise", "audience", "constraints"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "spec",
           "role": "game-designer",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "game-spec.md"
-          ],
-          "acceptanceCriteria": [
-            "规则、失败条件和内容边界可执行",
-            "未实现功能被标出"
-          ]
+          "requiredArtifacts": ["game-spec.md"],
+          "acceptanceCriteria": ["规则、失败条件和内容边界可执行", "未实现功能被标出"]
         },
         {
           "id": "review",
           "role": "model-evaluator",
-          "dependsOn": [
-            "spec"
-          ],
-          "requiredArtifacts": [
-            "evaluation.md"
-          ],
-          "acceptanceCriteria": [
-            "另一个人能按文档检查规则",
-            "范围外内容被退回"
-          ]
+          "dependsOn": ["spec"],
+          "requiredArtifacts": ["evaluation.md"],
+          "acceptanceCriteria": ["另一个人能按文档检查规则", "范围外内容被退回"]
         }
       ]
     }

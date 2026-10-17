@@ -3,7 +3,46 @@
   "status": "completed",
   "model": "synthetic-fixture",
   "output": [
-    {"type": "web_search_call", "id": "fixture-search-1", "status": "completed", "action": {"type": "search", "queries": ["content bot source traceability", "Markdown WeChat HTML workflow"], "sources": [{"type": "url", "url": "https://example.com/content-workflow", "title": "Synthetic source"}, {"type": "url", "url": "https://example.com/formatting", "title": "Synthetic uncited source"}]}},
-    {"type": "message", "id": "fixture-message", "role": "assistant", "content": [{"type": "output_text", "text": "Synthetic fixture: this text is not a research finding.", "annotations": [{"type": "url_citation", "url": "https://example.com/content-workflow", "title": "Synthetic source", "start_index": 0, "end_index": 17}]}]}
+    {
+      "type": "web_search_call",
+      "id": "fixture-search-1",
+      "status": "completed",
+      "action": {
+        "type": "search",
+        "queries": ["content bot source traceability", "Markdown WeChat HTML workflow"],
+        "sources": [
+          {
+            "type": "url",
+            "url": "https://example.com/content-workflow",
+            "title": "Synthetic source"
+          },
+          {
+            "type": "url",
+            "url": "https://example.com/formatting",
+            "title": "Synthetic uncited source"
+          }
+        ]
+      }
+    },
+    {
+      "type": "message",
+      "id": "fixture-message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "Synthetic fixture: this text is not a research finding.",
+          "annotations": [
+            {
+              "type": "url_citation",
+              "url": "https://example.com/content-workflow",
+              "title": "Synthetic source",
+              "start_index": 0,
+              "end_index": 17
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

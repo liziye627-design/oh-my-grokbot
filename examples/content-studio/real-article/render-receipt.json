@@ -15,8 +15,8 @@
     "title": "从一篇初稿到可交付内容：我们怎样搭建内容 Bot 的第二层",
     "author": "Oh My Grok Bot 项目编辑",
     "summary": "用一篇真实文章验证素材采集、写作、平台改写与公众号排版，并说明本地运行和账号发布之间还差什么。",
-    "htmlPath": "C:\\Users\\llwxy\\Documents\\ChatGPT\\oh-my-grokbot\\examples\\content-studio\\real-article\\article.html",
-    "backupPath": "C:\\Users\\llwxy\\Documents\\ChatGPT\\oh-my-grokbot\\examples\\content-studio\\real-article\\article.html.bak-20261016111745",
+    "htmlPath": "C:\\Users\\<user>\\Documents\\ChatGPT\\oh-my-grokbot\\examples\\content-studio\\real-article\\article.html",
+    "backupPath": "C:\\Users\\<user>\\Documents\\ChatGPT\\oh-my-grokbot\\examples\\content-studio\\real-article\\article.html.bak-20261016111745",
     "contentImages": [],
     "mermaidImages": []
   },

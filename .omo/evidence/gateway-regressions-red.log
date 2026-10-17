@@ -1,5 +1,5 @@
 
-[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/llwxy/Documents/ChatGPT/oh-my-grokbot[39m
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/<user>/Documents/ChatGPT/oh-my-grokbot[39m
 
 (node:23424) ExperimentalWarning: SQLite is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)

@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "task-planning",
@@ -70,72 +68,38 @@
         {
           "id": "research-director",
           "mission": "把研究问题拆成可检索的子问题、来源范围和停机条件。",
-          "skills": [
-            "task-planning",
-            "source-research",
-            "agent-handoff",
-            "capability-selection"
-          ],
-          "expectedOutputs": [
-            "research-plan.md"
-          ]
+          "skills": ["task-planning", "source-research", "agent-handoff", "capability-selection"],
+          "expectedOutputs": ["research-plan.md"]
         },
         {
           "id": "source-researcher",
           "mission": "按计划收集可回溯来源，保留原文位置、观察时间和覆盖边界。",
-          "skills": [
-            "source-research",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "sources.json",
-            "research-notes.md"
-          ]
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["sources.json", "research-notes.md"]
         },
         {
           "id": "industry-analyst",
           "mission": "基于已收集来源整理行业结构、关键论点和互相冲突的解释。",
-          "skills": [
-            "source-research",
-            "fact-verification",
-            "cost-awareness"
-          ],
-          "expectedOutputs": [
-            "industry-brief.md"
-          ]
+          "skills": ["source-research", "fact-verification", "cost-awareness"],
+          "expectedOutputs": ["industry-brief.md"]
         },
         {
           "id": "competitor-scout",
           "mission": "对照公开资料整理竞品的产品、定价线索、客户证据和差异。",
-          "skills": [
-            "source-research",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "competitor-matrix.md"
-          ]
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["competitor-matrix.md"]
         },
         {
           "id": "fact-checker",
           "mission": "逐条核对可发布主张，标出支持、冲突和证据缺口。",
-          "skills": [
-            "fact-verification",
-            "artifact-validation"
-          ],
-          "expectedOutputs": [
-            "claim-review.md"
-          ]
+          "skills": ["fact-verification", "artifact-validation"],
+          "expectedOutputs": ["claim-review.md"]
         },
         {
           "id": "trend-hunter",
           "mission": "在给定时间窗口内寻找重复出现的公开信号，并说明样本边界。",
-          "skills": [
-            "source-research",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "trend-note.md"
-          ]
+          "skills": ["source-research", "fact-verification"],
+          "expectedOutputs": ["trend-note.md"]
         }
       ],
       "policies": [
@@ -151,67 +115,36 @@
       "id": "deep-report",
       "name": "带来源的研究报告",
       "entryRole": "research-director",
-      "requiredInputs": [
-        "question",
-        "audience",
-        "researchWindow"
-      ],
+      "requiredInputs": ["question", "audience", "researchWindow"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "scope",
           "role": "research-director",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "research-plan.md"
-          ],
-          "acceptanceCriteria": [
-            "子问题、来源范围和停机条件明确",
-            "未授权来源不进入计划"
-          ]
+          "requiredArtifacts": ["research-plan.md"],
+          "acceptanceCriteria": ["子问题、来源范围和停机条件明确", "未授权来源不进入计划"]
         },
         {
           "id": "gather",
           "role": "source-researcher",
-          "dependsOn": [
-            "scope"
-          ],
-          "requiredArtifacts": [
-            "sources.json",
-            "research-notes.md"
-          ],
-          "acceptanceCriteria": [
-            "每条来源有位置和观察时间",
-            "失败检索被记录"
-          ]
+          "dependsOn": ["scope"],
+          "requiredArtifacts": ["sources.json", "research-notes.md"],
+          "acceptanceCriteria": ["每条来源有位置和观察时间", "失败检索被记录"]
         },
         {
           "id": "synthesize",
           "role": "industry-analyst",
-          "dependsOn": [
-            "gather"
-          ],
-          "requiredArtifacts": [
-            "industry-brief.md"
-          ],
-          "acceptanceCriteria": [
-            "论点能回到来源编号",
-            "冲突和未知分开"
-          ]
+          "dependsOn": ["gather"],
+          "requiredArtifacts": ["industry-brief.md"],
+          "acceptanceCriteria": ["论点能回到来源编号", "冲突和未知分开"]
         },
         {
           "id": "check",
           "role": "fact-checker",
-          "dependsOn": [
-            "synthesize"
-          ],
-          "requiredArtifacts": [
-            "claim-review.md"
-          ],
-          "acceptanceCriteria": [
-            "可发布主张都有支持或被剔除",
-            "证据缺口单独列出"
-          ]
+          "dependsOn": ["synthesize"],
+          "requiredArtifacts": ["claim-review.md"],
+          "acceptanceCriteria": ["可发布主张都有支持或被剔除", "证据缺口单独列出"]
         }
       ]
     },
@@ -219,38 +152,22 @@
       "id": "competitor-scan",
       "name": "竞品公开资料对照",
       "entryRole": "competitor-scout",
-      "requiredInputs": [
-        "market",
-        "competitors",
-        "researchWindow"
-      ],
+      "requiredInputs": ["market", "competitors", "researchWindow"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "collect",
           "role": "competitor-scout",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "competitor-matrix.md"
-          ],
-          "acceptanceCriteria": [
-            "每个对比项有来源",
-            "不可见资料保持空白"
-          ]
+          "requiredArtifacts": ["competitor-matrix.md"],
+          "acceptanceCriteria": ["每个对比项有来源", "不可见资料保持空白"]
         },
         {
           "id": "check",
           "role": "fact-checker",
-          "dependsOn": [
-            "collect"
-          ],
-          "requiredArtifacts": [
-            "claim-review.md"
-          ],
-          "acceptanceCriteria": [
-            "定价和客户证据被抽查",
-            "广告语未被当成事实"
-          ]
+          "dependsOn": ["collect"],
+          "requiredArtifacts": ["claim-review.md"],
+          "acceptanceCriteria": ["定价和客户证据被抽查", "广告语未被当成事实"]
         }
       ]
     },
@@ -258,38 +175,22 @@
       "id": "trend-scan",
       "name": "时间窗内的重复信号",
       "entryRole": "trend-hunter",
-      "requiredInputs": [
-        "domain",
-        "researchWindow",
-        "comparisonBaseline"
-      ],
+      "requiredInputs": ["domain", "researchWindow", "comparisonBaseline"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "collect",
           "role": "trend-hunter",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "trend-note.md"
-          ],
-          "acceptanceCriteria": [
-            "写明样本数和时间范围",
-            "单次信号不升级为趋势"
-          ]
+          "requiredArtifacts": ["trend-note.md"],
+          "acceptanceCriteria": ["写明样本数和时间范围", "单次信号不升级为趋势"]
         },
         {
           "id": "check",
           "role": "fact-checker",
-          "dependsOn": [
-            "collect"
-          ],
-          "requiredArtifacts": [
-            "claim-review.md"
-          ],
-          "acceptanceCriteria": [
-            "基线比较使用同一口径",
-            "缺失数据不被补零"
-          ]
+          "dependsOn": ["collect"],
+          "requiredArtifacts": ["claim-review.md"],
+          "acceptanceCriteria": ["基线比较使用同一口径", "缺失数据不被补零"]
         }
       ]
     }

@@ -1,7 +1,7 @@
 $ pnpm build && vitest run --maxWorkers=4
 $ tsc -p tsconfig.build.json
 
-[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/llwxy/Documents/ChatGPT/oh-my-grokbot[39m
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.4 [39m[90mC:/Users/<user>/Documents/ChatGPT/oh-my-grokbot[39m
 
  [32m✓[39m tests/provenance.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 1754[2mms[22m[39m
    [32m✓[39m Pinned licensed upstream distribution [2m(5)[22m
