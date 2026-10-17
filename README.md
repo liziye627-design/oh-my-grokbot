@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/hero.svg" alt="Oh My Grok Bot：把 Grok Bot 组织成分工明确、产物可验收的 Bot 团队" width="100%">
+  <img src="docs/images/mascot-hero.png" alt="吉祥物 dot 举着小旗，带着一队小圆点前进" width="100%">
 </p>
 
 # Oh My Grok Bot
@@ -7,6 +7,8 @@
 **把 Grok Bot 组织成分工明确、产物可验收的 Bot 团队。**
 
 > **English summary.** Oh My Grok Bot is a distribution and integration layer for native Grok Bot. It ships 16 team packs (75 roles, 40 workflows) with role prompts and acceptance criteria, 12 core skills plus a reviewed catalog of 38 third-party skills, an auditable local installer (`plan → apply → verify → rollback`), and a local task gateway (SQLite ledger, Result MCP, approvals, independent verification). Resources are `reviewed` development builds; native-account activation still needs to be verified in Grok Bot. The project license is not decided yet (`UNLICENSED`).
+
+<sub>插画里举旗的小圆点叫 **dot**，是本项目的原创吉祥物；标注「示意」的图是流程示意，不是界面截图。</sub>
 
 [快速开始](#快速开始) · [团队包](#团队包总览) · [案例](#案例) · [技能目录](#技能与技能目录) · [架构](#架构) · [参与贡献](#参与贡献) · [许可](#许可)
 
@@ -76,6 +78,8 @@ node dist/cli.js workspace bundle --config examples/workspaces.config.json --id 
 
 ## 团队包总览
 
+<p align="center"><img src="docs/images/mascot-team.png" alt="dot 和五个各有分工的小圆点队友" width="85%"></p>
+
 16 套团队、75 个岗位、40 条工作流。定义在 `industries/<团队>/industry.json`，岗位说明在 `industries/<团队>/prompts/`，上传包在 `examples/workspaces/generated/`。岗位职责与组合用法见 [Bot 操作指南](docs/bot-playbook.md)。
 
 | 团队包 | 群组 | 岗位 | 工作流 |
@@ -116,6 +120,8 @@ node dist/cli.js workspace bundle --config examples/workspaces.config.json --id 
 
 <img src="docs/images/case-real-article.png" alt="真实文章 article.html 截图" width="100%">
 
+<img src="docs/images/mascot-writing.png" alt="dot 在书桌前写文章" align="right" width="280">
+
 - **场景**：把一个选题做成可交付的公众号正文，加上 X 线程和短帖，停在发布前。
 - **岗位**：`producer`、`researcher`、`voice-keeper`、`drafter`、`channel-editor`、`reviewer`（工作流 `produce-piece`）。
 - **流程**：简报 → 来源 / 文风 → 大纲 → 正文 → 标题与 X 改写 → 宝玉工具 HTML 排版 → 独立审稿 → 发布前交接。[claims.json](examples/content-studio/real-article/claims.json) 记录 5 条可核查主张及其来源，内部编号不进入正文。
@@ -125,6 +131,8 @@ node dist/cli.js workspace bundle --config examples/workspaces.config.json --id 
 ### 3. GEO 查询扇出报告（模拟测试数据）
 
 <img src="docs/images/case-geo-report.png" alt="GEO 报告截图，模拟测试数据" width="100%">
+
+<img src="docs/images/mascot-magnifier.png" alt="dot 拿着放大镜查看来源卡片" align="right" width="280">
 
 - **场景**：写稿前先看「一个问题会被展开成哪些搜索、最终引用了哪些来源」，再把结论接进内容简报。
 - **岗位**：content-studio 的 `researcher` 执行查询 / 信源分析，`reviewer` 核对，`producer` 把简报接到 `produce-piece` 的 `sourceNotes`（工作流 `geo-content-brief`，技能 `zimu-geo-research`）。
@@ -144,6 +152,8 @@ node dist/cli.js workspace bundle --config examples/workspaces.config.json --id 
 ### 5. 先复核、再安装：技能入库与双平台 CI
 
 <img src="docs/images/case-review-install.svg" alt="技能复核与 CI 流程示意图" width="100%">
+
+<img src="docs/images/mascot-review.png" alt="dot 对着清单逐项打勾" align="right" width="280">
 
 - **场景**：从开源仓库引入第三方技能，但不想把许可不清或带风险脚本的东西直接交给 Bot。
 - **岗位**：core-team 的 `evidence-reviewer` 复核，`knowledge-keeper` 维护技能与岗位对照表。
