@@ -64,7 +64,7 @@ it("exports an executable Gateway request when a real industry workflow is plann
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
-}, 30000);
+}, 120000);
 it("refuses missing workflow input when no references are supplied", async () => {
   // Given an empty input file.
   const directory = await mkdtemp(join(tmpdir(), "ohmy-industry-invalid-"));

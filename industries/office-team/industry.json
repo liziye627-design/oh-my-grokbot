@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "task-planning",
@@ -65,57 +63,29 @@
         {
           "id": "meeting-secretary",
           "mission": "从授权的会议记录提取决定、负责人和未决问题。",
-          "skills": [
-            "task-planning",
-            "agent-handoff",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "minutes.md",
-            "actions.md"
-          ]
+          "skills": ["task-planning", "agent-handoff", "fact-verification"],
+          "expectedOutputs": ["minutes.md", "actions.md"]
         },
         {
           "id": "document-specialist",
           "mission": "把上游材料整理成可阅读的文档，并核对标题、来源和版本。",
-          "skills": [
-            "artifact-validation",
-            "agent-handoff"
-          ],
-          "expectedOutputs": [
-            "document.md"
-          ]
+          "skills": ["artifact-validation", "agent-handoff"],
+          "expectedOutputs": ["document.md"]
         },
         {
           "id": "data-analyst",
           "mission": "按用户给出的指标定义计算表格，并保留无法计算的原因。",
-          "skills": [
-            "fact-verification",
-            "artifact-validation",
-            "cost-awareness"
-          ],
-          "expectedOutputs": [
-            "metrics.md"
-          ]
+          "skills": ["fact-verification", "artifact-validation", "cost-awareness"],
+          "expectedOutputs": ["metrics.md"]
         },
         {
           "id": "schedule-manager",
           "mission": "根据行动项草拟日程，发送或修改外部日历前停在待批准。",
-          "skills": [
-            "task-planning",
-            "approval-protocol",
-            "routine-design"
-          ],
-          "expectedOutputs": [
-            "schedule.md"
-          ]
+          "skills": ["task-planning", "approval-protocol", "routine-design"],
+          "expectedOutputs": ["schedule.md"]
         }
       ],
-      "policies": [
-        "evidence-required",
-        "independent-review",
-        "no-calendar-write-without-approval"
-      ]
+      "policies": ["evidence-required", "independent-review", "no-calendar-write-without-approval"]
     }
   },
   "workflows": [
@@ -123,53 +93,29 @@
       "id": "meeting-pack",
       "name": "会议纪要与日程草案",
       "entryRole": "meeting-secretary",
-      "requiredInputs": [
-        "transcript",
-        "attendees",
-        "timezone"
-      ],
+      "requiredInputs": ["transcript", "attendees", "timezone"],
       "approvalRequired": true,
       "steps": [
         {
           "id": "extract",
           "role": "meeting-secretary",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "minutes.md",
-            "actions.md"
-          ],
-          "acceptanceCriteria": [
-            "决定能回到转写位置",
-            "未知发言保持未知"
-          ]
+          "requiredArtifacts": ["minutes.md", "actions.md"],
+          "acceptanceCriteria": ["决定能回到转写位置", "未知发言保持未知"]
         },
         {
           "id": "schedule",
           "role": "schedule-manager",
-          "dependsOn": [
-            "extract"
-          ],
-          "requiredArtifacts": [
-            "schedule.md"
-          ],
-          "acceptanceCriteria": [
-            "时区和参与人明确",
-            "外部日历仍是草案"
-          ]
+          "dependsOn": ["extract"],
+          "requiredArtifacts": ["schedule.md"],
+          "acceptanceCriteria": ["时区和参与人明确", "外部日历仍是草案"]
         },
         {
           "id": "review",
           "role": "document-specialist",
-          "dependsOn": [
-            "schedule"
-          ],
-          "requiredArtifacts": [
-            "document.md"
-          ],
-          "acceptanceCriteria": [
-            "行动项负责人和截止条件可读",
-            "未批准的写入被标出"
-          ]
+          "dependsOn": ["schedule"],
+          "requiredArtifacts": ["document.md"],
+          "acceptanceCriteria": ["行动项负责人和截止条件可读", "未批准的写入被标出"]
         }
       ]
     },
@@ -177,38 +123,22 @@
       "id": "data-brief",
       "name": "授权导出的数据简报",
       "entryRole": "data-analyst",
-      "requiredInputs": [
-        "exportFile",
-        "metricDefinitions",
-        "comparisonWindow"
-      ],
+      "requiredInputs": ["exportFile", "metricDefinitions", "comparisonWindow"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "calculate",
           "role": "data-analyst",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "metrics.md"
-          ],
-          "acceptanceCriteria": [
-            "口径和分母明确",
-            "空值不被补成零"
-          ]
+          "requiredArtifacts": ["metrics.md"],
+          "acceptanceCriteria": ["口径和分母明确", "空值不被补成零"]
         },
         {
           "id": "review",
           "role": "document-specialist",
-          "dependsOn": [
-            "calculate"
-          ],
-          "requiredArtifacts": [
-            "document.md"
-          ],
-          "acceptanceCriteria": [
-            "抽查合计",
-            "不可用指标被保留"
-          ]
+          "dependsOn": ["calculate"],
+          "requiredArtifacts": ["document.md"],
+          "acceptanceCriteria": ["抽查合计", "不可用指标被保留"]
         }
       ]
     }

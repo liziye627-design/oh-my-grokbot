@@ -33,7 +33,13 @@
         {
           "id": "art-director",
           "mission": "把功能、受众和核心信息写成审美方向。需要画面时生成静帧；视频和三维模型只在运行时返回文件后写入回执。",
-          "skills": ["task-planning", "agent-handoff", "design-atelier", "visual-generation", "capability-selection"],
+          "skills": [
+            "task-planning",
+            "agent-handoff",
+            "design-atelier",
+            "visual-generation",
+            "capability-selection"
+          ],
           "expectedOutputs": ["direction.md", "component-brief.md", "visual-receipt.json"]
         },
         {
@@ -51,13 +57,23 @@
         {
           "id": "motion-designer",
           "mission": "为每个组件指定 transitions.dev 的一条过渡，写明功能、韵律、效率和情绪。",
-          "skills": ["design-atelier", "transitions-dev", "artifact-validation", "capability-selection"],
+          "skills": [
+            "design-atelier",
+            "transitions-dev",
+            "artifact-validation",
+            "capability-selection"
+          ],
           "expectedOutputs": ["motion-spec.md"]
         },
         {
           "id": "design-reviewer",
           "mission": "退回没有功能理由的动效、即兴动画，以及没有来源的审美判断。",
-          "skills": ["design-atelier", "fact-verification", "artifact-validation", "approval-protocol"],
+          "skills": [
+            "design-atelier",
+            "fact-verification",
+            "artifact-validation",
+            "approval-protocol"
+          ],
           "expectedOutputs": ["review.md"]
         }
       ],
@@ -95,10 +111,7 @@
           "role": "reference-scout",
           "dependsOn": ["frame"],
           "requiredArtifacts": ["references.md"],
-          "acceptanceCriteria": [
-            "每个取用点有网址和检索时间",
-            "同一组件最多三个参考页"
-          ]
+          "acceptanceCriteria": ["每个取用点有网址和检索时间", "同一组件最多三个参考页"]
         },
         {
           "id": "specify",
@@ -125,10 +138,7 @@
           "role": "design-reviewer",
           "dependsOn": ["motion"],
           "requiredArtifacts": ["review.md"],
-          "acceptanceCriteria": [
-            "没有功能的动效被退回",
-            "未拉取的代码没有被写成已经安装"
-          ]
+          "acceptanceCriteria": ["没有功能的动效被退回", "未拉取的代码没有被写成已经安装"]
         }
       ]
     },

@@ -11,9 +11,7 @@
       "verification": "reviewed"
     },
     "spec": {
-      "providers": [
-        "grokbot"
-      ],
+      "providers": ["grokbot"],
       "requirements": [
         {
           "capability": "source-research",
@@ -75,50 +73,26 @@
         {
           "id": "requirements-engineer",
           "mission": "把功能需求写成可观察的输入、接口、约束和非目标。",
-          "skills": [
-            "source-research",
-            "task-planning",
-            "agent-handoff"
-          ],
-          "expectedOutputs": [
-            "requirements.md"
-          ]
+          "skills": ["source-research", "task-planning", "agent-handoff"],
+          "expectedOutputs": ["requirements.md"]
         },
         {
           "id": "embedded-engineer",
           "mission": "设计固件变更、外设接口、构建方式和预期测试，不把未烧录的计划写成已上板。",
-          "skills": [
-            "environment-bootstrap",
-            "task-planning",
-            "failure-recovery"
-          ],
-          "expectedOutputs": [
-            "firmware-plan.md"
-          ]
+          "skills": ["environment-bootstrap", "task-planning", "failure-recovery"],
+          "expectedOutputs": ["firmware-plan.md"]
         },
         {
           "id": "ai-engineer",
           "mission": "规划模型打包、目标运行时、资源预算和离线评估数据。",
-          "skills": [
-            "capability-selection",
-            "environment-bootstrap",
-            "cost-awareness"
-          ],
-          "expectedOutputs": [
-            "model-plan.md"
-          ]
+          "skills": ["capability-selection", "environment-bootstrap", "cost-awareness"],
+          "expectedOutputs": ["model-plan.md"]
         },
         {
           "id": "test-engineer",
           "mission": "按需求和计划执行或记录测试，失败和未运行都保持可见。",
-          "skills": [
-            "artifact-validation",
-            "failure-recovery",
-            "fact-verification"
-          ],
-          "expectedOutputs": [
-            "test-report.md"
-          ]
+          "skills": ["artifact-validation", "failure-recovery", "fact-verification"],
+          "expectedOutputs": ["test-report.md"]
         }
       ],
       "policies": [
@@ -133,52 +107,29 @@
       "id": "firmware-delivery",
       "name": "固件需求到测试记录",
       "entryRole": "requirements-engineer",
-      "requiredInputs": [
-        "deviceRequirements",
-        "constraints",
-        "targetBoard"
-      ],
+      "requiredInputs": ["deviceRequirements", "constraints", "targetBoard"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "specify",
           "role": "requirements-engineer",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "requirements.md"
-          ],
-          "acceptanceCriteria": [
-            "接口和验收观察点明确",
-            "非目标被列出"
-          ]
+          "requiredArtifacts": ["requirements.md"],
+          "acceptanceCriteria": ["接口和验收观察点明确", "非目标被列出"]
         },
         {
           "id": "design",
           "role": "embedded-engineer",
-          "dependsOn": [
-            "specify"
-          ],
-          "requiredArtifacts": [
-            "firmware-plan.md"
-          ],
-          "acceptanceCriteria": [
-            "构建命令和目标板明确",
-            "未烧录不被写成已验证"
-          ]
+          "dependsOn": ["specify"],
+          "requiredArtifacts": ["firmware-plan.md"],
+          "acceptanceCriteria": ["构建命令和目标板明确", "未烧录不被写成已验证"]
         },
         {
           "id": "verify",
           "role": "test-engineer",
-          "dependsOn": [
-            "design"
-          ],
-          "requiredArtifacts": [
-            "test-report.md"
-          ],
-          "acceptanceCriteria": [
-            "每项有证据或 not_run",
-            "失败不改记为通过"
-          ]
+          "dependsOn": ["design"],
+          "requiredArtifacts": ["test-report.md"],
+          "acceptanceCriteria": ["每项有证据或 not_run", "失败不改记为通过"]
         }
       ]
     },
@@ -186,52 +137,29 @@
       "id": "model-delivery",
       "name": "模型交付计划与评估",
       "entryRole": "requirements-engineer",
-      "requiredInputs": [
-        "modelRequirements",
-        "targetRuntime",
-        "evaluationSet"
-      ],
+      "requiredInputs": ["modelRequirements", "targetRuntime", "evaluationSet"],
       "approvalRequired": false,
       "steps": [
         {
           "id": "specify",
           "role": "requirements-engineer",
           "dependsOn": [],
-          "requiredArtifacts": [
-            "requirements.md"
-          ],
-          "acceptanceCriteria": [
-            "输入输出和运行时明确",
-            "许可证约束可见"
-          ]
+          "requiredArtifacts": ["requirements.md"],
+          "acceptanceCriteria": ["输入输出和运行时明确", "许可证约束可见"]
         },
         {
           "id": "package",
           "role": "ai-engineer",
-          "dependsOn": [
-            "specify"
-          ],
-          "requiredArtifacts": [
-            "model-plan.md"
-          ],
-          "acceptanceCriteria": [
-            "资源预算和来源明确",
-            "没有评估集不写精度"
-          ]
+          "dependsOn": ["specify"],
+          "requiredArtifacts": ["model-plan.md"],
+          "acceptanceCriteria": ["资源预算和来源明确", "没有评估集不写精度"]
         },
         {
           "id": "verify",
           "role": "test-engineer",
-          "dependsOn": [
-            "package"
-          ],
-          "requiredArtifacts": [
-            "test-report.md"
-          ],
-          "acceptanceCriteria": [
-            "评估命令和数据版本可追溯",
-            "未运行保持 not_run"
-          ]
+          "dependsOn": ["package"],
+          "requiredArtifacts": ["test-report.md"],
+          "acceptanceCriteria": ["评估命令和数据版本可追溯", "未运行保持 not_run"]
         }
       ]
     }

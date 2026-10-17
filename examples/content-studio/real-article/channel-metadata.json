@@ -4,7 +4,14 @@
   "platformWeightedLengthVerified": false,
   "authoring": "AI-assisted project editorial",
   "nativeExecution": "not-verified",
-  "threadClaimMapping": {"1": ["C1", "C5"], "2": ["C1"], "3": ["C2", "C3"], "4": ["C4"], "5": ["C5"], "6": ["C2", "C3"]},
+  "threadClaimMapping": {
+    "1": ["C1", "C5"],
+    "2": ["C1"],
+    "3": ["C2", "C3"],
+    "4": ["C4"],
+    "5": ["C5"],
+    "6": ["C2", "C3"]
+  },
   "postClaims": ["C1", "C4", "C5"],
   "note": "Metadata is not part of the copyable post bodies. Thread numbering is deliberate. Verify account limits before publication."
 }
