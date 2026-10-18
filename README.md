@@ -159,7 +159,7 @@ node dist/cli.js workspace bundle --config examples/workspaces.config.json --id 
 - **岗位**：core-team 的 `evidence-reviewer` 复核，`knowledge-keeper` 维护技能与岗位对照表。
 - **流程**：候选先进暂存区 → 逐个读文件与脚本、核对 LICENSE 与 Source → 缺 LICENSE 或 Source 的退回，补齐后再复核 → 通过的进入 `team-skills/` 并在 `mapping.md` 定岗位 → 提 PR，GitHub Actions 在 `ubuntu-latest` 与 `windows-latest` 上跑 typecheck、check、test、schemas、audit，转绿后合并。
 - **实际记录**：这套流程并非一开始就做到位——PR #2 在复核通过前就已合并，目录状态随后由 PR #3（重建为 PR #6）修正；CI 自首个提交起一直是红的，直到 PR #5 修复后 master 才转绿。
-- **实际记录**：首轮 3 个 design-style 技能和 8 个 game 技能因缺许可全文被退回，补齐后通过；12 个 anthropics 来源技能因缺 LICENSE 和 Source 行被退回，补齐后通过。需要 API key、会外发数据的评测脚本（`dev-mcp-builder`）只收录、未经用户同意不运行。两个逆向技能未获用户确认，留在暂存区，没进共享技能库。
+- **实际记录**：首轮 3 个 design-style 技能和 8 个 game 技能因缺许可全文被退回，补齐后通过；12 个 anthropics 来源技能因缺 LICENSE 和 Source 行被退回，补齐后 11 个通过，`competitive-brief` 因与其他技能重复被剔除。需要 API key、会外发数据的评测脚本（`dev-mcp-builder`）只收录、未经用户同意不运行。两个逆向技能仓库从未收录；10/16 曾误放进共享技能库，已撤回到暂存区。
 - **文件**：[skills-review.md](team-skills/_catalog/skills-review.md) · [skills-catalog.md](team-skills/_catalog/skills-catalog.md) · [mapping.md](team-skills/_catalog/mapping.md) · [CI 配置](.github/workflows/)
 
 ## 技能与技能目录
@@ -167,7 +167,7 @@ node dist/cli.js workspace bundle --config examples/workspaces.config.json --id 
 - **Core Skills（12 个，`skills/`）**：`source-research`、`fact-verification`、`task-planning`、`agent-handoff`、`artifact-validation`、`approval-protocol`、`failure-recovery`、`cost-awareness`、`capability-selection`、`environment-bootstrap`、`secret-handling`、`routine-design`。标准 `SKILL.md` 格式，基于固定提交的开源案例适配，版本 `0.2.0`，原始快照在 `third_party/upstreams/`。审批 Skill 不能替代宿主或 Gateway 的权限强制执行。
 - **内容与社交技能（`skills/`）**：宝玉网页采集、Markdown 转公众号 HTML、微信草稿交付，卡兹克长文方法，子木 GEO 研究；可选包 `oh-my-social` 提供 `social-research` 与 `social-publishing`。
 - **团队技能目录（`team-skills/`）**：共 42 个技能目录：38 个经复核的外部技能（各自保留 LICENSE 与 Source 说明），另有 4 个 core-team 自写技能；`_catalog/` 为目录与复核记录。来源仓库包括 anthropics/skills、anthropics/knowledge-work-plugins、anthropics/financial-services、alirezarezvani/claude-skills、bergside/awesome-design-skills、gamedev-skills/awesome-gamedev-agent-skills。
-  - 每个外部技能目录保留上游 `LICENSE`（Apache 批次另附 `NOTICE`），`SKILL.md` 带 Source 行。
+  - 每个外部技能目录保留上游 `LICENSE`（上游带 `NOTICE` 的一并保留），`SKILL.md` 带 Source 行。
   - 部分技能附带本地 Python 脚本，已复核、**未执行**，运行前请自行检查。
   - 清单、岗位对照和复核记录：[skills-catalog.md](team-skills/_catalog/skills-catalog.md) · [mapping.md](team-skills/_catalog/mapping.md) · [skills-review.md](team-skills/_catalog/skills-review.md) · [team-skills/README.md](team-skills/README.md)
 
